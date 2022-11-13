@@ -9,7 +9,7 @@ public class CharacterStats : MonoBehaviour
     public int food{get; private set;}
     public int medicine{get; private set;} 
     public float money{get; private set;} = 0f;
-    public int challengeScore{get; private set;} 
+    public int challengeScore{get; private set;}
     // Start is called before the first frame update
     void Start()
     {
