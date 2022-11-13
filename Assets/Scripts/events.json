@@ -1,5 +1,5 @@
 {
-    "eventFormat":[
+    "eventFormat": [ //Format to use for the remaining entries
         {
             "eventId": 0,
             "eventTitle": "eventTitle",
@@ -36,12 +36,48 @@
                     "choiceFailResults": "L_C_O_-1"
                 }
             ]
-
         }
     ],
     "events": [
+        { // TEST EVENT 1
+            "eventId": 1,
+            "eventTitle": "Test Event",
+            "eventImage": "",
+            "eventDesc": "This is to test calling an event",
+            "eventNumChoices": 2,
+            "eventChoiceTexts": [ // There should be entries to match # in eventNumChoices
+                "Lets Go!",
+                "No Way"
+            ],
+            "eventChoices" : [ // There should be entries to match # in eventNumChoices
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "0_0_0_0",
+                    "choiceFailResults": "0_0_0_0"
+                },
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "0_0_0_0",
+                    "choiceFailResults": "0_0_0_0"
+                }
+            ]
+        },
         {
-            
+
         }
     ]
 

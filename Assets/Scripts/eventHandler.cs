@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
+
+[System.Serializable]
+public class EventCollection {
+    Event[] data;
+}
 
 [System.Serializable]
 public class Event{
@@ -60,15 +66,38 @@ public class Attribute{
 
 public class eventHandler : MonoBehaviour
 {
-    Event[] eventsForLeg;
-    string eventPoolType;
+    [SerializeField] TextAsset eventJson;
+    EventCollection allEvents;
+    List<Event> jounreyLeg;
+
+    void Start(){
+        allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
+    }
     
-    void processAttribute(string attrStr){
-        // Ex; attrStr = L_C_O_-1
-        // split string over '_'
-        // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
-        // different methods in other scripts
+    public Event getEvent(string id){
+        foreach (Event e in allEvents.data){
+            if (e.eventId == id){
+                return e;
+            }
+        }
+        Debug.LogError("eventId not found");
+        return null;
     }
 
-    
+    // void processAttribute(string attrStr){
+    //     // Ex; attrStr = L_C_O_-1
+    //     // split string over '_'
+    //     // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
+    //     // different methods in other scripts
+    // }
+
+    // // Gathers a number of random events based from difficulty stat to appear during leg of journey
+    // void gatherEvents(int difficulty){
+        
+    // }
+
+    // // Makes event appear on screen
+    // void showEvent(){
+
+    // }
 }
