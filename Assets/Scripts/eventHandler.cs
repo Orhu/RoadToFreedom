@@ -5,28 +5,28 @@ using UnityEngine;
 
 [System.Serializable]
 public class EventCollection {
-    Event[] data;
+    public Event[] data;
 }
 
 [System.Serializable]
 public class Event{
-    int eventId;
-    string eventTitle;
-    string eventImage;
-    string eventDesc;
-    int eventNumChoices;
-    string[] eventChoicesText;
-    Choice[] eventChoices;
+    public int eventId;
+    public string eventTitle;
+    public string eventImage;
+    public string eventDesc;
+    public int eventNumChoices;
+    public string[] eventChoicesText;
+    public Choice[] eventChoices;
 }
 
 [System.Serializable]
 public class Choice{
-    Attribute choicePreCond;
-    bool choiceShowResultScreen; // Should be set False by default
-    string choicePassText;
-    string choiceFailText;
-    string[] choicePassResults;
-    string[] choiceFailResults;
+    public Attribute choicePreCond;
+    public bool choiceShowResultScreen; // Should be set False by default
+    public string choicePassText;
+    public string choiceFailText;
+    public string[] choicePassResults;
+    public string[] choiceFailResults;
 }
 
 [System.Serializable]
@@ -39,7 +39,7 @@ public class Attribute{
     // 4 - Status
     // 5 - Location
     // 6 - Game
-    int attrType;
+    public int attrType;
 
     // Parameters
     // None - None (N)
@@ -48,7 +48,7 @@ public class Attribute{
     // Item/Status - Query (Q), Add (A), or Remove (R)
     // Location - Change (C)
     // Game - Win (w) or Loss  (L)
-    char attrParam;
+    public char attrParam;
 
     // Value A
     // skillNumber - 
@@ -56,11 +56,11 @@ public class Attribute{
     // item - itemId
     // status - statusId
     // location - locationId
-    int attrValA;
+    public int attrValA;
 
     // Value B
     // skill / resources value changes
-    int attrValB;
+    public int attrValB;
 }
 
 
@@ -68,13 +68,14 @@ public class eventHandler : MonoBehaviour
 {
     [SerializeField] TextAsset eventJson;
     EventCollection allEvents;
-    List<Event> jounreyLeg;
+    List<Event> journeyLeg;
+    int numPathEvents;
 
     void Start(){
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
     }
     
-    public Event getEvent(string id){
+    public Event getEvent(int id){
         foreach (Event e in allEvents.data){
             if (e.eventId == id){
                 return e;
@@ -84,20 +85,19 @@ public class eventHandler : MonoBehaviour
         return null;
     }
 
-    // void processAttribute(string attrStr){
-    //     // Ex; attrStr = L_C_O_-1
-    //     // split string over '_'
-    //     // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
-    //     // different methods in other scripts
-    // }
-
-    // // Gathers a number of random events based from difficulty stat to appear during leg of journey
-    // void gatherEvents(int difficulty){
+    public void showEvent(){
         
-    // }
+    }
 
-    // // Makes event appear on screen
-    // void showEvent(){
+    // TO BE DONE ONCE WE HAVE ACTUAL EVENTS IDENTIFIED
+    public void legGeneration(int numPathEvents){
+        
+    }
 
-    // }
+    void processAttribute(string attrStr){
+        // Ex; attrStr = L_C_O_-1
+        // split string over '_'
+        // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
+        // different methods in other scripts
+    }
 }

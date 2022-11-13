@@ -39,17 +39,17 @@
         }
     ],
     "events": [
-        { // TEST EVENT 1
+        { 
             "eventId": 1,
             "eventTitle": "Test Event",
             "eventImage": "",
             "eventDesc": "This is to test calling an event",
             "eventNumChoices": 2,
-            "eventChoiceTexts": [ // There should be entries to match # in eventNumChoices
+            "eventChoiceTexts": [ 
                 "Lets Go!",
                 "No Way"
             ],
-            "eventChoices" : [ // There should be entries to match # in eventNumChoices
+            "eventChoices" : [ 
                 {
                     "choicePreCond": [
                         {"attrType": 0},
