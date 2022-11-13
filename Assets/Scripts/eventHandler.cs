@@ -57,12 +57,18 @@ public class Attribute{
     int attrValB;
 }
 
+
 public class eventHandler : MonoBehaviour
 {
+    Event[] eventsForLeg;
+    string eventPoolType;
+    
     void processAttribute(string attrStr){
         // Ex; attrStr = L_C_O_-1
         // split string over '_'
         // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
         // different methods in other scripts
-    }   
+    }
+
+    
 }

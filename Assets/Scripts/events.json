@@ -1,0 +1,48 @@
+{
+    "eventFormat":[
+        {
+            "eventId": 0,
+            "eventTitle": "eventTitle",
+            "eventImage": "address for image",
+            "eventDesc": "description of event",
+            "eventNumChoices": 2,
+            "eventChoiceTexts": [ // There should be entries to match # in eventNumChoices
+                "Text1",
+                "Text2"
+            ],
+            "eventChoices" : [ // There should be entries to match # in eventNumChoices
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": "Q"},
+                        {"attrValA": 1},
+                        {"attrValB": 2}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "L_C_O_-1",
+                    "choiceFailResults": "L_C_O_-1"
+                },
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": "Q"},
+                        {"attrValA": 1},
+                        {"attrValB": 2}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "L_C_O_-1",
+                    "choiceFailResults": "L_C_O_-1"
+                }
+            ]
+
+        }
+    ],
+    "events": [
+        {
+            
+        }
+    ]
+
+}
