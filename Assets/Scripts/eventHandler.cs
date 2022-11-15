@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 [System.Serializable]
 public class EventCollection {
-    public Event[] data;
+    public Event[] events;
 }
 
 [System.Serializable]
@@ -15,7 +17,7 @@ public class Event{
     public string eventImage;
     public string eventDesc;
     public int eventNumChoices;
-    public string[] eventChoicesText;
+    public string[] eventChoiceTexts;
     public Choice[] eventChoices;
 }
 
@@ -71,12 +73,28 @@ public class eventHandler : MonoBehaviour
     List<Event> journeyLeg;
     int numPathEvents;
 
+    //Text GameObjects
+    [SerializeField] TMP_Text title;
+    [SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text option1;
+    [SerializeField] TMP_Text option2;
+    [SerializeField] TMP_Text option3;
+    [SerializeField] TMP_Text option4;
+
     void Start(){
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
+
+        Event e = getEvent(1);
+        title.text = e.eventTitle;
+        text.text = e.eventDesc;
+        option1.text = e.eventChoiceTexts[0];
+        option2.text = e.eventChoiceTexts[1];
+        option3.text = "";
+        option4.text = "";
     }
     
     public Event getEvent(int id){
-        foreach (Event e in allEvents.data){
+        foreach (Event e in allEvents.events){
             if (e.eventId == id){
                 return e;
             }
@@ -85,19 +103,19 @@ public class eventHandler : MonoBehaviour
         return null;
     }
 
-    public void showEvent(){
+    // public void showEvent(){
         
-    }
+    // }
 
     // TO BE DONE ONCE WE HAVE ACTUAL EVENTS IDENTIFIED
-    public void legGeneration(int numPathEvents){
+    // public void legGeneration(int numPathEvents){
         
-    }
+    // }
 
-    void processAttribute(string attrStr){
-        // Ex; attrStr = L_C_O_-1
-        // split string over '_'
-        // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
-        // different methods in other scripts
-    }
+    // void processAttribute(string attrStr){
+    //     // Ex; attrStr = L_C_O_-1
+    //     // split string over '_'
+    //     // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
+    //     // different methods in other scripts
+    // }
 }
