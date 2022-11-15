@@ -1,16 +1,16 @@
 {
-    "eventFormat": [ //Format to use for the remaining entries
+    "eventFormat": [ 
         {
             "eventId": 0,
             "eventTitle": "eventTitle",
             "eventImage": "address for image",
             "eventDesc": "description of event",
             "eventNumChoices": 2,
-            "eventChoiceTexts": [ // There should be entries to match # in eventNumChoices
+            "eventChoiceTexts": [ 
                 "Text1",
                 "Text2"
             ],
-            "eventChoices" : [ // There should be entries to match # in eventNumChoices
+            "eventChoices" : [
                 {
                     "choicePreCond": [
                         {"attrType": 0},
