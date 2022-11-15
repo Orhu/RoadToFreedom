@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 [System.Serializable]
@@ -72,6 +73,8 @@ public class eventHandler : MonoBehaviour
     EventCollection allEvents;
     List<Event> journeyLeg;
     int numPathEvents;
+    private Event curEvent;
+    private int pressCount = 0;
 
     //Text GameObjects
     [SerializeField] TMP_Text title;
@@ -85,6 +88,7 @@ public class eventHandler : MonoBehaviour
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
 
         Event e = getEvent(1);
+        curEvent = e;
         title.text = e.eventTitle;
         text.text = e.eventDesc;
         option1.text = e.eventChoiceTexts[0];
@@ -103,9 +107,40 @@ public class eventHandler : MonoBehaviour
         return null;
     }
 
-    // public void showEvent(){
+    public void optionButtonPress(int option){ // Option 0 to 3
+        if (curEvent.eventNumChoices > option || option < 0){
+            Debug.LogError("Option not in valid range");
+        }
+        // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
+        text.text = curEvent.eventChoices[option].choicePassText;
+        option1.text = "Close";
+        option2.text = "";
+        option3.text = "";
+        option4.text = "";
         
+        if(pressCount > 0){
+            Debug.LogError("Event concluded");
+            pressCount = 0;
+            // Replace with code for closing scene/window to handle consequence
+            transform.root.gameObject.SetActive(false);
+        }
+        else{
+            pressCount++;
+        }
+    }
+
+    // public void closeEvent(bool close){
+    //     if (close == true){
+    //         close = false;
+    //         Debug.LogError("Event concluded");
+    //         // Replace with code for closing scene/window to handle consequence
+    //         transform.root.gameObject.SetActive(false);
+    //     }
     // }
+
+    public void showEvent(){
+        transform.root.gameObject.SetActive(true);
+    }
 
     // TO BE DONE ONCE WE HAVE ACTUAL EVENTS IDENTIFIED
     // public void legGeneration(int numPathEvents){
