@@ -4,38 +4,65 @@ using UnityEngine;
 
 public class CharacterSheet : MonoBehaviour {
     public string characterName {get; private set;}
-    public string job {get; private set;}
-    public string perk {get; private set;} // may change depending on how we do perks 
+    public int job {get; private set;}
+    public string dispJob {get; private set;}
+    /*not yet implemented */ public string perk {get; private set;} // may change depending on how we do perks 
 
     // Character Stats
     // Body
     public int statBody {get; private set;} // body
     public int statStr {get; private set;} // strength (statNum = 0)
-    public int statSpeed {get; private set;} // speed (statNum = 1)
-    public int statSurv {get; private set;} // survival (statNum = 2)
+    public int statSpd {get; private set;} // speed (statNum = 1)
+    public int statSrv {get; private set;} // survival (statNum = 2)
     
     // Mind
     public int statMind {get; private set;} // mind
-    public int statKnow {get; private set;} // knowledge (statNum = 3)
+    public int statKnw {get; private set;} // knowledge (statNum = 3)
     public int statMed {get; private set;} // medicine (statNum = 4)
-    public int statSpeech {get; private set;} // speech (statNum = 5)
+    public int statSpc {get; private set;} // speech (statNum = 5)
 
     // Soul
     public int statSoul {get; private set;} // soul
     public int statVit {get; private set;} // vitality (statNum = 6)
     public int statAct {get; private set;} // acting (statNum = 7)
-    public int statLuck {get; private set;} // luck (statNum = 8)
+    public int statLck {get; private set;} // luck (statNum = 8)
 
-    public void fillCharacterSheet(string[] details, int[] statScores) {
+    public void FillCharacterSheet(string[] details, int jobID, int[] statScores) {
         characterName = details[0];
-        job = details[1];
-        perk = details[2];
+        job = jobID;
+        //perk = details[1];
 
         statBody = statScores[0];
         statMind = statScores[1];
         statSoul = statScores[2];
 
         // fill substats on formula
+        switch (jobID) {
+            case 1: // farmer
+                SetStats(new int[]{1,-1,0,-1,0,1,1,0,-1});
+                break;
+            case 2: // butler
+                SetStats(new int[]{-1,1,0,1,-1,0,-1,1,0});
+                break;
+            case 3: // chef
+                SetStats(new int[]{0,-1,1,0,1,-1,0,-1,1});
+                break;
+            default:
+                Debug.LogError("Invalid Job Type Selected.");
+                break;
+        }
+    }
+
+    private void SetStats(int[] statVals) {
+        statStr = statBody + statVals[0];
+        statSpd = statBody + statVals[1];
+        statSrv = statBody + statVals[2];
+        statKnw = statMind + statVals[3];
+        statMed = statMind + statVals[4];
+        statSpc = statMind + statVals[5];
+        statVit = statSoul + statVals[6];
+        statAct = statSoul + statVals[7];
+        statLck = statSoul + statVals[8];
     }
 
     public void changeStat(int statNum, int change) {
@@ -49,27 +76,27 @@ public class CharacterSheet : MonoBehaviour {
                 }
                 break;
             case 1:
-                statSpeed += change;
-                if (statSpeed > 5) {
-                    statSpeed = 5;
-                } else if (statSpeed < 1) {
-                    statSpeed = 1;
+                statSpd += change;
+                if (statSpd > 5) {
+                    statSpd = 5;
+                } else if (statSpd < 1) {
+                    statSpd = 1;
                 }
                 break;
             case 2:
-                statSurv += change;
-                if (statSurv > 5) {
-                    statSurv = 5;
-                } else if (statSurv < 1) {
-                    statSurv = 1;
+                statSrv += change;
+                if (statSrv > 5) {
+                    statSrv = 5;
+                } else if (statSrv < 1) {
+                    statSrv = 1;
                 }
                 break;
             case 3:
-                statKnow += change;
-                if (statKnow > 5) {
-                    statKnow = 5;
-                } else if (statKnow < 1) {
-                    statKnow = 1;
+                statKnw += change;
+                if (statKnw > 5) {
+                    statKnw = 5;
+                } else if (statKnw < 1) {
+                    statKnw = 1;
                 }
                 break;
             case 4:
@@ -81,11 +108,11 @@ public class CharacterSheet : MonoBehaviour {
                 }
                 break;
             case 5:
-                statSpeech += change;
-                if (statSpeech > 5) {
-                    statSpeech = 5;
-                } else if (statSpeech < 1) {
-                    statSpeech = 1;
+                statSpc += change;
+                if (statSpc > 5) {
+                    statSpc = 5;
+                } else if (statSpc < 1) {
+                    statSpc = 1;
                 }
                 break;
             case 6:
@@ -105,11 +132,11 @@ public class CharacterSheet : MonoBehaviour {
                 }
                 break;
             case 8:
-                statLuck += change;
-                if (statLuck > 5) {
-                    statLuck = 5;
-                } else if (statLuck < 1) {
-                    statLuck = 1;
+                statLck += change;
+                if (statLck > 5) {
+                    statLck = 5;
+                } else if (statLck < 1) {
+                    statLck = 1;
                 }
                 break;
             default:

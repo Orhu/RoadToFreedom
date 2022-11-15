@@ -1831,15 +1831,29 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: <i>Pick a Job</i>
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: Farmer
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: Butler
+      m_Image: {fileID: 0}
+    - m_Text: Chef
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnSetNewJob
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &523707550
 MonoBehaviour:
@@ -2437,7 +2451,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnSetName
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -4206,7 +4232,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067884510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnDecrementScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1067884510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4539,7 +4577,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1103121562}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnDecrementScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1103121562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4807,7 +4857,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1188986705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnDecrementScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1188986705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,7 +5117,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1206733620}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnDone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1206733620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6089,7 +6163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: <i>Pick a Job</i>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6806,7 +6880,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1498193365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnIncrementScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1498193365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7103,7 +7189,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1592847867}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnIncrementScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1592847867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7538,6 +7636,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269f77c08d346384cbca303bd07c72b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plusButtons:
+  - {fileID: 1898757202}
+  - {fileID: 1498193364}
+  - {fileID: 1592847866}
+  minusButtons:
+  - {fileID: 1188986704}
+  - {fileID: 1103121561}
+  - {fileID: 1067884509}
+  doneButton: {fileID: 1206733619}
+  perkText: {fileID: 556158103}
+  ptsRemainingText: {fileID: 1972426834}
+  majorStatTextBox:
+  - {fileID: 259565218}
+  - {fileID: 330619069}
+  - {fileID: 444880662}
+  minorStatTextBox:
+  - {fileID: 1999979696}
+  - {fileID: 1015031760}
+  - {fileID: 504217957}
+  - {fileID: 2040795534}
+  - {fileID: 1549940069}
+  - {fileID: 1486472737}
+  - {fileID: 2101704980}
+  - {fileID: 1231499149}
+  - {fileID: 1402352182}
 --- !u!1 &1730888867
 GameObject:
   m_ObjectHideFlags: 0
@@ -8288,7 +8411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1898757203}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722443559}
+        m_TargetAssemblyTypeName: CharacterBuilderUI, Assembly-CSharp
+        m_MethodName: OnIncrementScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1898757203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8655,7 +8790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Points Remaining: 4'
+  m_text: '<color=#FFFF00>Points Remaining: 4 </color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
