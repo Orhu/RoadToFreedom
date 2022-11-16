@@ -6,11 +6,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+// Holds collected json file for access
 [System.Serializable]
 public class EventCollection {
     public Event[] events;
 }
 
+// Hold key event information
 [System.Serializable]
 public class Event{
     public int eventId;
@@ -22,6 +24,7 @@ public class Event{
     public Choice[] eventChoices;
 }
 
+// Holds choice information for choice outcomes
 [System.Serializable]
 public class Choice{
     public Attribute choicePreCond;
@@ -87,6 +90,7 @@ public class eventHandler : MonoBehaviour
     void Start(){
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
 
+        // Used to initialize event window for testing. May be altered later
         Event e = getEvent(1);
         curEvent = e;
         title.text = e.eventTitle;
@@ -97,6 +101,7 @@ public class eventHandler : MonoBehaviour
         option4.text = "";
     }
     
+    // Gets event information from event json based from eventId
     public Event getEvent(int id){
         foreach (Event e in allEvents.events){
             if (e.eventId == id){
@@ -108,24 +113,31 @@ public class eventHandler : MonoBehaviour
     }
 
     public void optionButtonPress(int option){ // Option 0 to 3
+        // Makes sure option info is not out of available bounds
         if (curEvent.eventNumChoices > option || option < 0){
             Debug.LogError("Option not in valid range");
-        }
-        // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
-        text.text = curEvent.eventChoices[option].choicePassText;
-        option1.text = "Close";
-        option2.text = "";
-        option3.text = "";
-        option4.text = "";
-        
-        if(pressCount > 0){
-            Debug.LogError("Event concluded");
-            pressCount = 0;
-            // Replace with code for closing scene/window to handle consequence
-            transform.root.gameObject.SetActive(false);
+            // 
         }
         else{
-            pressCount++;
+            // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
+
+            // Sets buttons to close options and none other
+            text.text = curEvent.eventChoices[option].choicePassText;
+            option1.text = "Close";
+            option2.text = "";
+            option3.text = "";
+            option4.text = "";
+        
+            // Presscount being greater than 0 allows for button to become exit window command
+            if(pressCount > 0){
+                Debug.LogError("Event concluded");
+                pressCount = 0;
+                // Replace with code for closing scene/window to handle consequence
+                transform.root.gameObject.SetActive(false);
+            }
+            else{
+                pressCount++;
+            }
         }
     }
 
