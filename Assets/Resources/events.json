@@ -1,0 +1,42 @@
+{
+    "events": [
+        { 
+            "eventId": 1,
+            "eventTitle": "Test Event",
+            "eventImage": "",
+            "eventDesc": "This is to test calling an event",
+            "eventNumChoices": 2,
+            "eventChoiceTexts": [ 
+                "Lets Go!",
+                "No Way"
+            ],
+            "eventChoices" : [ 
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "0_0_0_0",
+                    "choiceFailResults": "0_0_0_0"
+                },
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "0_0_0_0",
+                    "choiceFailResults": "0_0_0_0"
+                }
+            ]
+        }
+    ]
+
+}

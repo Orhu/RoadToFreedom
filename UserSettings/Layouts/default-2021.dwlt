@@ -914,7 +914,7 @@ MonoBehaviour:
       y: -115.5
       width: 412.75
       height: 231
-    m_MinimalGUI: 1
+    m_MinimalGUI: 
   m_defaultScale: 2
   m_LastWindowPixelSize: {x: 1651, y: 966}
   m_ClearInEditMode: 1
