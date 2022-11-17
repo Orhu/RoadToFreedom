@@ -51,6 +51,9 @@ public class CharacterSheet : MonoBehaviour {
                 Debug.LogError("Invalid Job Type Selected.");
                 break;
         }
+
+        GetComponent<CharacterStats>().InitialHealth(statVit);
+        SceneController.CharacterBuilderComplete();
     }
 
     private void SetStats(int[] statVals) {

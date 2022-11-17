@@ -21,7 +21,7 @@ public class CharacterStats : MonoBehaviour
         challengeScore = 0;
     }
 
-    public void IntialHealth(int vit) { //Sets Initial health to the player based on their vitality
+    public void InitialHealth(int vit) { //Sets Initial health to the player based on their vitality
         health = vit * 2;
         if(health < 1){ //If vitality is 0, we assign them the minimum amount of health
             health = 1;
