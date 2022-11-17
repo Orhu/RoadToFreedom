@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public static bool characterBuilt {get; private set;} = false;
+
+    [Tooltip("Game UI Root Object")]
+    [SerializeField] GameObject gameUIObject;
     
     void Start() {
+        gameUIObject.SetActive(false);
         SceneManager.LoadScene("CharacterBuilder", LoadSceneMode.Additive);
         StartCoroutine(AwaitCharacter());
     }
@@ -22,7 +26,7 @@ public class SceneController : MonoBehaviour {
 
         Debug.Log("Character Building Complete!");
 
-        //SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
-        //SceneManager.LoadScene("GameUI", LoadSceneMode.Additive);
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
+        gameUIObject.SetActive(true);
     }
 }

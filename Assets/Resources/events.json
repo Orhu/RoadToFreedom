@@ -36,6 +36,30 @@
                     "choiceFailResults": "0_0_0_0"
                 }
             ]
+        },
+	{ 
+            "eventId": 2,
+            "eventTitle": "Find Berries",
+            "eventImage": "",
+            "eventDesc": "You find a bush of berries as you are walking along the trail. You decide to stop and gather some berries to eat later on your journey.\n\n<color=#00FF00>Gain 4 Food</color>",
+            "eventNumChoices": 1,
+            "eventChoiceTexts": [ 
+                "Continue"
+            ],
+            "eventChoices" : [ 
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "2_c_1_4",
+                    "choiceFailResults": "2_c_1_4"
+                }
+            ]
         }
     ]
 
