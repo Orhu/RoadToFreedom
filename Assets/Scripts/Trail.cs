@@ -146,6 +146,7 @@ public class Trail : MonoBehaviour {
             // town time or for now end game
         } else {
             _gameUI.SetActive(true);
+            readyToShow = false;
             StartCoroutine(LoadEvent());
         }
     }

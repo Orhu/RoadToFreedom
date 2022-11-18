@@ -90,7 +90,7 @@ public class eventHandler : MonoBehaviour
     void Start() {
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
         // Used to initialize event window for testing. May be altered late     
-        transform.root.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void BuildEvent(int eventID) {
@@ -163,11 +163,11 @@ public class eventHandler : MonoBehaviour
         
             // Presscount being greater than 0 allows for button to become exit window command
             if(pressCount > 0){
-                Debug.LogError("Event concluded");
+                Debug.Log("Event concluded");
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
                 SceneController.EndEvent();
-                transform.root.gameObject.SetActive(false);
+                gameObject.SetActive(false);
             }
             else{
                 pressCount++;
@@ -185,7 +185,7 @@ public class eventHandler : MonoBehaviour
     // }
 
     public void ShowEvent(){
-        transform.root.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     // TO BE DONE ONCE WE HAVE ACTUAL EVENTS IDENTIFIED
