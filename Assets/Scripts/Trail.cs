@@ -89,11 +89,18 @@ public class Trail : MonoBehaviour {
     private int GetRandomEvent() {
         List<int> validEvents = new List<int>(EventPools.GetEventPool($"biome:{biome}")); // biome
         List<int> newEvents = new List<int>(EventPools.GetEventPool($"time:{time}")); // time
+        List<int> toRemove = new List<int>();
         foreach (int eventID in validEvents) {
             if (!newEvents.Contains(eventID)) {
-                validEvents.Remove(eventID);
+                toRemove.Add(eventID);
             }
         }
+
+        foreach (int eventID in toRemove) {
+            validEvents.Remove(eventID);
+        }
+
+        toRemove.Clear();
 
         // weather (implement later)
 
@@ -109,13 +116,19 @@ public class Trail : MonoBehaviour {
 
         foreach (int eventID in validEvents) {
             if (!newEvents.Contains(eventID)) {
-                validEvents.Remove(eventID);
+                toRemove.Add(eventID);
             }
         }
 
+        foreach (int eventID in toRemove) {
+            validEvents.Remove(eventID);
+        }
+
+        toRemove.Clear();
+
         // select random event
         var rng = new System.Random();
-        int pickVal = rng.Next(validEvents.Count + 1);
+        int pickVal = rng.Next(validEvents.Count);
         return validEvents[pickVal];
     }
 
