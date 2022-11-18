@@ -116,7 +116,7 @@ public class Trail : MonoBehaviour {
         // select random event
         var rng = new System.Random();
         int pickVal = rng.Next(validEvents.Count + 1);
-        return pickVal;
+        return validEvents[pickVal];
     }
 
     public void ShowEvent() {
