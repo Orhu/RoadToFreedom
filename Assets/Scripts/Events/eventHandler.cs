@@ -91,7 +91,7 @@ public class eventHandler : MonoBehaviour
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
 
         // Used to initialize event window for testing. May be altered later
-        Event e = getEvent(1);
+        Event e = getEvent(2);
         if (e.eventNumChoices == 1){
             pressCount++;
             curEvent = e;

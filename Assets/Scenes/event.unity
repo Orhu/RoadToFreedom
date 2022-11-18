@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 191883078}
   - component: {fileID: 191883079}
+  - component: {fileID: 191883080}
   m_Layer: 0
   m_Name: eventUI
   m_TagString: Untagged
@@ -166,6 +167,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1961a41692ff3724e8a18addc8a0d8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &191883080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191883077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44596d809f099da46bf759b3716938f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventJson: {fileID: 4900000, guid: 13eb4a2a32c3aac40bcab063c44cd4a7, type: 3}
@@ -296,7 +309,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -221.89482, y: 0, z: -223.32649, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
