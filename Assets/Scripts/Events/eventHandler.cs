@@ -148,7 +148,7 @@ public class eventHandler : MonoBehaviour
 
     public void optionButtonPress(int option){ // Option 0 to 3
         // Makes sure option info is not out of available bounds
-        if (option > 3 || option < 0){
+        if (option < 0){
             Debug.LogError("Option not in valid range");
         }
         else{
