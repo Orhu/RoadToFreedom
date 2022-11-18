@@ -92,13 +92,44 @@ public class eventHandler : MonoBehaviour
 
         // Used to initialize event window for testing. May be altered later
         Event e = getEvent(1);
-        curEvent = e;
-        title.text = e.eventTitle;
-        text.text = e.eventDesc;
-        option1.text = e.eventChoiceTexts[0];
-        option2.text = e.eventChoiceTexts[1];
-        option3.text = "";
-        option4.text = "";
+        if (e.eventNumChoices == 1){
+            pressCount++;
+            curEvent = e;
+            title.text = e.eventTitle;
+            text.text = e.eventDesc;
+            option1.text = e.eventChoiceTexts[0];
+            option2.text = "";
+            option3.text = "";
+            option4.text = "";
+        }
+        else if (e.eventNumChoices == 2){
+            curEvent = e;
+            title.text = e.eventTitle;
+            text.text = e.eventDesc;
+            option1.text = e.eventChoiceTexts[0];
+            option2.text = e.eventChoiceTexts[1];
+            option3.text = "";
+            option4.text = "";
+        }
+        else if (e.eventNumChoices == 3){
+            curEvent = e;
+            title.text = e.eventTitle;
+            text.text = e.eventDesc;
+            option1.text = e.eventChoiceTexts[0];
+            option2.text = e.eventChoiceTexts[1];
+            option3.text = e.eventChoiceTexts[2];
+            option4.text = "";
+        }
+        else if (e.eventNumChoices == 4){
+            curEvent = e;
+            title.text = e.eventTitle;
+            text.text = e.eventDesc;
+            option1.text = e.eventChoiceTexts[0];
+            option2.text = e.eventChoiceTexts[1];
+            option3.text = e.eventChoiceTexts[2];
+            option4.text = e.eventChoiceTexts[3];
+        }
+        
     }
     
     // Gets event information from event json based from eventId
@@ -114,9 +145,8 @@ public class eventHandler : MonoBehaviour
 
     public void optionButtonPress(int option){ // Option 0 to 3
         // Makes sure option info is not out of available bounds
-        if (curEvent.eventNumChoices > option || option < 0){
+        if (option > 3 || option < 0){
             Debug.LogError("Option not in valid range");
-            // 
         }
         else{
             // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
