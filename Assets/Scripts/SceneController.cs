@@ -9,14 +9,37 @@ public class SceneController : MonoBehaviour {
     [Tooltip("Game UI Root Object")]
     [SerializeField] GameObject gameUIObject;
     
-    void Start() {
+    private static eventHandler _event;
+    private static Trail _trail;
+    
+    void Awake() {
         gameUIObject.SetActive(false);
         SceneManager.LoadScene("CharacterBuilder", LoadSceneMode.Additive);
         StartCoroutine(AwaitCharacter());
+        SceneManager.LoadScene("event", LoadSceneMode.Additive);
+
+        _trail = GameObject.Find("Trail Manager").GetComponent<Trail>();
+    }
+
+    void Start() {
+        _event = GameObject.Find("eventUI").GetComponent<eventHandler>();
     }
 
     public static void CharacterBuilderComplete() {
         characterBuilt = true;
+        _trail.StartTrail();
+    }
+
+    public static void StartEventLoad(int eventID) {
+        _event.BuildEvent(eventID);
+    }
+
+    public static void DisplayEvent() {
+        _event.ShowEvent();
+    }
+    
+    public static void EndEvent() {
+        _trail.EndEvent();
     }
 
     private IEnumerator AwaitCharacter() {

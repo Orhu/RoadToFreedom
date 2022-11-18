@@ -87,11 +87,14 @@ public class eventHandler : MonoBehaviour
     [SerializeField] TMP_Text option3;
     [SerializeField] TMP_Text option4;
 
-    void Start(){
+    void Start() {
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
+        // Used to initialize event window for testing. May be altered late     
+        transform.root.gameObject.SetActive(false);
+    }
 
-        // Used to initialize event window for testing. May be altered later
-        Event e = getEvent(2);
+    public void BuildEvent(int eventID) {
+        Event e = getEvent(eventID);
         if (e.eventNumChoices == 1){
             pressCount++;
             curEvent = e;
@@ -129,11 +132,11 @@ public class eventHandler : MonoBehaviour
             option3.text = e.eventChoiceTexts[2];
             option4.text = e.eventChoiceTexts[3];
         }
-        
     }
     
     // Gets event information from event json based from eventId
     public Event getEvent(int id){
+        Debug.Log($"searching for eventID {id}");
         foreach (Event e in allEvents.events){
             if (e.eventId == id){
                 return e;
@@ -163,6 +166,7 @@ public class eventHandler : MonoBehaviour
                 Debug.LogError("Event concluded");
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
+                SceneController.EndEvent();
                 transform.root.gameObject.SetActive(false);
             }
             else{
@@ -180,7 +184,7 @@ public class eventHandler : MonoBehaviour
     //     }
     // }
 
-    public void showEvent(){
+    public void ShowEvent(){
         transform.root.gameObject.SetActive(true);
     }
 

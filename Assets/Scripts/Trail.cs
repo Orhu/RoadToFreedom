@@ -22,15 +22,12 @@ public class Trail : MonoBehaviour {
     private CharacterStats _charStats;
     private TrailUI _trailUI;
 
+    [SerializeField] GameObject _gameUI;
+
     void Start() {
         time = "Morning";
         weather = "Coming Soon";
-        _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
         _trailUI = GetComponent<TrailUI>();
-
-        SetupTrail(5,1,"alpha",10); // placeholder
-
-        order = GenerateEventOrder();
     }
 
     void Update() {
@@ -38,6 +35,13 @@ public class Trail : MonoBehaviour {
             ShowEvent();
         }
         
+    }
+    
+    public void StartTrail() {
+        _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        
+        SetupTrail(5,1,"alpha",10); // placeholder
+        StartCoroutine(LoadEvent());
     }
 
     public void SetupTrail(int tLength, int tDanger, string tBiome, int tTargetCS) {
@@ -75,13 +79,9 @@ public class Trail : MonoBehaviour {
         return temp;
     }
 
-    public void DoEvent() {
-        StartCoroutine(LoadEvent());
-    }
-
     private IEnumerator LoadEvent() {
         int eventID = GetRandomEvent();
-        
+        SceneController.StartEventLoad(eventID);
         yield return new WaitForSeconds(7f);
         readyToShow = true;
     }
@@ -118,12 +118,23 @@ public class Trail : MonoBehaviour {
         int pickVal = rng.Next(validEvents.Count + 1);
         return pickVal;
     }
-    
+
     public void ShowEvent() {
-        //todo
+        SceneController.DisplayEvent();
+        _gameUI.SetActive(false);
+    }
+    
+    public void EndEvent() {
         ProgressTime();
         progress++;
         _trailUI.Refresh();
+
+        if (progress == order.Length) {
+            // town time or for now end game
+        } else {
+            _gameUI.SetActive(true);
+            StartCoroutine(LoadEvent());
+        }
     }
 
     public int GetPlayerCS() {
