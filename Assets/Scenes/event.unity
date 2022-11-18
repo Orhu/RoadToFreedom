@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 191883078}
   - component: {fileID: 191883079}
+  - component: {fileID: 191883080}
   m_Layer: 0
   m_Name: eventUI
   m_TagString: Untagged
@@ -166,6 +167,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1961a41692ff3724e8a18addc8a0d8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventJson: {fileID: 4900000, guid: 13eb4a2a32c3aac40bcab063c44cd4a7, type: 3}
+  title: {fileID: 207271283}
+  text: {fileID: 1211731581}
+  option1: {fileID: 1512233961}
+  option2: {fileID: 1304253912}
+  option3: {fileID: 1496525749}
+  option4: {fileID: 655756912}
+--- !u!114 &191883080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191883077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44596d809f099da46bf759b3716938f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventJson: {fileID: 4900000, guid: 13eb4a2a32c3aac40bcab063c44cd4a7, type: 3}
