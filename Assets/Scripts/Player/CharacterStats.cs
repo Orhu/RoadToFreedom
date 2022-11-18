@@ -39,21 +39,25 @@ public class CharacterStats : MonoBehaviour
     }
 
     public void ChangeHealth(int boost) { //Changes health based on boost
+        Debug.Log("changing health");
         health += boost;
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
     public void ChangeFood(int ration) { //Changes food stored based on ration
+        Debug.Log("changing food");
         food += ration;
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
     public void ChangeMedicine(int meds) { //Changes medicine based on meds
+        Debug.Log("changing meds");
         medicine += meds;
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
     public void ChangeMoney(float cash) { //Changes money based on cash 
+        Debug.Log("changing munny");
         money += cash;
         _gameUI.RefreshCounters(food, medicine, money, health);
     }

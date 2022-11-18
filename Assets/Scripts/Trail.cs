@@ -24,10 +24,13 @@ public class Trail : MonoBehaviour {
 
     [SerializeField] GameObject _gameUI;
 
+    [SerializeField] GameObject endText; // temp for alpha
+
     void Start() {
         time = "Morning";
         weather = "Coming Soon";
         _trailUI = GetComponent<TrailUI>();
+        endText.SetActive(false);
     }
 
     void Update() {
@@ -82,7 +85,7 @@ public class Trail : MonoBehaviour {
     private IEnumerator LoadEvent() {
         int eventID = GetRandomEvent();
         SceneController.StartEventLoad(eventID);
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(1.5f);
         readyToShow = true;
     }
 
@@ -143,7 +146,8 @@ public class Trail : MonoBehaviour {
         _trailUI.Refresh();
 
         if (progress == order.Length) {
-            // town time or for now end game
+            EndAlpha();
+            return;
         } else {
             _gameUI.SetActive(true);
             readyToShow = false;
@@ -173,5 +177,10 @@ public class Trail : MonoBehaviour {
                 time = "Morning";
                 break;
         }
+    }
+
+    private void EndAlpha() {
+        readyToShow = false;
+        endText.SetActive(true);
     }
 }

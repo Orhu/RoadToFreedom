@@ -20,8 +20,8 @@
                     ],
                     "choicePassText": "Success",
                     "choiceFailText": "Failure",
-                    "choicePassResults": "0_0_0_0",
-                    "choiceFailResults": "0_0_0_0"
+                    "choicePassResults": "0_n_0_0",
+                    "choiceFailResults": "0_n_0_0"
                 },
                 {
                     "choicePreCond": [
@@ -93,7 +93,7 @@
                     ],
                     "choicePassText": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
                     "choiceFailText": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
-                    "choicePassResults": "2_c_0_0",
+                    "choicePassResults": "2_c_0_-1",
                     "choiceFailResults": "2_c_0_1"
                 }
             ]

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -31,8 +32,8 @@ public class Choice{
     public bool choiceShowResultScreen; // Should be set False by default
     public string choicePassText;
     public string choiceFailText;
-    public string[] choicePassResults;
-    public string[] choiceFailResults;
+    public string choicePassResults;
+    public string choiceFailResults;
 }
 
 [System.Serializable]
@@ -48,12 +49,12 @@ public class Attribute{
     public int attrType;
 
     // Parameters
-    // None - None (N)
-    // Skill - Query (Q), Reveal (R), or Change (C)
-    // Resource - Query (Q) or Change (C)
-    // Item/Status - Query (Q), Add (A), or Remove (R)
-    // Location - Change (C)
-    // Game - Win (w) or Loss  (L)
+    // None - None (n)
+    // Skill - Query (q), Reveal (r), or Change (c)
+    // Resource - Query (q) or Change (c)
+    // Item/Status - Query (q), Add (a), or Remove (r)
+    // Location - Change (c)
+    // Game - Win (w) or Loss  (l)
     public char attrParam;
 
     // Value A
@@ -155,10 +156,12 @@ public class eventHandler : MonoBehaviour
 
     public void optionButtonPress(int option){ // Option 0 to 3
         // Makes sure option info is not out of available bounds
+
         if (option < 0){
             Debug.LogError("Option not in valid range");
         }
         else{
+            processAttribute(option);
             // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
 
             // Sets buttons to close options and none other
@@ -200,10 +203,120 @@ public class eventHandler : MonoBehaviour
         
     // }
 
-    // void processAttribute(string attrStr){
-    //     // Ex; attrStr = L_C_O_-1
-    //     // split string over '_'
-    //     // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
-    //     // different methods in other scripts
-    // }
+    void processAttribute(int option){
+        Debug.Log("processing attributes");
+        // Ex; attrStr = L_C_O_-1
+        // split string over '_'
+        // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
+        // different methods in other scripts
+        string attr = curEvent.eventChoices[option].choicePassResults;
+        Debug.Log(attr);
+        //foreach (string attr in attrAll) {   
+            string[] attrVals = attr.Split("_");
+            Debug.Log(attrVals[0]);
+            string type = attrVals[0];
+            string param = attrVals[1];
+            string a = attrVals[2];
+            string b = attrVals[3];
+
+            if (type == "0"){ // None
+                if (param != "n"){
+                    Debug.LogError("How did we screw up None?");
+                }
+            }
+            else if (type == "1"){ // Skill
+                if (param == "q"){
+                    // ADD CHECK SKILL
+                }
+                else if (param == "c"){
+                    // ADD CHANGE SKILL
+                }
+                else if (param == "r"){
+                    // ADD REVEAL SKILL
+                }
+                else{
+                    Debug.LogError("Skill param not valid");
+                }
+            }
+            else if (type == "2"){ // Resource
+                if (param == "c"){ // change resource
+                    if (a == "0"){ // health
+                        int numVal = Int32.Parse(b);
+                        _charStats.ChangeHealth(numVal);
+                    }
+                    else if (a == "1"){ // food
+                        int numVal = Int32.Parse(b);
+                        _charStats.ChangeFood(numVal);
+                    }
+                    else if (a == "2"){ // medicine
+                        int numVal = Int32.Parse(b);
+                        _charStats.ChangeMedicine(numVal);
+                    }
+                    else if (a == "3"){ // money
+                        float numVal = float.Parse(b);
+                        _charStats.ChangeMoney(numVal);
+                    }
+                    else{
+                        Debug.LogError("resource key not valid");
+                    }
+                }
+                else if (param == "q"){ // query resource
+
+                }
+                else{
+                    Debug.LogError("Resource param not valid");
+                }
+            }
+            else if (type == "3"){ // Item
+                if (param == "q"){
+                    // ADD INFO TO CHECK RESOURCE NUM
+                }
+                else if (param == "a"){
+                    // ADD INFO TO ADD ITEMS
+                }
+                else if (param == "r"){
+                    // ADD INFO TO REMOVE ITEMS
+                }
+                else{
+                    Debug.LogError("Item param not valid");
+                }
+            }
+            else if (type == "4"){ // Status
+                if (param == "q"){
+                    // ADD CHECK CURRENT STATUS
+                }
+                else if (param == "a"){
+                    // ADD ADD STATUS
+                }
+                else if (param == "r"){
+                    // ADD REMOVE STATUS
+                }
+                else{
+                    Debug.LogError("Status param not valid");
+                }
+            }
+            else if (type == "5"){ // Location
+                if (param == "c"){
+                    // ADD LOCATION CHANGE INFO HERE
+                }
+                else{
+                    Debug.LogError("Location param not valid");
+                }
+            }
+            else if (type == "6"){ // Game
+                if (param == "w"){
+                    // ADD WIN INFO HERE
+                }
+                else if (param == "l"){
+                    // ADD LOSS INFO HERE
+                }
+                else{
+                    Debug.LogError("Game param not valid");
+                }
+            }
+            else{
+                Debug.LogError("Attribute Type is not specified values");
+            }
+        //}
+    }
 }
