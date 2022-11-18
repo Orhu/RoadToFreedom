@@ -25,8 +25,7 @@ public class SceneController : MonoBehaviour {
         }
 
         Debug.Log("Character Building Complete!");
-
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
+        
         gameUIObject.SetActive(true);
     }
 }
