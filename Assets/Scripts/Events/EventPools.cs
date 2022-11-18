@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EventPools : MonoBehaviour {
-    private static int[] poolAlpha = new int[]{1,2,3}; 
-    private static int[] poolCalamity = new int[]{3}; 
+    private static int[] poolAlpha = new int[]{0,1,2}; 
+    private static int[] poolCalamity = new int[]{2}; 
     
     public static int[] GetEventPool(string poolID) {
         switch (poolID) {

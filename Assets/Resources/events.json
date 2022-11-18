@@ -1,7 +1,7 @@
 {
     "events": [
         { 
-            "eventId": 1,
+            "eventId": 0,
             "eventTitle": "Test Event",
             "eventImage": "",
             "eventDesc": "This is to test calling an event",
@@ -38,7 +38,7 @@
             ]
         },
 	    { 
-            "eventId": 2,
+            "eventId": 1,
             "eventTitle": "Mystery Berries",
             "eventImage": "",
             "eventDesc": "You find a bush of berries as you are walking along the trail. You decide to stop and gather some berries to eat later on your journey.\n\n<color=#00FF00>Gain 4 Food</color>",
@@ -62,7 +62,7 @@
             ]
         },
         {
-            "eventId": 3,
+            "eventId": 2,
             "eventTitle": "People Approaching",
             "eventImage": "",
             "eventDesc": "As you walk down the road, you notice a group of people approaching.",
