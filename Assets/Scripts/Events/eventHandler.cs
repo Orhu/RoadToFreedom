@@ -87,8 +87,15 @@ public class eventHandler : MonoBehaviour
     [SerializeField] TMP_Text option3;
     [SerializeField] TMP_Text option4;
 
+    private CharacterStats _charStats;
+    private CharacterSheet _charSheet;
+
     void Start() {
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
+
+        _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        _charSheet = GameObject.Find("Player").GetComponent<CharacterSheet>();
+        
         // Used to initialize event window for testing. May be altered late     
         gameObject.SetActive(false);
     }
