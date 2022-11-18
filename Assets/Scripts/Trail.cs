@@ -80,13 +80,13 @@ public class Trail : MonoBehaviour {
     }
 
     private IEnumerator LoadEvent() {
-        GetRandomEvent();
+        int eventID = GetRandomEvent();
         
         yield return new WaitForSeconds(7f);
         readyToShow = true;
     }
 
-    private void GetRandomEvent() {
+    private int GetRandomEvent() {
         List<int> validEvents = new List<int>(EventPools.GetEventPool($"biome:{biome}")); // biome
         List<int> newEvents = new List<int>(EventPools.GetEventPool($"time:{time}")); // time
         foreach (int eventID in validEvents) {
@@ -116,6 +116,7 @@ public class Trail : MonoBehaviour {
         // select random event
         var rng = new System.Random();
         int pickVal = rng.Next(validEvents.Count + 1);
+        return pickVal;
     }
     
     public void ShowEvent() {
