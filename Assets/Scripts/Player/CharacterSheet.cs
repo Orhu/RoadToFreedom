@@ -52,8 +52,9 @@ public class CharacterSheet : MonoBehaviour {
                 break;
         }
 
-        GetComponent<CharacterStats>().InitialHealth(statVit);
+        GetComponent<CharacterStats>().Setup(statVit);
         SceneController.CharacterBuilderComplete();
+        
     }
 
     private void SetStats(int[] statVals) {
