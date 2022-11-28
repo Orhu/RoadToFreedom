@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class TrailUI : MonoBehaviour { // temporary until assets are added
-    [SerializeField] TMP_Text pathText;
+    /*[SerializeField] TMP_Text pathText;
     [SerializeField] TMP_Text worldText;
     [SerializeField] TMP_Text playerText;
 
@@ -20,5 +20,5 @@ public class TrailUI : MonoBehaviour { // temporary until assets are added
         worldText.text = $"<b>World Info</b>\n\nTime of Day: <i>{_trail.time}</i>\nWeather: <i>{_trail.weather}</i>";
         int playerCS = _trail.GetPlayerCS();
         playerText.text = $"<b>Player Info</b>\n\nCurrent CS: {playerCS}";
-    }
+    }*/
 }
