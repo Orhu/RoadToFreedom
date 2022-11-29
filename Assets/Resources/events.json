@@ -1,103 +1,211 @@
 {
-    "events": [
-        { 
-            "eventId": 0,
-            "eventTitle": "Test Event",
-            "eventImage": "",
-            "eventDesc": "This is to test calling an event",
-            "eventNumChoices": 2,
-            "eventChoiceTexts": [ 
-                "Lets Go!",
-                "No Way"
-            ],
-            "eventChoices" : [ 
+    "events":[
+        {
+            "id": 0,
+            "stageNum": 1,
+            "stages": [
                 {
-                    "choicePreCond": [
-                        {"attrType": 0},
-                        {"attrParam": ""},
-                        {"attrValA": 0},
-                        {"attrValB": 0}
+                    "stageId": 0,
+                    "title": "Mystery Berries",
+                    "image": "",
+                    "text": "You find a bush of berries as you are walking along the trail. You decide to stop and gather some berries to eat later on your journey.\n\n<color=#00FF00>Gain 4 Food</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "add",
+                            "effectValA": 1,
+                            "effectValB": 4
+                        }
                     ],
-                    "choicePassText": "Success",
-                    "choiceFailText": "Failure",
-                    "choicePassResults": "0_n_0_0",
-                    "choiceFailResults": "0_n_0_0"
-                },
-                {
-                    "choicePreCond": [
-                        {"attrType": 0},
-                        {"attrParam": ""},
-                        {"attrValA": 0},
-                        {"attrValB": 0}
-                    ],
-                    "choicePassText": "Failure",
-                    "choiceFailText": "Success",
-                    "choicePassResults": "0_0_0_0",
-                    "choiceFailResults": "0_0_0_0"
-                }
-            ]
-        },
-	    { 
-            "eventId": 1,
-            "eventTitle": "Mystery Berries",
-            "eventImage": "",
-            "eventDesc": "You find a bush of berries as you are walking along the trail. You decide to stop and gather some berries to eat later on your journey.\n\n<color=#00FF00>Gain 4 Food</color>",
-            "eventNumChoices": 1,
-            "eventChoiceTexts": [ 
-                "Continue"
-            ],
-            "eventChoices" : [ 
-                {
-                    "choicePreCond": [
-                        {"attrType": 0},
-                        {"attrParam": ""},
-                        {"attrValA": 0},
-                        {"attrValB": 0}
-                    ],
-                    "choicePassText": "Success",
-                    "choiceFailText": "Failure",
-                    "choicePassResults": "2_c_1_4",
-                    "choiceFailResults": "2_c_1_4"
+                    "choiceNum": 0,
+                    "choices":[]
                 }
             ]
         },
         {
-            "eventId": 2,
-            "eventTitle": "People Approaching",
-            "eventImage": "",
-            "eventDesc": "As you walk down the road, you notice a group of people approaching.",
-            "eventNumChoices": 2,
-            "eventChoiceTexts": [ 
-                "Hide in the bushes.",
-                "Run for it."
-            ],
-            "eventChoices" : [ 
+            "id": 1,
+            "stageNum": 3,
+            "stages": [
                 {
-                    "choicePreCond": [
-                        {"attrType": 0},
-                        {"attrParam": ""},
-                        {"attrValA": 0},
-                        {"attrValB": 0}
-                    ],
-                    "choicePassText": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
-                    "choiceFailText": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
-                    "choicePassResults": "2_c_0_0",
-                    "choiceFailResults": "2_c_0_1"
+                    "stageId": 0,
+                    "title": "People Approaching",
+                    "image": "",
+                    "text": "As you walk down the road, you notice a group of people approaching.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Hide in the bushes.",
+                            "hasCheck": false,
+                            "checkType": "",
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        },
+                        {
+                            "buttonText": "Run for it.",
+                            "hasCheck": false,
+                            "checkType": "",
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ]
                 },
                 {
-                    "choicePreCond": [
-                        {"attrType": 0},
-                        {"attrParam": ""},
-                        {"attrValA": 0},
-                        {"attrValB": 0}
+                    "stageId": 1,
+                    "title": "People Approaching",
+                    "image": "",
+                    "text": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[]
+                },
+                {
+                    "stageId": 2,
+                    "title": "People Approaching",
+                    "image": "",
+                    "text": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
                     ],
-                    "choicePassText": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
-                    "choiceFailText": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
-                    "choicePassResults": "2_c_0_-1",
-                    "choiceFailResults": "2_c_0_1"
+                    "choiceNum": 0,
+                    "choices":[]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "stageNum": 7,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "On the corner of the town square there sits a small shop with a wooden mortar and pestle hanging above the door. Inside, the tall oaken shelves bow with rows and rows of bottles, strange tinctures, and unlabeled barrels. The man at the counter straightens and glowers at you from under heavy brows and a heavier mustache.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Search for the medicine yourself",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkVal": 4,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Approach the shopkeep",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkVal": 3,
+                            "successStage": 5,
+                            "failStage": 6
+                        }
+                    ]
+                },
+                {
+                    "stageId": 1,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "You locate a small bottle of pills with the image of a bandaged wound on the side. You take them to the counter to inquire about the price.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Check price",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkVal": 3,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ]
+                },
+                {
+                    "stageId": 2,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "You wander blindly around the shop, unfamiliar words looming up around you. Fluid extract of baptista. Chlorodine. Creosote. Permanganate of Potash.\n The owner’s glowering eyes follow you suspiciously until he stands up with his fists on his hips. “I think that’s enough browsing, stranger. Leave this shop now.” There’s a current of threat to his voice.\n It’s dangerous to argue. You shuffle away from the pharmacy empty-handed.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[]
+                },
+                {
+                    "stageId": 3,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "You pay for the medicine and head on your way.\n\n<color=#00FF00>Gain 2 Health</color>\n <color=#00FF00>Lose 3 money</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": 2
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[]
+                },
+                {
+                    "stageId": 4,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "Upon hearing the price, you glance at your empty purse, the sad few coins rattling against each other: not nearly enough. You put the bottle on the counter and mumble something about going to grab more money, then hastily back out of the shop empty-handed.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[]
+                },
+                {
+                    "stageId": 5,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "The jingle of coins in your purse softens the man at the counter to your cause. He points you to a small bottle of pills with the image of a bandaged wound on the side.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Check cost of medicine",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkVal": 3,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ]
+                },
+                {
+                    "stageId": 5,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "His eyes narrow as you approach. “Say, what’s a dark fella/missus like you doing up here, anyway?”\n\n You stammer out something about a trip to assist your master, but the shopkeep seems unconvinced. He leans forward on his elbows to peer at you close across the counter.\n “Lotta runaways pass through this town. There’s a bulletin full of ‘em. And lots of rewards besides. Call themselves ‘freedom seekers.’” He scoffs, not taking his eyes off you. “You wouldn’t know anything about that, would you, stranger?”\n\n You don’t like the way he’s looking at you. Mumbling something about being behind schedule, you back out of the shop.\n",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[]
                 }
             ]
         }
     ]
-
 }

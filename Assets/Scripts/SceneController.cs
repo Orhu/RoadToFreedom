@@ -31,7 +31,7 @@ public class SceneController : MonoBehaviour {
     }
 
     public static void StartEventLoad(int eventID) {
-        _event.BuildEvent(eventID);
+        _event.BuildEvent(eventID, 0);
     }
 
     public static void DisplayEvent() {
