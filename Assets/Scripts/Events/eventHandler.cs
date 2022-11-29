@@ -70,6 +70,7 @@ public class Choice{
     public string buttonText;
     public bool hasCheck;
     public int checkType;
+    public int checkID;
     public int checkVal;
     public int successStage;
     public int failStage;
@@ -175,7 +176,7 @@ public class eventHandler : MonoBehaviour
     
     // Gets event information from event json based from eventId
     public Event getEvent(int eventId){
-        Debug.Log($"searching for eventID {id}");
+        Debug.Log($"searching for eventID {eventId}");
         foreach (Event e in allEvents.events){
             if (e.id == eventId){
                 return e;
@@ -206,9 +207,9 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 1: // Skill
                         if(s.effects[i].effectOperation == 'c'){ // Change
-                            switch(s.effects[i].effectValA){
-                                // ADD SKILL NUMBERS HERE
-                            }
+                            // switch(s.effects[i].effectValA){
+                            //     // ADD SKILL NUMBERS HERE
+                            // }
                         }
                         break;
                     case 2: // Resource
@@ -229,6 +230,7 @@ public class eventHandler : MonoBehaviour
                                 case 3: // money
                                     int changeMo = s.effects[i].effectValB;
                                     // ADD MONEY VALUE CHANGE HERE
+                                    
                                     break;
                             }
                         }
@@ -276,8 +278,62 @@ public class eventHandler : MonoBehaviour
             if (c.hasCheck == true){
                 bool pass = false;
 
+            // HANDLE CHECKS HERE BY CHECKING RESOURCES AND
+                switch(c.checkType){
+                    case 1: // Skill
+                        switch(c.checkID){
+                            case 0: // strength
+                                if (CharacterSheet.statStr >= c.checkVal){pass = true;}
+                                break;
+                            case 1: // speed
+                                if (CharacterSheet.statSpd >= c.checkVal){pass = true;}
+                                break;
+                            case 2: // survival
+                                if (CharacterSheet.statSrv >= c.checkVal){pass = true;}
+                                break;
+                            case 3: // knowledge
+                                if (CharacterSheet.statKnw >= c.checkVal){pass = true;}
+                                break;
+                            case 4: // medicine
+                                if (CharacterSheet.statMed >= c.checkVal){pass = true;}
+                                break;
+                            case 5: // speech
+                                if (CharacterSheet.statSpc >= c.checkVal){pass = true;}
+                                break;
+                            case 6: // vitality
+                                if (CharacterSheet.statVit >= c.checkVal){pass = true;}
+                                break;
+                            case 7: // acting
+                                if (CharacterSheet.statAct >= c.checkVal){pass = true;}
+                                break;
+                            case 8: // luck
+                                if (CharacterSheet.statLck >= c.checkVal){pass = true;}
+                                break;
+                        }
+                        break;
+                    case 2: // Resource
+                        switch(c.checkID){
+                            case 0: // health
+                                if (CharacterStats.health >= c.checkVal){pass = true;}
+                                break;
+                            case 1: // food
+                                if (CharacterStats.food >= c.checkVal){pass = true;}
+                                break;
+                            case 2: // medicine
+                                if (CharacterStats.medicine >= c.checkVal){pass = true;}
+                                break;
+                            case 3: // money
+                                if (CharacterStats.money >= c.checkVal){pass = true;}
+                                break;
+                        }
+                        break;
+                    case 4: // Status
+                        // HANDLE STATUS EFFECTS HERE
+                        break;
+                }
+
                 if (pass == true){
-                    // HANDLE CHECKS HERE BY CHECKING RESOURCES AND 
+                    BuildEvent(curEventId, c.successStage);
                 }
                 else{
                     BuildEvent(curEventId, c.failStage);
