@@ -10,22 +10,22 @@ public class CharacterSheet : MonoBehaviour {
 
     // Character Stats
     // Body
-    public int statBody {get; private set;} // body
-    public int statStr {get; private set;} // strength (statNum = 0)
-    public int statSpd {get; private set;} // speed (statNum = 1)
-    public int statSrv {get; private set;} // survival (statNum = 2)
+    public static int statBody {get; private set;} // body
+    public static int statStr {get; private set;} // strength (statNum = 0)
+    public static int statSpd {get; private set;} // speed (statNum = 1)
+    public static int statSrv {get; private set;} // survival (statNum = 2)
     
     // Mind
-    public int statMind {get; private set;} // mind
-    public int statKnw {get; private set;} // knowledge (statNum = 3)
-    public int statMed {get; private set;} // medicine (statNum = 4)
-    public int statSpc {get; private set;} // speech (statNum = 5)
+    public static int statMind {get; private set;} // mind
+    public static int statKnw {get; private set;} // knowledge (statNum = 3)
+    public static int statMed {get; private set;} // medicine (statNum = 4)
+    public static int statSpc {get; private set;} // speech (statNum = 5)
 
     // Soul
-    public int statSoul {get; private set;} // soul
-    public int statVit {get; private set;} // vitality (statNum = 6)
-    public int statAct {get; private set;} // acting (statNum = 7)
-    public int statLck {get; private set;} // luck (statNum = 8)
+    public static int statSoul {get; private set;} // soul
+    public static int statVit {get; private set;} // vitality (statNum = 6)
+    public static int statAct {get; private set;} // acting (statNum = 7)
+    public static int statLck {get; private set;} // luck (statNum = 8)
 
     public void FillCharacterSheet(string[] details, int jobID, int[] statScores) {
         characterName = details[0];

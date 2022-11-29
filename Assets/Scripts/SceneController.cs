@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour {
 
     public static void CharacterBuilderComplete() {
         characterBuilt = true;
-        _trail.StartTrail();
+        //_trail.StartTrail();
     }
 
     public static void StartEventLoad(int eventID) {
@@ -39,7 +39,7 @@ public class SceneController : MonoBehaviour {
     }
     
     public static void EndEvent() {
-        _trail.EndEvent();
+        //_trail.EndEvent();
     }
 
     private IEnumerator AwaitCharacter() {
