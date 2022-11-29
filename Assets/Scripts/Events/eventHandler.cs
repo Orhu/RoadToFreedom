@@ -207,9 +207,16 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 1: // Skill
                         if(s.effects[i].effectOperation == 'c'){ // Change
+<<<<<<< HEAD
                             // switch(s.effects[i].effectValA){
                             //     // ADD SKILL NUMBERS HERE
                             // }
+=======
+                            //switch(s.effects[i].effectValA){
+                                // ADD SKILL NUMBERS HERE
+                                
+                            //}
+>>>>>>> 7cc43c07d555214acdb102cd67394499874648b3
                         }
                         break;
                     case 2: // Resource

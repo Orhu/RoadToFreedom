@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public static bool characterBuilt {get; private set;} = false;
+    public static GameState gameState {get; private set;} = GameState.CHARACTER_BUILDER;
 
     [Tooltip("Game UI Root Object")]
     [SerializeField] GameObject gameUIObject;
@@ -48,7 +49,12 @@ public class SceneController : MonoBehaviour {
         }
 
         Debug.Log("Character Building Complete!");
+        UpdateGameState(GameState.ON_TRAIL);
         
         gameUIObject.SetActive(true);
+    }
+
+    public static void UpdateGameState(GameState newGameState) {
+        gameState = newGameState;
     }
 }
