@@ -8,13 +8,11 @@ public class Trail : MonoBehaviour {
 
     public string[] traits {get; private set;} // trail traits
 
-    private CharacterStats _charStats;
     private float moveSpeed;
 
     private int timeToNextEvent = 10;
 
     public void StartTrail() {
-        _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
         moveSpeed = 2.5f + (0.5f * GetBonus(CharacterSheet.statSpd));
         StartCoroutine(TrailUpdate());
     }
