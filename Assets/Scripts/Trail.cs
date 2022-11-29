@@ -36,6 +36,24 @@ public class Trail : MonoBehaviour {
             //return;
         }
 
+        // time sensitive events
+        switch (World.time) {
+            case 0f:
+                // sleep event
+                break;
+            case 5.9f:
+                // show morning meal event (if skipped sleep)
+                break;
+            case 12f:
+                // lunch event
+                break;
+            case 18f:
+                // dinner event
+                break;
+            default:
+                break;
+        }
+
         // next event countdown
         timeToNextEvent--;
         if (timeToNextEvent <= 0) {
