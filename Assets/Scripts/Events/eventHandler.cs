@@ -175,7 +175,7 @@ public class eventHandler : MonoBehaviour
     
     // Gets event information from event json based from eventId
     public Event getEvent(int eventId){
-        Debug.Log($"searching for eventID {id}");
+        Debug.Log($"searching for eventID {eventId}");
         foreach (Event e in allEvents.events){
             if (e.id == eventId){
                 return e;
@@ -206,9 +206,10 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 1: // Skill
                         if(s.effects[i].effectOperation == 'c'){ // Change
-                            switch(s.effects[i].effectValA){
+                            //switch(s.effects[i].effectValA){
                                 // ADD SKILL NUMBERS HERE
-                            }
+                                
+                            //}
                         }
                         break;
                     case 2: // Resource

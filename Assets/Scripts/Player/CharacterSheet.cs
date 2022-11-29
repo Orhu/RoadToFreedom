@@ -52,7 +52,7 @@ public class CharacterSheet : MonoBehaviour {
                 break;
         }
 
-        GetComponent<CharacterStats>().Setup(statVit);
+        CharacterStats.Setup();
         SceneController.CharacterBuilderComplete();
         
     }
@@ -69,7 +69,7 @@ public class CharacterSheet : MonoBehaviour {
         statLck = statSoul + statVals[8];
     }
 
-    public void changeStat(int statNum, int change) {
+    public static void changeStat(int statNum, int change) {
         switch (statNum) {
             case 0:
                 statStr += change;
