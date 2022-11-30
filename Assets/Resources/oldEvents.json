@@ -1,0 +1,103 @@
+{
+    "events": [
+        { 
+            "eventId": 0,
+            "eventTitle": "Test Event",
+            "eventImage": "",
+            "eventDesc": "This is to test calling an event",
+            "eventNumChoices": 2,
+            "eventChoiceTexts": [ 
+                "Lets Go!",
+                "No Way"
+            ],
+            "eventChoices" : [ 
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "0_n_0_0",
+                    "choiceFailResults": "0_n_0_0"
+                },
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "Failure",
+                    "choiceFailText": "Success",
+                    "choicePassResults": "0_0_0_0",
+                    "choiceFailResults": "0_0_0_0"
+                }
+            ]
+        },
+	    { 
+            "eventId": 1,
+            "eventTitle": "Mystery Berries",
+            "eventImage": "",
+            "eventDesc": "You find a bush of berries as you are walking along the trail. You decide to stop and gather some berries to eat later on your journey.\n\n<color=#00FF00>Gain 4 Food</color>",
+            "eventNumChoices": 1,
+            "eventChoiceTexts": [ 
+                "Continue"
+            ],
+            "eventChoices" : [ 
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 1},
+                        {"attrValB": 4}
+                    ],
+                    "choicePassText": "Success",
+                    "choiceFailText": "Failure",
+                    "choicePassResults": "2_c_1_4",
+                    "choiceFailResults": "2_c_1_4"
+                }
+            ]
+        },
+        {
+            "eventId": 2,
+            "eventTitle": "People Approaching",
+            "eventImage": "",
+            "eventDesc": "As you walk down the road, you notice a group of people approaching.",
+            "eventNumChoices": 2,
+            "eventChoiceTexts": [ 
+                "Hide in the bushes.",
+                "Run for it."
+            ],
+            "eventChoices" : [ 
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
+                    "choiceFailText": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
+                    "choicePassResults": "2_c_0_0",
+                    "choiceFailResults": "2_c_0_1"
+                },
+                {
+                    "choicePreCond": [
+                        {"attrType": 0},
+                        {"attrParam": ""},
+                        {"attrValA": 0},
+                        {"attrValB": 0}
+                    ],
+                    "choicePassText": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
+                    "choiceFailText": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
+                    "choicePassResults": "2_c_0_-1",
+                    "choiceFailResults": "2_c_0_1"
+                }
+            ]
+        }
+    ]
+
+}
