@@ -10,7 +10,7 @@ public class Trail : MonoBehaviour {
 
     public static string[] traits {get; private set;} // trail traits
 
-    private int timeToNextEvent = 10;
+    private int timeToNextEvent = 2;
 
     public void StartTrail() {
         InitializeTrail();
@@ -58,9 +58,11 @@ public class Trail : MonoBehaviour {
             // update time and distance
             World.TickTime(); // +0.1 hours every second, also handles set events since we don't do event loading in here anymore
             progress += 0.1f * CharacterStats.moveSpeed;
+            Debug.Log(progress);
             
             // end trail check
             if (progress >= length) {
+                trailNum++;
                 //EndTrail();
                 //return;
             }
@@ -68,31 +70,10 @@ public class Trail : MonoBehaviour {
             // next event countdown
             timeToNextEvent--;
             if (timeToNextEvent <= 0) {
-                // LoadEvent();
+                World.LoadRandomEvent();
             }
         }
         // go again
         StartCoroutine(TrailUpdate());
     }
-
-    // move this to event processing script
-    private void TimeSkip(float timeAdvance) { // make sure you only advance time in the last stage of an event and only pop up events after the last one resolves
-        float oldTime = World.time;
-        World.AdvanceTime(timeAdvance);
-        float newTime = World.time;
-
-        // check if any mandatory events happened during the time skip and display them after a few seconds
-        if (oldTime > newTime) { // past midnight, also look out for the case where the sleep event advances time
-            // show sleep event immediately
-        } else if ((oldTime > 0f && oldTime < 5.9f) && newTime >= 5.9f) { // look out for sleep event here too
-            // show morning meal after a few seconds
-        } else if ((oldTime > 6f && oldTime < 12f) && newTime >= 12f) {
-            // show midday meal after a few seconds
-        } else if ((oldTime > 12f && oldTime < 18f) && newTime >= 18f) {
-            // show evening meal after a few seconds
-        }
-    } // potentially worth adding a queue for this so that we can have a way to wait until we're out of the last event to update time.
-
-    
-
 }

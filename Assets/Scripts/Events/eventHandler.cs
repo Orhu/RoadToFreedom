@@ -106,14 +106,11 @@ public class eventHandler : MonoBehaviour
     [SerializeField] TMP_Text option3;
     [SerializeField] TMP_Text option4;
 
-    private CharacterStats _charStats;
-    private CharacterSheet _charSheet;
+    private World _world; 
 
     void Start() {
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
-
-        _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
-        _charSheet = GameObject.Find("Player").GetComponent<CharacterSheet>();
+        _world = GameObject.Find("Scene Controller").GetComponent<World>();
         
         // Used to initialize event window for testing. May be altered late     
         gameObject.SetActive(false);
@@ -208,10 +205,7 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 1: // Skill
                         if(s.effects[i].effectOperation == 'c'){ // Change
-                            //switch(s.effects[i].effectValA){
-                                // ADD SKILL NUMBERS HERE
-                                
-                            //}
+                            CharacterSheet.ChangeStat(s.effects[i].effectValA, s.effects[i].effectValB);
                         }
                         break;
                     case 2: // Resource
@@ -234,13 +228,14 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 3: // Item
                         // WILL WE BE USING ITEMS???? WILL ADD IF SO
+                        // No, I don't think so - Malcolm
                         break;
                     case 4: // Status
                         if(s.effects[i].effectOperation == 'a'){ // add skill here
-                            // ADD ADDING SKILLS
+                            CharacterStats.AddStatus(s.effects[i].effectValA);
                         }
                         else if(s.effects[i].effectOperation == 'r'){ // remove skill
-                            // ADD REMOVING SKILLS
+                            CharacterStats.RemoveStatus(s.effects[i].effectValA);
                         }
                         break;
                     case 5: // Location
@@ -248,6 +243,10 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 6: // Game
                         // WIN LOSS EFFECTS ADDED HERE
+                        break;
+                    case 7: // time
+                        float timeToSkip = s.effects[i].effectValA + s.effects[i].effectValB/10f;
+                        _world.QueueTimeSkip(timeToSkip);
                         break;
                 }
             }
@@ -270,6 +269,14 @@ public class eventHandler : MonoBehaviour
             // option2.text = "";
             // option3.text = "";
             // option4.text = "";
+            if (curStage.choiceNum == 0) {
+                Debug.Log("Event concluded");
+                pressCount = 0;
+                // Replace with code for closing scene/window to handle consequence
+                SceneController.EndEvent();
+                gameObject.SetActive(false);
+                return;
+            }
 
             Choice c = curStage.choices[option];
             if (c.hasCheck == true){
@@ -316,6 +323,10 @@ public class eventHandler : MonoBehaviour
     // SHOWS THE EVENT ON SCREEN
     public void ShowEvent(){
         gameObject.SetActive(true);
+    }
+
+    public void HideEvent() {
+        gameObject.SetActive(false);
     }
 
 

@@ -7,6 +7,8 @@ public class SceneController : MonoBehaviour {
     public static bool characterBuilt {get; private set;} = false;
     public static GameState gameState {get; private set;} = GameState.CHARACTER_BUILDER;
 
+    private static GameState prevState;
+
     [Tooltip("Game UI Root Object")]
     [SerializeField] GameObject gameUIObject;
     
@@ -33,14 +35,17 @@ public class SceneController : MonoBehaviour {
 
     public static void StartEventLoad(int eventID) {
         _event.BuildEvent(eventID, 0);
+        DisplayEvent();
     }
 
     public static void DisplayEvent() {
         _event.ShowEvent();
+        UpdateGameState(GameState.IN_EVENT);
     }
     
     public static void EndEvent() {
-        //_trail.EndEvent();
+        _event.HideEvent();
+        RevertGameState();
     }
 
     private IEnumerator AwaitCharacter() {
@@ -50,11 +55,19 @@ public class SceneController : MonoBehaviour {
 
         Debug.Log("Character Building Complete!");
         UpdateGameState(GameState.ON_TRAIL);
+        _trail.StartTrail();
         
         gameUIObject.SetActive(true);
     }
 
     public static void UpdateGameState(GameState newGameState) {
+        if (gameState == GameState.IN_TOWN || gameState == GameState.ON_TRAIL)
+            prevState = gameState;
         gameState = newGameState;
+    }
+
+    public static void RevertGameState() {
+        if (prevState == GameState.IN_TOWN || prevState == GameState.ON_TRAIL)
+            gameState = prevState;
     }
 }

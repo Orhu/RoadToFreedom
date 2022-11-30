@@ -97,7 +97,7 @@ public class CharacterSheet : MonoBehaviour {
         }
     }
 
-    public static void changeStat(int statNum, int change) {
+    public static void ChangeStat(int statNum, int change) {
         switch (statNum) {
             case 0:
                 statStr += change;

@@ -8,7 +8,7 @@ public class TrailOLD : MonoBehaviour {
     /*
     // trail specific info
     public float length {get; private set;} // measured in miles
-    //public int danger {get; private set;} // (reworking)
+    public int danger {get; private set;} // (reworking)
     public int trailID {get; private set;} // to determine the trail pool
     public string biome {get; private set;}
     public int targetCS {get; private set;} // (reworking)
@@ -19,7 +19,7 @@ public class TrailOLD : MonoBehaviour {
     
     public float progress = 0f; // used to determine progress on path
 
-    //private int[] order;
+    private int[] order;
 
     private bool readyToShow = false;
 
@@ -28,7 +28,7 @@ public class TrailOLD : MonoBehaviour {
 
     [SerializeField] GameObject _gameUI;
 
-    //[SerializeField] GameObject endText; // temp for alpha
+    [SerializeField] GameObject endText; // temp for alpha
 
     void Start() {
         time = "Morning";
