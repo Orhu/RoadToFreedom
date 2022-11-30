@@ -13,13 +13,19 @@ public class Status {
     public int id;
     public string name;
     public string description;
-    public int[] effects; // 0-8 = skills, 9 = max health, 10 = movement speed
+    public int[] effects; // 0-8 = skills, 9 = max health
+    public int level;
 
     public Status(int idVal, string nameVal, string descriptionVal, int[] effectsVal) {
         id = idVal;
         name = nameVal;
         description = descriptionVal;
         effects = effectsVal;
+        level = 1;
+    }
+
+    public void ChangeLevel(int amnt) {
+        level += amnt;
     }
 }
 

@@ -86,7 +86,11 @@ public class CharacterStats : MonoBehaviour
     */
 
     public static void AddStatus(int statusID) { //Adds a status and it's description
-        if (StatusHandler.GetStatusFromID(statusID) != null) {
+        if (statusDictionary.ContainsKey(statusID)) {
+            statusDictionary[statusID].ChangeLevel(1);
+            CharacterSheet.SheetStatusRefresh();
+            StatStatusRefresh();
+        } else if (StatusHandler.GetStatusFromID(statusID) != null) {
             statusDictionary.Add(statusID, StatusHandler.GetStatusFromID(statusID));
             CharacterSheet.SheetStatusRefresh();
             StatStatusRefresh();
@@ -94,9 +98,15 @@ public class CharacterStats : MonoBehaviour
     }
 
     public static void RemoveStatus(int statusID) { //Overloaded function which only takes the status name and removes it from the list and description
-        statusDictionary.Remove(statusID);
-        CharacterSheet.SheetStatusRefresh();
-        StatStatusRefresh();
+        if (statusDictionary.ContainsKey(statusID)) {
+            if (statusDictionary[statusID].level <= 1) {
+                statusDictionary.Remove(statusID);
+            } else {
+                statusDictionary[statusID].ChangeLevel(-1);
+            }
+            CharacterSheet.SheetStatusRefresh();
+            StatStatusRefresh();
+        }
     }
 
     public static void StatStatusRefresh() {
