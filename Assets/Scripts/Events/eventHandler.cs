@@ -32,6 +32,7 @@ public class Stage{
     public Effect[] effects;
     public int choiceNum;
     public Choice[] choices;
+    public int timeToNextEvent;
 }
 
 //     CHOICE AND EFFECT VALUE INDEX
@@ -182,7 +183,7 @@ public class eventHandler : MonoBehaviour
                 return e;
             }
         }
-        Debug.LogError("event's id not found");
+        Debug.LogWarning($"eventId {eventId} not found");
         return null;
     }
 
@@ -194,7 +195,7 @@ public class eventHandler : MonoBehaviour
                 return s;
             }
         }
-        Debug.LogError("stageId not found");
+        Debug.LogWarning($"stageId {stageId} not found");
         return null;
     }
 
@@ -282,51 +283,10 @@ public class eventHandler : MonoBehaviour
             // HANDLE CHECKS HERE BY CHECKING RESOURCES AND
                 switch(c.checkType){
                     case 1: // Skill
-                        switch(c.checkID){
-                            case 0: // strength
-                                if (CharacterSheet.statStr >= c.checkVal){pass = true;}
-                                break;
-                            case 1: // speed
-                                if (CharacterSheet.statSpd >= c.checkVal){pass = true;}
-                                break;
-                            case 2: // survival
-                                if (CharacterSheet.statSrv >= c.checkVal){pass = true;}
-                                break;
-                            case 3: // knowledge
-                                if (CharacterSheet.statKnw >= c.checkVal){pass = true;}
-                                break;
-                            case 4: // medicine
-                                if (CharacterSheet.statMed >= c.checkVal){pass = true;}
-                                break;
-                            case 5: // speech
-                                if (CharacterSheet.statSpc >= c.checkVal){pass = true;}
-                                break;
-                            case 6: // vitality
-                                if (CharacterSheet.statVit >= c.checkVal){pass = true;}
-                                break;
-                            case 7: // acting
-                                if (CharacterSheet.statAct >= c.checkVal){pass = true;}
-                                break;
-                            case 8: // luck
-                                if (CharacterSheet.statLck >= c.checkVal){pass = true;}
-                                break;
-                        }
+                        pass = CharacterSheet.GetStat(c.checkID) >= c.checkVal;
                         break;
                     case 2: // Resource
-                        switch(c.checkID){
-                            case 0: // health
-                                if (CharacterStats.health >= c.checkVal){pass = true;}
-                                break;
-                            case 1: // food
-                                if (CharacterStats.food >= c.checkVal){pass = true;}
-                                break;
-                            case 2: // medicine
-                                if (CharacterStats.medicine >= c.checkVal){pass = true;}
-                                break;
-                            case 3: // money
-                                if (CharacterStats.money >= c.checkVal){pass = true;}
-                                break;
-                        }
+                        pass = CharacterStats.GetResource(c.checkID) >= c.checkVal;
                         break;
                     case 4: // Status
                         // HANDLE STATUS EFFECTS HERE

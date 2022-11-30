@@ -3,55 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Trail : MonoBehaviour {
-    public float length {get; private set;} // trail length
-    public float progress {get; private set;} // player progress on trail
+    private static int trailNum = 0; // trail number
 
-    public string[] traits {get; private set;} // trail traits
+    public static float length {get; private set;} // trail length
+    public static float progress {get; private set;} // player progress on trail
 
-    private float moveSpeed;
+    public static string[] traits {get; private set;} // trail traits
 
     private int timeToNextEvent = 10;
 
     public void StartTrail() {
-        moveSpeed = 2.5f + (0.5f * GetBonus(CharacterSheet.statSpd));
+        InitializeTrail();
         StartCoroutine(TrailUpdate());
     }
 
-    private int GetBonus(int statScore) {
-        return ((statScore + 1)/2) - 1 + (statScore/6);
+    private void InitializeTrail() {
+        switch (trailNum) {
+            case 0: // trail from start to town 1
+                length = 45f;
+                traits = new string[]{"easy"};
+                timeToNextEvent = 10;
+                return;
+            case 1: // trail from town 1 to town 2
+                length = 60f;
+                traits = new string[]{"medium"};
+                timeToNextEvent = 10;
+                return;
+            case 2: // trail from town 2 to town 3
+                length = 90f;
+                traits = new string[]{"medium"};
+                timeToNextEvent = 10;
+                return;
+            case 3: // trail from town 3 to final challenge
+                length = 90f;
+                traits = new string[]{"hard"};
+                timeToNextEvent = 10;
+                return;
+            case 4: // marathon final challenge
+                length = 120f;
+                traits = new string[]{"marathon"};
+                timeToNextEvent = 10;
+                return;
+            case 5: // city final challenge
+                length = 15f;
+                traits = new string[]{"city"};
+                timeToNextEvent = 10;
+                return;
+        }
     }
 
     private IEnumerator TrailUpdate() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f); // 2x speed to make game slightly faster
         if (SceneController.gameState == GameState.ON_TRAIL) {
             // update time and distance
-            World.TickTime(); // +0.1 hours every second
-            progress += 0.1f * moveSpeed;
+            World.TickTime(); // +0.1 hours every second, also handles set events since we don't do event loading in here anymore
+            progress += 0.1f * CharacterStats.moveSpeed;
             
             // end trail check
             if (progress >= length) {
                 //EndTrail();
                 //return;
             }
-
-            // time sensitive events
-            switch (World.time) {
-                case 0f:
-                    // sleep event
-                    break;
-                case 5.9f:
-                    // show morning meal event (if skipped sleep)
-                    break;
-                case 12f:
-                    // lunch event
-                    break;
-                case 18f:
-                    // dinner event
-                    break;
-                default:
-                    break;
-            }
-
+            
             // next event countdown
             timeToNextEvent--;
             if (timeToNextEvent <= 0) {
@@ -62,6 +75,7 @@ public class Trail : MonoBehaviour {
         StartCoroutine(TrailUpdate());
     }
 
+    // move this to event processing script
     private void TimeSkip(float timeAdvance) { // make sure you only advance time in the last stage of an event and only pop up events after the last one resolves
         float oldTime = World.time;
         World.AdvanceTime(timeAdvance);
@@ -79,12 +93,6 @@ public class Trail : MonoBehaviour {
         }
     } // potentially worth adding a queue for this so that we can have a way to wait until we're out of the last event to update time.
 
-    public IEnumerator QueueTimeSkip(float timeAdvance) {
-        while(SceneController.gameState != GameState.ON_TRAIL) {
-            yield return new WaitForSeconds(0.1f); // will create a weird delay, watch out for that
-        }
-
-        TimeSkip(timeAdvance);
-    }
+    
 
 }

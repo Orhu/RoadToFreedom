@@ -17,4 +17,8 @@ public class Utilities : MonoBehaviour {
             arr[n] = value;  
         }  
     }
+
+    public static int GetBonus(int statScore) {
+        return ((statScore + 1)/2) - 1 + (statScore/6);
+    }
 }

@@ -196,7 +196,7 @@ public class CharacterBuilderUI : MonoBehaviour {
     }
 
     public void OnDone() {
-        GameObject.Find("Player").GetComponent<CharacterSheet>().FillCharacterSheet(new string[] {pName, pPerk}, pJob, new int[] {statBody, statMind, statSoul});
+        CharacterSheet.FillCharacterSheet(new string[] {pName, pPerk}, pJob, new int[] {statBody, statMind, statSoul});
         Destroy(this.gameObject);
     }
 }

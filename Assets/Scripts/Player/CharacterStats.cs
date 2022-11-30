@@ -5,37 +5,54 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public static int health{get;private set;}
+    public static int maxHealth{get; private set;}
+    public static int health{get; private set;}
     public static int food{get; private set;}
     public static int medicine{get; private set;}
-    public static float money{get; private set;}
-    public int challengeScore{get; private set;}
+    public static int money{get; private set;}
+    //public int challengeScore{get; private set;}
 
-    public List<string> status = new List<string>();  
-    public Dictionary<string, string> statusDescription = new Dictionary<string, string>();
+    public static float moveSpeed{get; private set;}
+
+    public static int healthAug{get; private set;} = 0;
+
+    public static Dictionary<int, Status> statusDictionary= new Dictionary<int, Status>();  
 
     private static GameUI _gameUI;
 
     void Start() {
         food = 0;
         medicine = 0;
-        money = 0f;
-        challengeScore = 0;
+        money = 0;
+        //challengeScore = 0;
 
         _gameUI = GetComponent<GameUI>();
     }
 
     public static void Setup() { //Sets Initial health to the player based on their vitality
-        health = CharacterSheet.statVit * 2;
+        maxHealth = 2 + CharacterSheet.GetStat(6) - healthAug;
+        health = maxHealth;
+        moveSpeed = 2.5f + (0.5f * Utilities.GetBonus(CharacterSheet.GetStat(1)));
         if(health < 1){ //If vitality is 0, we assign them the minimum amount of health
             health = 1;
         }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
-    public void InitialStatuses(List<string> st, Dictionary<string, string> stdesc) {
-        status = st;
-        statusDescription = stdesc;
+    public static int GetResource(int resourceNum) { // 0 = health
+        switch (resourceNum) {
+            case 0:
+                return health;
+            case 1:
+                return food;
+            case 2:
+                return medicine;
+            case 3:
+                return money;
+            default:
+                Debug.LogWarning($"Attempting to get unknown resource: {resourceNum}");
+                return 0;
+        }
     }
 
     public static void ChangeHealth(int boost) { //Changes health based on boost
@@ -56,23 +73,38 @@ public class CharacterStats : MonoBehaviour
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
-    public static void ChangeMoney(float cash) { //Changes money based on cash 
+    public static void ChangeMoney(int cash) { //Changes money based on cash 
         Debug.Log("changing munny");
         money += cash;
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
+    /* cut CS
     public void ChangeCS(int difficult) { //Changes challengeScore based on difficult
         challengeScore += difficult;
     }
+    */
 
-    public void AddStatus(string st, string stdesc) { //Adds a status and it's description
-        status.Add(st);
-        statusDescription.Add(st, stdesc);
+    public static void AddStatus(int statusID) { //Adds a status and it's description
+        if (StatusHandler.GetStatusFromID(statusID) != null) {
+            statusDictionary.Add(statusID, StatusHandler.GetStatusFromID(statusID));
+            CharacterSheet.SheetStatusRefresh();
+            StatStatusRefresh();
+        }
     }
 
-    public void RemoveStatus(string st) { //Overloaded function which only takes the status name and removes it from the list and description
-        status.Remove(st);
-        statusDescription.Remove(st);
+    public static void RemoveStatus(int statusID) { //Overloaded function which only takes the status name and removes it from the list and description
+        statusDictionary.Remove(statusID);
+        CharacterSheet.SheetStatusRefresh();
+        StatStatusRefresh();
+    }
+
+    public static void StatStatusRefresh() {
+        // for each status in statusList, process updates to health
+        maxHealth = 2 + CharacterSheet.GetStat(6) - healthAug;
+        if (maxHealth < health) {
+            health = maxHealth;
+        }
+        moveSpeed = 2.5f + (0.5f * Utilities.GetBonus(CharacterSheet.GetStat(1)));
     }
 }
