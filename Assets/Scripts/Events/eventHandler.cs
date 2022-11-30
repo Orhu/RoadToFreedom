@@ -112,8 +112,8 @@ public class eventHandler : MonoBehaviour
     void Start() {
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
 
-        _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
-        _charSheet = GameObject.Find("Player").GetComponent<CharacterSheet>();
+        // _charStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        // _charSheet = GameObject.Find("Player").GetComponent<CharacterSheet>();
         
         // Used to initialize event window for testing. May be altered late     
         gameObject.SetActive(false);
@@ -220,19 +220,22 @@ public class eventHandler : MonoBehaviour
                                 case 0: // health
                                     int changeH = s.effects[i].effectValB;
                                     // ADD HEALTH VALUE CHANGE HERE
+                                    CharacterStats.ChangeHealth(changeH);
                                     break;
                                 case 1: // food
                                     int changeF = s.effects[i].effectValB;
                                     // ADD FOOD VALUE CHANGE HERE
+                                    CharacterStats.ChangeFood(changeF);
                                     break;
                                 case 2: // medicine
                                     int changeMe = s.effects[i].effectValB;
                                     // ADD MEDICINE VALUE CHANGE HERE
+                                    CharacterStats.ChangeMedicine(changeMe);
                                     break;
                                 case 3: // money
                                     int changeMo = s.effects[i].effectValB;
                                     // ADD MONEY VALUE CHANGE HERE
-                                    
+                                    CharacterStats.ChangeMoney(changeMo);
                                     break;
                             }
                         }
@@ -266,8 +269,6 @@ public class eventHandler : MonoBehaviour
             Debug.LogError("Option not in valid range");
         }
         else{
-            //processAttribute(option);
-            // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
 
             // Sets buttons to close options and none other
             // text.text = curEvent.eventChoices[option].choicePassText;
