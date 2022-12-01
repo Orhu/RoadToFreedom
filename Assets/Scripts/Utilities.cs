@@ -19,6 +19,12 @@ public class Utilities : MonoBehaviour {
     }
 
     public static int GetBonus(int statScore) {
+        if (statScore > 6)
+            statScore = 6;
+
+        if (statScore < 0)
+            statScore = 0;
+
         return ((statScore + 1)/2) - 1 + (statScore/6);
     }
 }

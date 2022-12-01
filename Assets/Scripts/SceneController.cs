@@ -9,18 +9,20 @@ public class SceneController : MonoBehaviour {
 
     private static GameState prevState;
 
-    [Tooltip("Game UI Root Object")]
-    [SerializeField] GameObject gameUIObject;
+    private static GameObject gameUIObject;
+    private static GameObject resourcesUIObject;
     
     private static eventHandler _event;
     private static Trail _trail;
     
     void Awake() {
+        resourcesUIObject = GameObject.Find("ResourceCounterUI");
+        gameUIObject = GameObject.Find("GameUI");
+        resourcesUIObject.SetActive(false);
         gameUIObject.SetActive(false);
         SceneManager.LoadScene("CharacterBuilder", LoadSceneMode.Additive);
         StartCoroutine(AwaitCharacter());
         SceneManager.LoadScene("event", LoadSceneMode.Additive);
-        SceneManager.LoadScene("townTemplate", LoadSceneMode.Additive);
 
         _trail = GameObject.Find("Trail Manager").GetComponent<Trail>();
     }
@@ -55,14 +57,29 @@ public class SceneController : MonoBehaviour {
         }
 
         Debug.Log("Character Building Complete!");
+
+        LoadTown(0);
+        resourcesUIObject.SetActive(true);
+    }
+
+    public static void LoadTown(int townNum) {
+        UpdateGameState(GameState.IN_TOWN);
+        switch (townNum) {
+            default:
+                SceneManager.LoadScene("townTemplate", LoadSceneMode.Additive);
+                return;
+        }
+    }
+
+    public static void LoadTrail() {
         UpdateGameState(GameState.ON_TRAIL);
         _trail.StartTrail();
-        
+
         gameUIObject.SetActive(true);
     }
 
     public static void UpdateGameState(GameState newGameState) {
-        if (gameState == GameState.IN_TOWN || gameState == GameState.ON_TRAIL)
+        if ((gameState == GameState.IN_TOWN || gameState == GameState.ON_TRAIL) && (newGameState != GameState.IN_TOWN || newGameState != GameState.ON_TRAIL)) 
             prevState = gameState;
         gameState = newGameState;
     }
