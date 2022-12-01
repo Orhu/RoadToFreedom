@@ -14,12 +14,12 @@ public class town : MonoBehaviour
     // [SerializeField] TMP_Text shopButtonText;
 
     void Start(){
-        _event = GameObject.Find("eventUI").GetComponent<eventHandler>();
+        //_event = GameObject.Find("eventUI").GetComponent<eventHandler>();
     }
 
     // Handled opening the shop event
     public static void openShop(int shopID){
-        World.LoadEvent(shopID);
+        World.LoadEvent(shopID); 
     }
 
 
