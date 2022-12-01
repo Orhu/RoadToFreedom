@@ -8,7 +8,7 @@ public class EventPools : MonoBehaviour {
     
     public static int[] GetEventPool(string poolID) {
         switch (poolID) {
-            case "biome:alpha":
+            case "trail0":
                 return poolAlpha;
             case "calamity":
                 return poolCalamity;
