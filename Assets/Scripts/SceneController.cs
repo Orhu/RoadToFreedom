@@ -20,6 +20,7 @@ public class SceneController : MonoBehaviour {
         SceneManager.LoadScene("CharacterBuilder", LoadSceneMode.Additive);
         StartCoroutine(AwaitCharacter());
         SceneManager.LoadScene("event", LoadSceneMode.Additive);
+        SceneManager.LoadScene("townTemplate", LoadSceneMode.Additive);
 
         _trail = GameObject.Find("Trail Manager").GetComponent<Trail>();
     }
