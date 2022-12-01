@@ -94,6 +94,7 @@ public class World : MonoBehaviour {
     private IEnumerator TimeSkip(float timeAdvance) { // make sure you only advance time in the last stage of an event and only pop up events after the last one resolves
         float oldTime = time;
         World.AdvanceTime(timeAdvance);
+        SlaveCatcher.AdvanceTime(timeAdvance);
         float newTime = time;
 
         // check if any mandatory events happened during the time skip and display them after a few seconds

@@ -59,6 +59,7 @@ public class Trail : MonoBehaviour {
         if (SceneController.gameState == GameState.ON_TRAIL) {
             // update time and distance
             World.TickTime(); // +0.1 hours every second, also handles set events since we don't do event loading in here anymore
+            SlaveCatcher.TickTime();
             progress += 0.1f * CharacterStats.moveSpeed;
             Debug.Log(progress);
             
