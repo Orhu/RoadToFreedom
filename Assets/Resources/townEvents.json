@@ -234,19 +234,89 @@
         },
         {
             "id": 3,
-            "stageNum": 1,
+            "stageNum": 3,
             "stages": [
                 {
                     "stageId": 0,
                     "title": "Your Cabin",
                     "image": "",
-                    "text": "",
+                    "text": "Your enter the cabin in which you normally sleep.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 0,
+                    "choiceNum": 2,
                     "choices": [
                         {
-                            
+                            "buttonText": "Sleep",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "Your Cabin",
+                    "image": "",
+                    "text": "You sleep and wake up well rested.\n\n",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 6,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "Your Cabin",
+                    "image": "",
+                    "text": "You exit the cabin and head back to the plantation.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
                         }
                     ],
                     "timeBeforeNextEvent": 1
