@@ -6,7 +6,6 @@ public class CharacterSheet : MonoBehaviour {
     public static string characterName {get; private set;}
     public static int job {get; private set;}
     public static string dispJob {get; private set;}
-    /*not yet implemented */ public static string perk {get; private set;} // may change depending on how we do perks 
 
     // Character Stats
     // Body
@@ -29,10 +28,9 @@ public class CharacterSheet : MonoBehaviour {
 
     private static int[] statAug = new int[9]; // status based stat augmentations
 
-    public static void FillCharacterSheet(string[] details, int jobID, int[] statScores) {
-        characterName = details[0];
+    public static void FillCharacterSheet(string pName, int jobID, int[] statScores) {
+        characterName = pName;
         job = jobID;
-        //perk = details[1];
 
         statBody = statScores[0];
         statMind = statScores[1];
