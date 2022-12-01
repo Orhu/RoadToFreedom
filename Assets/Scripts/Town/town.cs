@@ -8,7 +8,6 @@ using TMPro;
 
 public class town : MonoBehaviour
 {
-    private static SceneController _control;
     private static eventHandler _event;
 
     // Text GameObjects
@@ -20,7 +19,7 @@ public class town : MonoBehaviour
 
     // Handled opening the shop event
     public static void openShop(int shopID){
-        _control.StartEventLoad(shopID);
+        World.LoadEvent(shopID);
     }
 
 
