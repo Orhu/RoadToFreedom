@@ -695,7 +695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Vitality Tooltip!
+  toolTipText: <b>Vitality (VIT)</b> determines your hardiness and<br><color=#0000FF>resistance
+    to the elements.</color> It also determines<br>your <color=#0000FF>maximum health</color>.
 --- !u!1 &239248172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Speech Tooltip!
+  toolTipText: <b>Speech (SPC)</b> determines your <color=#0000FF>skill with words</color><br>and
+    ability to <color=#0000FF>persuade others</color>.
 --- !u!1 &669871380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,7 +2495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Acting Tooltip!
+  toolTipText: <b>Acting (ACT)</b> determines your ability to<br><color=#0000FF>perform</color>
+    and adapt to situations.
 --- !u!1 &738191486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,7 +2683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Survival Tooltip!
+  toolTipText: <b>Survival (SRV)</b> determines how good you are at<br><color=#0000FF>navigating
+    nature</color> and <color=#0000FF>surviving</color> in the wilderness.
 --- !u!1 &778389579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,7 +3117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Knowledge Tooltip!
+  toolTipText: <b>Knowledge (KNW)</b> determines <color=#0000FF>how much you know</color>.
 --- !u!1 &886045487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Luck Tooltip!
+  toolTipText: <b>Luck (LUK)</b> determines how <color=#0000FF>lucky</color><br>you
+    are.
 --- !u!1 &1015031758
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,7 +5187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Medicine Tooltip!
+  toolTipText: <b>Medicine (MED)</b> determines how good you are at<br><color=#0000FF>first
+    aid</color> and <color=#0000FF>treating illness</color>.
 --- !u!1 &1277163308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,7 +5607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Speed Tooltip!
+  toolTipText: <b>Speed (SPD)</b> determines how fast you are. It<br>also determines
+    your <color=#0000FF>walking speed</color> on the trail.
 --- !u!1 &1308659422
 GameObject:
   m_ObjectHideFlags: 0
@@ -7933,7 +7940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85aadf5f60f07847b5b34d22a1d2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Strength Tooltip!
+  toolTipText: <b>Strength (STR)</b> determines how strong you are.<br>It is used
+    for <color=#0000FF>physical labor</color>.
 --- !u!1 &1898757200
 GameObject:
   m_ObjectHideFlags: 0
