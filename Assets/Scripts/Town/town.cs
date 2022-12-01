@@ -24,7 +24,7 @@ public class town : MonoBehaviour
 
     // Closes out town and continues journey
     public static void continueJourney(){
-        SceneController.EndEvent();
+        SceneController.LoadTrail();
     }
 
 

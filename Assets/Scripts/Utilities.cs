@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Utilities : MonoBehaviour {
-
    // array shuffler
     public static void Shuffle(int[] arr) {
         var rng = new System.Random();

@@ -65,13 +65,28 @@ public class SceneController : MonoBehaviour {
     public static void LoadTown(int townNum) {
         UpdateGameState(GameState.IN_TOWN);
         switch (townNum) {
+            case 0:
+                SceneManager.LoadScene("Plantation", LoadSceneMode.Additive);
+                return;
+            case 1:
+                SceneManager.LoadScene("Town1", LoadSceneMode.Additive);
+                return;
+            case 2:
+                SceneManager.LoadScene("Town2", LoadSceneMode.Additive);
+                return;
+            case 3:
+                SceneManager.LoadScene("Town3", LoadSceneMode.Additive);
+                return;
             default:
-                SceneManager.LoadScene("townTemplate", LoadSceneMode.Additive);
+                Debug.LogError($"Attempted to load invalid town: {townNum}");
                 return;
         }
     }
 
     public static void LoadTrail() {
+        GameObject townObj = GameObject.Find("TownUI");
+        if (townObj != null)
+            Destroy(townObj);
         UpdateGameState(GameState.ON_TRAIL);
         _trail.StartTrail();
 
