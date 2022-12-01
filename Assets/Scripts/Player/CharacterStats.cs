@@ -58,6 +58,12 @@ public class CharacterStats : MonoBehaviour
     public static void ChangeHealth(int boost) { //Changes health based on boost
         Debug.Log("changing health");
         health += boost;
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
+        if (health <= 0) {
+            // game over
+        }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 

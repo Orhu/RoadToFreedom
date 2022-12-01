@@ -1,0 +1,2600 @@
+"""
+Strength = 0
+Speed = 1
+Survival = 2
+Knowledge = 3
+Medicine = 4
+Speech = 5
+Vitality = 6
+Acting = 7
+Luck = 8
+"""
+{
+    "events":[
+        {
+            "id": 0,
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Time to Sleep",
+                    "image": "",
+                    "text": "With the moon hanging high in the sky, the time to sleep has once again come. If you wish, you may continue to travel through the night, but without ample light, the road may be difficult to follow, and without sleep, you will surely be exhausted come morning.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Sleep until morning",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 1,
+                            "checkVal": 1,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Continue onwards",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 1,
+                    "title": "Time to Sleep",
+                    "image": "",
+                    "text": "You set up a small camp off the side of the road and drift off to sleep. When you awaken in the morning, you feel well-rested and eat a meal before continuing down the road.\n\n<color=#FF0000>Lose 1 Food.</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": -1
+                        },
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 6,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                },
+                {
+                    "stageId": 1,
+                    "title": "Time to Sleep",
+                    "image": "",
+                    "text": "You set up a small camp off the side of the road and drift off to sleep. When you awaken in the morning, you feel well-rested, but without any food, you must continue down the road with an empty stomach.\n\n<color=#FF0000>You grow hungry.</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 6,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                },
+                {
+                    "stageId": 3,
+                    "title": "Time to Sleep",
+                    "image": "",
+                    "text": "There is no time for sleep. After a brief rest, you continue down the road.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Morning Meal",
+                    "image": "",
+                    "text": "As the sun rises, your stomach grumbles. You take a seat off the road and have your morning meal.\n\n<color=#FF0000>Lose 1 Food.\nYou feel exhausted.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": -1
+                        }, 
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Morning Meal",
+                    "image": "",
+                    "text": "As the sun rises your stomach grumbles. You have exhausted your supply of food, and must go hungry.\n\n<color=#FF0000>You grow hungry.\nYou feel exhausted.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Midday Meal",
+                    "image": "",
+                    "text": "As the sun hangs high in the sky, you decide to break for a quick meal.\n\n<color=#FF0000>Lose 1 food.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": -1
+                        },
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Midday Meal",
+                    "image": "",
+                    "text": "As the sun hangs high in the sky, you feel your stomach grumble. Without food, there is nothing to eat, so you continue along the road.\n\n<color=#FF0000>You grow hungry.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 5, //evening meal
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Evening Meal",
+                    "image": "",
+                    "text": "As the sun sets, you decide to enjoy an evening meal.\n\n<color=#FF0000>Lose 1 food.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": -1
+                        },
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "stageNum": 0,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Evening Meal",
+                    "image": "",
+                    "text": "As the sun sets, you feel your stomach growl. Without food, you must continue without a meal.\n\n<color=#FF0000>You grow hungry.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 20
+                }
+            ]
+        },
+        {
+            "id": 7, //mystery berries
+            "stageNum": 1,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Mystery Berries",
+                    "image": "",
+                    "text": "You find a bush of berries as you are walking along the trail. You decide to stop and gather some berries to eat later on your journey.\n\n<color=#00FF00>Gain 4 Food</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "add",
+                            "effectValA": 1,
+                            "effectValB": 4
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 15
+                }
+            ]
+        },
+        {
+            "id": 8, //people approaching
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "People Approaching",
+                    "image": "",
+                    "text": "As you walk down the road, you notice a group of people approaching.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Hide in the bushes.",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        },
+                        {
+                            "buttonText": "Run for it.",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 1,
+                    "title": "People Approaching",
+                    "image": "",
+                    "text": "You duck into the bushes and wait until they pass. Once you are sure the coast is clear, you get up and continue on your way.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                },
+                {
+                    "stageId": 2,
+                    "title": "People Approaching",
+                    "image": "",
+                    "text": "As you start running, you hear the group shouting as they come after you. You are able to get away, but in your flight you sprained your ankle.\n\n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 15
+                }
+            ]
+        },
+        {
+            "id": 9, //pharmacy
+            "stageNum": 5,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "Beside the road ahead of you sits a small shop with a wooden mortar and pestle hanging above the door. Inside, the tall oaken shelves bow with rows and rows of bottles, strange tinctures, and unlabeled barrels. The man at the counter straightens and glowers at you from under heavy brows and a heavier mustache.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Search for the medicine yourself",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 4,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Approach the shopkeep",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 3,
+                            "checkVal": 0,
+                            "successStage": 5,
+                            "failStage": 6
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 1,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "You locate a small bottle of pills with the image of a bandaged wound on the side. You take them to the counter to inquire about the price.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Check price",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 3,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 2,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "You wander blindly around the shop, unfamiliar words looming up around you. Fluid extract of baptista. Chlorodine. Creosote. Permanganate of Potash.\n The owner’s glowering eyes follow you suspiciously until he stands up with his fists on his hips. “I think that’s enough browsing, stranger. Leave this shop now.” There’s a current of threat to his voice.\n It’s dangerous to argue. You shuffle away from the pharmacy empty-handed.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 3,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "You pay for the medicine and head on your way.\n\n<color=#00FF00>Gain 2 Health</color>\n <color=#00FF00>Lose 3 money</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": 2
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 10
+                },
+                {
+                    "stageId": 4,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "Upon hearing the price, you glance at your empty purse, the sad few coins rattling against each other: not nearly enough. You put the bottle on the counter and mumble something about going to grab more money, then hastily back out of the shop empty-handed.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 15
+                },
+                {
+                    "stageId": 5,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "The jingle of coins in your purse softens the man at the counter to your cause. He points you to a small bottle of pills with the image of a bandaged wound on the side.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Check cost of medicine",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 3,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 5,
+                    "title": "Pharmacy Stop",
+                    "image": "",
+                    "text": "His eyes narrow as you approach. “Say, what’s a negro like you doing up here all alone, anyway?”\n\n You stammer out something about a trip to assist your master, but the shopkeep seems unconvinced. He leans forward on his elbows to peer at you close across the counter.\n “Lotta runaways pass through this town. There’s a bulletin full of ‘em. And lots of rewards besides. Call themselves ‘freedom seekers.’” He scoffs, not taking his eyes off you. “You wouldn’t know anything about that, would you, stranger?”\n\n You don’t like the way he’s looking at you. Mumbling something about being behind schedule, you back out of the shop.\n",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 15
+                }
+            ]
+        }
+        {
+            "id": 10, //mystery mushrooms
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Mystery Mushrooms",
+                    "image": "",
+                    "text": "Off the side of the road is a cluster of mushrooms growing on a rotten log.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Examine the mushrooms",
+                            "hasCheck": true,
+                            "checkType": 1, //need to add this
+                            "checkID": 4,
+                            "checkVal": 1,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Mystery Mushrooms",
+                    "image": "",
+                    "text": "Upon closer examination, you see the mushrooms have slender white stems and pale, round caps. You recognize these as poisonous, causing stomach upset. You leave them be.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Mystery Mushrooms",
+                    "image": "",
+                    "text": "Upon closer examination, you see the mushrooms have slender white stems and pale, round caps. You don't recognize them. What if they're poisonous?",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Pick them anyway",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Leave them be",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 3,
+                    "title": "Mystery Mushrooms",
+                    "image": "",
+                    "text": "You pluck a few and try one as you continue walking. It doesn't take long before your stomach begins to churn, and you barely make it to the edge of the road before you vomit. \n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 2,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 11, //toll bridge
+            "stageNum": 5,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Toll Bridge",
+                    "image": "",
+                    "text": "Ahead, you see a thick band of water twisting through the woods. The road comes to a bridge, where a bored-looking man in a uniform dozes against a piling. He shakes himself and stands as you approach. \n'Toll is 25 cents,' He says, holding out a hand expectantly. 'I'm sure your master gave you some coin for it.'",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Check purse",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 3,
+                            "checkVal": 0.25,
+                            "successStage": 1,
+                            "failStage": 3
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Toll Bridge",
+                    "image": "",
+                    "text": "You hand over the money and continue on your way.",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -0.25
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Toll Bridge",
+                    "image": "",
+                    "text": "You check your purse. 25 cents is more than you have. 'My - my master must have forgotten,' you lie.\nThe man shrugs. 'No toll, no bridge.' He cracks a crooked-toothed grin. 'But the river is free.'",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Swim",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 2, //survival medium difficulty
+                            "checkVal": 3,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 3,
+                    "title": "Toll Bridge",
+                    "image": "",
+                    "text": "You can hear the guard cackling to himself as you make your way down to the water. He leers at you from over the side of the bridge. You dip a foot in; it's icy cold, but shallower than you'd thought. You take off your shoes and, holding them over your head, wade across the river.
+                    \nThe rushing water beats against you, but you keep your balance and emerge on the other side, wet but safe.
+                    \nYou're surprised to hear clapping, and you turn to see the bridge guard on the other side applauding. 'Didn't think you had it in you,' the guard says. 'I'll tell your master when he comes along that he sure bought a strong one.'
+                    \nYou yank your shoes on and hurry away from the bridge before he can talk about your made-up master any longer.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "Toll Bridge",
+                    "image": "",
+                    "text": "You can hear the guard cackling to himself as you make your way down to the water. He leers at you from over the side of the bridge. You dip a foot in; it's icy cold, but shallower than you'd thought. You take off your shoes and, holding them over your head, wade into the river.
+                    \nYou quickly find that though the river is shallow, its current is a force to be reckoned with. It pummels you from the side with icy fists. As you step into the raging center, the gravel beneath your foot gives way and you splash down into the freezing water. You get a desperate gasp of air before you're dragged under, kicking and flailing.
+                    \nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled in a calm pocket half-mile away from the road, bruised all down your torso from where the river threw you against the rocky far shore.
+                    \nYou're across the river now, at least. And somehow you've kept hold of your shoes. Shivering, you put them on and drag yourself back towards the road. \n\n<color=#00FF00>Lose 2 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -2
+                        }
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": -2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 12, //wild carrots
+            "stageNum": 1,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Wild Carrots",
+                    "image": "",
+                    "text": "In the dappled shadows of a nearby grove, you spot a delicate cluster of white blooms nodding in the gentle breeze. Queen Anne's Lace: wild carrots. You gather some for the road.\n\n<color=#00FF00>Gain 4 Food</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "add",
+                            "effectValA": 1,
+                            "effectValB": 4
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 13, //briar patch
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Briar Patch",
+                    "image": "",
+                    "text": "Before you, the road takes a broad curve around a massive briar patch. You pause in front of it; the foliage is dense and bristling with thorns, though you can make out some blackberries in the thick of it.
+                    \nSquinting, you can tell that the road continues on the other side. Cutting through the patch would probably be faster, but it might hurt.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Go around",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Go through",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Briar Patch",
+                    "image": "",
+                    "text": "You take the long way around, avoiding the jabbing thorns.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Briar Patch",
+                    "image": "",
+                    "text": "You plunge boldly into the thicket. Thorns rake your arms and chew at your clothes. Kicking and shoving and thoroughly irritated, you push through the center of the patch.
+                    \nThe blackberries are ripe and plump, sheltered by the thorns from hungry animals, but not safe from you. After stuffing them into your pack, you fight your way through to the other side of the patch. Your skin burns where the thorns raked it, but you make it back out onto the road in one piece.",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "add",
+                            "effectValA": 1,
+                            "effectValB": 3
+                        }
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 14, //broken wagon
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Broken Wagon",
+                    "image": "",
+                    "text": "The winding path exits the woods for a while to cross a vast swath of farmland. Small white houses dot the fields here and there, surrounded by grazing animals and swaying seas of corn. Here and there you can pick out people bent over in the fields, tilling the soil or driving cows. A dog barks somewhere, sending a drop of cold sweat down your spine - but it doesn't sound like a tracker hound, thank the Lord.
+                    \nOn the road ahead you see two men arguing beside a wagon. As you near, you can see that one of the wagon's wheels has fallen off its axle.
+                    \n'Dad's too damn cheap,' grumbles one of the men, kicking at the side of the wagon. 'Should've bought a new wagon years ago.'
+                    \n'Language!' says the other, much younger-looking man - barely a teen - and, based on looks, likely a brother. 'If we can get the wheel back on, we can still make it to town.'
+                    \n'Wait, someone's coming.' The older man spots you over his brother's shoulder and steps around into the road. 'Hey, you there! How about a quick coin?'",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Decline",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Accept",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Broken Wagon",
+                    "image": "",
+                    "text": "'Oh, no, I'm in a hurry,' you mumble. 'So sorry.'
+                    \nThe two stare at you in surprise as you rush by. You turn your face so that they hopefully can't see it if the slave-catchers come asking.
+                    \n'Whoever's the master got a damn bad deal for that one,' the older man mutters behind you.
+                    \n'Language,' his brother says.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Broken Wagon",
+                    "image": "",
+                    "text": "You stop beside them, keeping a safe distance in case they try to grab you. Forcing yourself to sound cheerful, you ask, 'What can I do for you, sirs?'
+                    \n'Help me hold up this damn cart so we can ram the wheel back on.'
+                    \nThey don't seem to suspect anything. You position yourself next to the younger brother to lift the cart.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Lift the cart",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 0,
+                            "checkVal": 2,
+                            "successStage": 3,
+                            "failStage": 4
+                        },
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 3,
+                    "title": "Broken Wagon",
+                    "image": "",
+                    "text": "The two of you lift the wagon in tandem, one brother tries to shove the wheel into place with grunt. After a few attempts, the wheell slides onto its axle again. You set the bulk of it back down, and the younger man pushes the wheel experimentally. It holds.
+                    \nThe older man claps his hands together as if to get dust off. 'That'll do it,' he says with satisfaction. He digs out a few coins from a bag in the wagon and passes it to you. 'Your master's a lucky one, with a helper like you.'
+                    \nTaking the money, you force a 'thank you' and a smile that quickly turns into a grimace as soon as the two are behind you.",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 0.75
+                        }
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        }
+        {
+            "id": 15, //fallen trees
+            "stageNum": 6,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Fallen Trees",
+                    "image": "",
+                    "text": "As you near a bend in the path, you hear loud voices beyond. You slip behind a tree and peer around the corner to see a man and a woman arguing tersely beside a large carriage hitched to several impatient-looking horses. The road beyond is blocked by a massive fallen tree. 
+                    \n“How was I to know the storm would cause such blockage, dear? I’ve never known the roads hereabouts to be anything but clear.”
+                    \nThe woman’s arms cross over her chest. “Well now. That doesn’t get us any closer to your cousins, does it?”
+                    \nThe man sighs and sits heavily on the trunk. “And the lumbermen won’t be out here until tomorrow, at least.” He slaps the side of the tree. “If I had a third pair of hands, we might budge this fella. But with just us two, it’s not going anywhere.”
+                    \nThe woman sits down next to him. “I’d give good silver for a help here right now.”",
+                    "effectsNum": 1,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Help the couple",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Cut through the forest to avoid them",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 2,
+                            "checkVal": 2,
+                            "successStage": 2,
+                            "failStage": 3
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Fallen Trees",
+                    "image": "",
+                    "text": "You approach the couple, who turn to you in surprise. “Well, hello,” the man says, peering at you in confusion. 
+                    \nThe woman stands. “Oh, thank the Lord. I thought we’d be stuck out here.” She looks you up and down. “You look like a strong young traveler. Could you, perhaps…?” She gestures at the log. “We can pay.”",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Move the logs",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 0,
+                            "checkVal": 2,
+                            "successStage": 4,
+                            "failStage": 5
+                        },
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 2,
+                    "title": "Fallen Trees",
+                    "image": "",
+                    "text": "The duo's voices fade behind you as you climb nimbly over logs and duck bushes. You come out on the far side of the fallen tree, well down the road and out of sight.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Fallen Trees",
+                    "image": "",
+                    "text": "The duo's voices fade behind you as you climb nimbly over logs and duck bushes. Just as you reach the road again, however, a thorn catches your pant leg. Trying to shake it free, you stumble and land funny on your ankle. A twinge of pain shoots up your leg.\n\n<color=#00FF00>Lose 2 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "Fallen Trees",
+                    "image": "",
+                    "text": "The three of you grunt and strain and eventually manage to heave the log to the side enough to allow the carriage to pass. Fanning herself, the woman thanks you profusely, and the man doffs his cap. They give you a few coins for your trouble before trundling off down the road ahead of you in their carriage.
+                    \n\n<color=#00FF00>Gain 50 Cents</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 0.50
+                        }
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 3,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 5,
+                    "title": "Fallen Trees",
+                    "image": "",
+                    "text": "The three of you grunt and strain, but the log won’t budge. The man thanks you for your time, but you can tell his annoyance has grown. You hastily apologize to the travelers and continue on your way at a faster pace, glancing over your shoulder, but they can’t follow.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        }
+        {   
+            "id": 16, //the hounds attack (DIFFICULT)
+            "stageNum": 5,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "The Hounds Attack",
+                    "image": "",
+                    "text": "You’re deep in the forest when you hear a harsh baying that rattles your bones like thunderclaps. Before you know it, before you even have time to turn and run, the slave catchers’ dogs are upon you. Their teeth flash in the dull sunlight as they snap and charge at your legs. Fangs sink into your calf and you stifle a cry of pain: noise will only bring their masters closer.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Run",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 1,
+                            "checkVal": 5,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Fight",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 0,
+                            "checkVal": 4,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "The Hounds Attack",
+                    "image": "",
+                    "text": "Your feet pound against the forest floor, and you fly like a crazed deer through the woods, leaping logs and ducking branches. The hounds and the shouts of their masters fade, but baying echoes in your ears even as the dogs and the slave-catchers vanish behind you.
+                    \nEventually you slow, panting, and dare a glance behind you. No sign of pursuit, but you're certain they won't be far behind. Quickening your step, you continue on your way.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "The Hounds Attack",
+                    "image": "",
+                    "text": "You scramble ahead, logs catching your shins and branches slapping your chest and forehead, but the hounds surround and outpace you. A canine fang seizes your leg, then a third, and you crash to the ground in a flurry of savage snarls. 
+                    \nYour heartbeat pounds in your ears. You manage to kick the hounds away and scramble, bleeding, to your feet. You spot a creek nearby and haul yourself into the reeds, where your scent will be lost in the muck. The grimy water stings your wounds, washing the blood downstream in a red trickle.
+                    \nThe dogs sniff around the river's edge, and you can hear their master hollering to them over the hill. Eventually they give up their search and vanish into the forest again. You limp, bloody and rank, from the swamp. The road feels very far away.
+                    \n\n<color=#00FF00>Lose 4 Health.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -4
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "The Hounds Attack",
+                    "image": "",
+                    "text": "You kick and stomp, beating off the hounds with your hands until the savage snarls turn to yelps and whimpers, and you manage to stumble out of their pack and away through the woods. Fingers slipping on the ragged bark and clothes tearing against sharp twigs, you drag yourself into the branches of a tree. 
+                    \nThe catchers stalk into sight below you, grumbling to their whining animals and gripping their guns. You can see the curves of their hats. The brims hide you from their peripheral vision. Rifle steel glints in the dull light. They could look up, any moment...
+                    \nBut the hounds, dazed, have lost your scent, and soon both the dogs and their masters have moved deeper into the woods and out of sight.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "The Hounds Attack",
+                    "image": "",
+                    "text": "You kick and stomp, beating off the hounds with your hands, but there are too many. Another seizes your leg, then a third, and you crash to the ground in a flurry of savage snarls.
+                    \nYour heartbeat pounds in your ears. You manage to kick the hounds away and scramble, bleeding, to your feet. You spot a creek nearby and haul yourself into the reeds, where your scent will be lost in the muck. The grimy water stings your wounds, washing the blood downstream in a red trickle.
+                    \nThe dogs sniff around the river's edge, and you can hear their master hollering to them over the hill. Eventually they give up their search and vanish into the forest again. You limp, bloody and rank, from the swamp. The road feels very far away.
+                    \n\n<color=#00FF00>Lose 4 Health.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -4
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        }
+        {
+            "id": 17, //thunderstorm
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Thunderstorm",
+                    "image": "",
+                    "text": "Throughout the day you've watched low, dark clouds piling up on the horizon with growing unease. The sky breaks open as the road winds out of the forest. Torrents of rain flush through the trees and soak quickly into your clothes. A tongue of lightning licks a far-off cornfield, and thunder moans in the distance.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Shelter until the storm ends",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Keep walking",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Thunderstorm",
+                    "image": "",
+                    "text": "At the edge of the woods, you spot a small, crooked shed that looks abandoned. You duck inside to wait out the storm. Leaks trickle through the gaps between boards in the ceiling, but compared to outside, the shelter is practically bone-dry.
+                    \nIt takes the storm an hour to pass, and then you can continue on your way.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Thunderstorm",
+                    "image": "",
+                    "text": "You try to pull your shirt over your head to keep out the rain as you walk out of the woods, but it just soaks through. Soon you're as wet as if you climbed out of a river and just as shivery. Lightning flashes periodically, followed by great rumbles of thunder that roll back and forth across the sky. But you're able to keep moving, and the storm passes in an hour.
+                    \n\n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 18, //stonemason
+            "stageNum": 5,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Stonemason",
+                    "image": "",
+                    "text": "The trail brings you through a smattering of tiny houses built on small plots of land. The buildings look hand-hewn, ramshackle, but there's also something intimate about them that the huge farmhouses down South don't have.
+                    \nOne plot holds only half a house. Its owner, you presume, is the old Black woman fanning herself in the shade of a half-built awning. She waves lazily to you. 'Where you going in such a rush, young 'un?'",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Answer her",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Keep moving",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Stonemason",
+                    "image": "",
+                    "text": "You stop and wave back. 'Howdy, missus. Just - seeing sights, up here in Ohio.'
+                    \n'Not normally from around these parts, eh?'
+                    \n'Just passing through.'
+                    \nShe cackles in a way that makes you think she caught the hidden meaning. 'Well, youngster, you look the sturdy sort. If you help me lay bricks for a few hours, I reckon I can spare some food and change for this tour of yours.' She beckons you over.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Refuse",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                        {
+                            "buttonText": "Help her lay bricks",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 0,
+                            "checkVal": 3,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 2,
+                    "title": "Stonemason",
+                    "image": "",
+                    "text": "You wave back, but time is precious. 'Sorry, missus. Got a schedule to keep.' You hustle on, though you feel her disappointed eyes on your back.
+                    \n'Good luck, youngster,' she calls after you.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Stonemason",
+                    "image": "",
+                    "text": "Under the heat of the Ohio sun, the two of you get to work on the half-finished walls of her house, mixing mortar, measuring guideposts, and slapping bricks down. The old Black lady, you learn, was once from Georgia, and the withered scars on her muscled arms tell you that she didn't live there as a free woman.
+                    \nWhen the wall is leveled out and the brick gaps filled, she stands back, mopping her brow. 'I think I've worked you hard enough, young 'un,' she says. 'Can't pause your tour too long, eh?'
+                    \nYou're sweaty, but seeing the wall level is oddly satisfying. The sun has shifted in the sky, though, and you're antsy to get back on the road. You nod to her.
+                    \nShe vanishes into the cellar of the house and reemerges with a bag of food and a few coins. 'Good luck,' she says, serious now.
+                    \nYou can feel her eyes on you as you take to the road again.
+                    \n\n<color=#00FF00>Gain 6 Food</color>
+                    \n\n<color=#00FF00>Gain +1 Strength</color>
+                    \n\n<color=#00FF00>Gain 1 Dollar</color>",
+                    "effectsNum": 4,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 3,
+                            "effectValB": 0
+                        }
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 1 //amount changed
+                        }
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": 6 //amount changed
+                        }
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "Stonemason",
+                    "image": "",
+                    "text": "You struggle to carry the bricks back and forth. It wasn't until now that you realized just how much trekking through the forest has fatigued you. You've barely carried three loads before you have to stop and rest.
+                    \nThe woman pauses her work and notices you sitting. 'Heavens, love,' she says. 'If this little trifle has gotten you winded, you have a long, long walk ahead.'
+                    \nYou hate to admit it, but she's correct. And based on the position of the sun, you've already lost an hour with this work.
+                    \nShe looks at you a little doubtfully. 'Well, I ain't got much. But I can send you on your way with a bit of good eating.' She hands you a small bag of food, looking suddenly somber. 'Good luck out there, youngster.'
+                    \nYou can feel her eyes on you as you take to the road again.
+                    \n\n<color=#00FF00>Gain 2 Food</color>",
+                    "effectsNum": 0,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 1 //amount changed
+                        }
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 19, //deer trail
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Deer Trail",
+                    "image": "",
+                    "text": "The terrain gradually becomes hillier, and the trail begins to take switchbacks back and forth across the steep slopes. Though easier on your feet, the zigzagging route makes frustratingly slow forward progress. 
+                    \nHowever, at the beginning of one of the switchbacks, you notice that a small trail leads off into the woods and then sharply downhill. Narrow and a bit hard to see, you can tell that this is probably a path carved by deer making their way through the woods. It could get you past the switchbacks faster - if you don't lose the trail.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Follow the deer trail",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 2,
+                            "checkVal": 2,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Continue along switchbacks",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Deer Trail",
+                    "image": "",
+                    "text": "You push through the brush, following the overgrown path and trying to keep your eyes on the delicate hoof tracks. The deer trail veers sharply towards a steep, rocky hillside down which you carefully climb, dislodging a few pebbles as you go. At the bottom, the ground flattens out again, and you can see the proper road through the foliage. You push through the bushes and continue along it, having passed the switchbacks.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Deer Trail",
+                    "image": "",
+                    "text": "You push through the brush, following the overgrown path and trying to keep your eyes on the delicate hoof tracks. Soon, however, you lose track of the trail through the hanging moss and dense thickets of foliage and find yourself lost in the woods. Only after a frustrating half hour of wandering do you stumble back onto the road.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 5
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Deer Trail",
+                    "image": "",
+                    "text": "Biting back your frustration, you continue along the switchbacks. It's not worth the risk to save a few extra minutes.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 4
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 20, //bloodroot
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Bloodroot",
+                    "image": "",
+                    "text": "Growing on the roadside is a patch of white flowers with long petals whose leaves remind you of oak. You recognize these as bloodroot. Faintly, you can remember that this plant can be used as medicine - if you can recall how to prepare it.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Attempt to prepare bloodroot",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 4,
+                            "checkVal": 2,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Bloodroot",
+                    "image": "",
+                    "text": "As you pull up the roots, the familiarity of the motion brings the memories back to you. Drying and then grinding the root makes a paste that can prevent wounds from infection. You harvest several of the plants and put them in your bag to dry as you walk.
+                    \n\n<color=#00FF00>Gain 2 Medicine</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 2,
+                            "effectValB": 2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Bloodroot",
+                    "image": "",
+                    "text": "You poke at the roots and pull a few up, but nothing comes to mind, and you're not sure what would happen if you prepared it wrong. Some plants are poisonous that way. You decide it's best to not risk it.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 21, //abandoned cart
+            "stageNum": 6,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Abandoned Cart",
+                    "image": "",
+                    "text": "An empty horsecart sits in the ditch at the side of the road in front of a long driveway. Nobody seems to be tending the cart, especially if they're busy at the other end of the driveway. It seems that nobody is around to see you if you look inside.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Take a look",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 8,
+                            "checkVal": 3,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Keep moving",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 5,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Abandoned Cart",
+                    "image": "",
+                    "text": "The inside of the cart is surprisingly plush, with pillows on the seats and everything. In the back is what seems to be a picnic basket covered in an embroidered cloth. As you lift the cloth, the smell of fresh cheese and warm bread makes your mouth water. You snatch the basket and run.
+                    \n\n<color=#00FF00>Gain 2 Food</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": 2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Abandoned Cart",
+                    "image": "",
+                    "text": "The inside of the cart is surprisingly plush, with pillows on the seats and everything. In the back is what seems to be a picnic basket covered in an embroidered cloth. As you lift the cloth, the smell of fresh cheese and warm bread makes your mouth water. But as you lift the basket from the seat, you hear an angry shout. Your eyes fly to a figure at the curve in the driveway. 'THIEF!' He yells.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Run for it",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 1,
+                            "checkVal": 3,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 3,
+                    "title": "Abandoned Cart",
+                    "image": "",
+                    "text": "The click of a rifle cocking rings out, then a shot that shatters the bark of a nearby tree. You drop the basket and dash away down the road, hoping they won't pursue. 'Dammit, get my horse, John, get my horse!' the person behind you screams. 
+                    \nAs you round the corner, you hear the thunder of hooves behind you and throw yourself into the ditch. Laying in the shade of the shrubs, you watch the horseman speed by, still yelling after you - but he doesn't see you. After waiting, listening hard for further sounds of pursuit, you push yourself up and tiptoe back along the road.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "Abandoned Cart",
+                    "image": "",
+                    "text": "You barely make it ten paces before your foot catches on the jagged ground and you pitch forward onto the ground. Sharp pebbles sting your knees. You scramble backwards, throwing your hands up in a desperate attempt to sheild yourself. 'Please, sir, didn't mean any harm -'
+                    \nYou finally get a good glance at the pursuer. Old, patched clothes, battered shoes. Dark skin - a Black man, with these riches? This can't be the cart owner, despite the rifle in his hand and how he glowers at you - and yet you see a trace of panic in his eyes.
+                    \n'What's that, John?' someone calls from down the path.
+                    \nJohn glares at you for a moment longer, then takes you by the elbow and hauls you roughly to your feet.
+                    \n'Run,' he hisses. 'Before my master gets here.' He turns to the driveway and yells back, 'Just a beggar, master.'
+                    \nYou don't need telling twice, especially as the crunch of footsteps descend towards you down the driveway. You're out of sight around the bend before they reach you.
+                    \nOnly later do you stop and think what John risked for you.
+                    \n\n<color=#00FF00>Lose 1 Health.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 5,
+                    "title": "Abandoned Cart",
+                    "image": "",
+                    "text": "The cart looks well-kept. You can make out plush pillows inside. It probably belongs to someone rich, someone white. You can't risk setting someone like that against you. You hurry on your way.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 22, //rattlesnake
+            "stageNum": 6,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Rattlesnake",
+                    "image": "",
+                    "text": "While attempting a shortcut across a field, you hear a telltale rattling, buzzing noise from the tall grass. You freeze instantly, looking around. There, a pace from your foot, is a coiled bundle of mottled green scales and lean muscle. The rattlesnake hisses at you, its head swaying slightly back and forth. The rattle comes again, louder, as you try to step to the side. You see those muscles bunching together as if ready to strike.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Dodge it",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 1,
+                            "checkVal": 2,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Kick it",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 0,
+                            "checkVal": 2,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                        {
+                            "buttonText": "Stay perfectly still",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 5,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Rattlesnake",
+                    "image": "",
+                    "text": "You leap sideways and the snake strikes beside you. You stumble backwards as it pulls away, tail rattling. For a moment, its beady, blank eyes look into your own. Then the snake vanishes into the grass in a flicker of green, and you're safe.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Rattlesnake",
+                    "image": "",
+                    "text": "You leap sideways, but the head comes whipping around, and you feel a sharp, stabbing pain in your ankle. You cry out and try to kick it off, but it's already detached, pulling back into its coils. After an angry hiss, the snake vanishes into the grass in a flicker of green. Your ankle throbs with pain as you hobble through the rest of the field, peering anxiously at every stone and loop of grass before you step.
+                    \n\n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Rattlesnake",
+                    "image": "",
+                    "text": "You strike out with your heavy, booted foot and hit the snake before it can bite. Its head rolls sideways, and in a frenzy of stomping you leap upon it until the thick green coils still, twitching. You stand back, panting - the snake is dead, leaking a little blood from a caved-in skull. You've eaten rattlesnake before, when rations shrank. But you never did the killing yourself before. As you pick up the dead snake, you feel equal parts triumphant and nauseated.
+                    \n\n<color=#00FF00>Gain 1 Food</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "Rattlesnake",
+                    "image": "",
+                    "text": "You strike out with your heavy, booted foot and hit the snake before it can bite, but the head comes whipping around, and you feel a sharp, stabbing pain in your ankle. You cry out and try to kick it off, but it's already detached, pulling back into its coils. After an angry hiss, the snake vanishes into the grass in a flicker of green. Your ankle throbs with pain as you hobble through the rest of the field, peering anxiously at every stone and loop of grass before you step.
+                    \n\n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 5,
+                    "title": "Rattlesnake",
+                    "image": "",
+                    "text": "You and the snake stare each other down for what feels like eternity, its blank, beady eyes fixed on yours, punctuated by the rhythm of its rattle. You quiver slightly, trying your best to not even breathe. The snake should go away if you don't provoke it - please, let it go away. Suddenly, with a final hiss, the snake vanishes into the grass in a flicker of green. You let out a relieved huff of air and wipe your brow before picking your way through the rest of the field, peering anxiously at every stone and loop of grass before you step.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 23, //river crossing
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "River Crossing",
+                    "image": "",
+                    "text": "You hear the rush water ahead of you and are surprised to find a river through over a crevace in the road. Peering down into it, you can see that there used to be a bridge here, based on the rotten pilings sticking out of the water, but it's fallen. A makeshift road leads sideways along the river, probably to another bridge further down. If you followed, you'd have to walk all the way there and all the way back to the road. On the other hand, the water looks deep and dangerous, but you might be a strong enough swimmer to make the crossing.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "buttonText": "Swim",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 2,
+                            "checkVal": 4,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Go around",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "River Crossing",
+                    "image": "",
+                    "text": "You take off your shoes and stuff them in your bag - for all the good that will do - and wade into the river. Already the chilly current buffets you from side to side. You dip a hand in experimentally, feeling the strength of the flow, then throw a leaf in and watch it whirl wildly away downstream. The current is fast, but think you can handle it, despite the pull.
+                    \nWith a deep breath, you plunge in. The water beats against you, sucking at your legs and threataning to suck you under, but you kick and splash, pulling yourself through it against the current and towards the opposite shore. A bridge support sticks out of the water about halfway through; you grasp this for a moment to catch your breath before plunging on.
+                    \nYour feet brush sand again. You gasp with relief and struggle for balance, then slosh your way out of the water and collapse onshore to catch your breath. You survived, and so did your bag, which although sodden, holds all of your belongings. You rest there until you can breathe easy again, then climb the opposite embankment to continue along the road.
+                    \n\n<color=#00FF00>Gain +1 Survival</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 2,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "River Crossing",
+                    "image": "",
+                    "text": "You take off your shoes and stuff them in your bag - for all the good that will do - and wade into the river. Already the chilly current buffets you from side to side. You dip a hand in experimentally, feeling the strength of the flow, then throw a leaf in and watch it whirl wildly away downstream. The current is fast, but think you can handle it, despite the pull.
+                    \nYou quickly realize how wrong you were. The current is a force to be reckoned with. It pummels you from the side with icy fists. As you near into the raging center, gasping and splashing, an unexpected whirlpool of water sucks onto your legs with a sudden pull. You get a desperate gasp of air before you're dragged under, kicking and flailing.
+                    \nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled in a calm pocket half-mile away from the road, bruised all down your torso from where the river threw you against the rocky far shore. Worse, your bag popped open in the flood, and while your shoes are still there, much of your food and a few bottles of medicine got washed away.
+                    \nYou're across the river now, at least, you tell yourself, to abate your sinking dread. You rest there until you can breathe easy again, then climb the opposite embankment to continue along the road with a lighter pack and a heavier heart.
+                    \n\n<color=#00FF00>Lose 4 Food</color>
+                    \n\n<color=#00FF00>Lose 2 Medicine</color>
+                    \n\n<color=#00FF00>Lose 3 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": -4
+                        }
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 2,
+                            "effectValB": -2
+                        }
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -3
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "River Crossing",
+                    "image": "",
+                    "text": "The further you walk down the river, the more you're convinced that you the long way is the safe way. Rapids bulge and froth around jagged-looking rocks, and loose wood washes downstream, probably heavy enough to knock out a full-grown man. Still, you're eminently aware of the time passing, and by the time you reach a bridge, you're nearly jogging to get back on the path.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 5
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 24, //bucking horse
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Bucking Horse",
+                    "image": "",
+                    "text": "You hear a frenzied nickering and neighing on the path ahead and see a woman on the back of a bucking horse. She spots you and yells for help. 'He's gone mad! Spooked! Please help me!' She drops the reins and seizes the stomping, angry horse around the neck to keep from falling as her saddle slips and slides.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Help her",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 3,
+                            "checkVal": 4,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Ignore her",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                },
+                {
+                    "stageId": 1,
+                    "title": "Bucking Horse",
+                    "image": "",
+                    "text": "You run to her and grab the fallen reins that flop around like dead snakes on the horse's neck. 'Whoa!' you shout, dodgingt he horse's stamping hooves. 'Whoa, there!' You gently pull on the reins to turn its head, putting a hand on its broad, heavy nose. 'Whoa.'
+                    \nThe horse shakes its head back and forth with a huff of air that blows the scent of stale hay over your face. It flips its tail back and forth. But it's stopped bucking.
+                    \nThe woman buries her head in the horse's mane, forehead shiny with sweat. 'Thank the Lord,' she sighs, and finally sits up. 'He saw a snake or - or some crawling beast and just lost his mind. How can I repay you?'
+                    \nIt feels a bit crude to say it, but you mumble, 'Money never hurts.'
+                    \nShe gives a breathless chuckle and reaches into her saddlebag. 'Fair enough.'
+                    \n\n<color=#00FF00>Gain 50 Cents.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 0.5 //amount changed
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                },
+                {
+                    "stageId": 2,
+                    "title": "Bucking Horse",
+                    "image": "",
+                    "text": "You run to her and grab the fallen reins that flop around like dead snakes on the horse's neck. 'Whoa!' you shout, dodgingt he horse's stamping hooves. 'Whoa, there!' 
+                    \nBut the horse rolls its crazed eyes and jerks the reins out of your grip. It rears up high on its hind legs, jarring the woman off its back. She falls hard on the ground with a cry of pain, and it's all you can do to keep the wild horse from trampling her.
+                    \nYou run around after the horse, trying to catch the reins again, but the woman gets there first, expertly pulling them around to halt the horse. 'You useless Negro,' she pants through gritted teeth. Her face is streaked with blood and dirt. 'Get out of here.'
+                    \nYou back away and then turn and nearly run down the path before she can grab her riding crop from the ground.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Bucking Horse",
+                    "image": "",
+                    "text": "'Sorry, missus,' you call, dodging around the horse's lethal hooves striking the ground as you dash by. 'I can't!'
+                    \nThe horse rears up high on its hind legs, jarring the woman off its back. She falls hard on the ground with a cry of pain. 'Bastard!' she screams after you, but you're already out of sight.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 25, //rabbit
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Rabbit",
+                    "image": "",
+                    "text": "A very brave or very stupid rabbit dashes across the road right in front of you, close enough that it nearly runs over your feet. You glimpse that it's limping slightly. You might be able to catch it.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Go after the rabbit",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 1,
+                            "checkVal": 4,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Continue walking",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Rabbit",
+                    "image": "",
+                    "text": "You run after the rabbit, keeping it locked in your vision even as it zigs and zags across the mulchy forest floor. It struggles for a moment to leap over a low stump and you lunge, catching it with both bare hands. It's the work of a moment to snap its neck in a twist of your hands. Your stomach growls at the thought of the fresh, warm meat you'll have tonight. And, of course, rabbit feet are lucky, and you can use all the luck you can get.
+                    \n\n<color=#00FF00>Gain 3 Food</color>
+                    \n\n<color=#00FF00>Gain +1 Luck</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": 3
+                        }
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 8,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Rabbit",
+                    "image": "",
+                    "text": "Though it's limping, the rabbit is quick and nimble. You lunge for it with your hands and get a grip on its haunches, but it kicks and then slips through them. You watch with disappointment as it vanishes into the brush, ignoring your gnawing stomach. Even more to your annoyance, it takes a bit of wandering to find your way back to the road again.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Rabbit",
+                    "image": "",
+                    "text": "Rabbits are fast, even lame rabbits. Pursuit would just be a waste of time. You continue down the road.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 26, //steamboat crossing
+            "stageNum": 3,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Steamboat Crossing",
+                    "image": "",
+                    "text": "You come to a river wider than one you've yet encountered - wide enough to have a large dock with a steamboat and a group of people waiting to board. When you ask about tickets, the captain tells you that tickets are 50 cents each.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices":[
+                        {
+                            "checkType": 2,
+                            "checkID": 3,
+                            "checkVal": 0.60, //amount needed
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Steamboat Crossing",
+                    "image": "",
+                    "text": "You hand over the coins and board the steamboat, trying to angle your face away from the other customers in case they're looking for runaways crossing the river. The river below makes you nervous - you've never ridden a steamboat before. Still, you can't help but feel a thrill of excitement over your nerves as the steamboat chugs off, water rippling smoothly beneath it.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -0.50 //amount changed
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Steamboat Crossing",
+                    "image": "",
+                    "text": "You stare in dismay at a purse too empty to pay. The captain extends his hand for the money, but you don't have anything to give him. 'Is - is there another way?'
+                    \nHe spits a wad of tobacco at your feet. 'There's the old rail bridge a few miles thataway.' He jabs a thumb down the river. 
+                    \nYour stomach sinks. 'No other way to get a ticket, though?'
+                    \nHe squints at you. 'Not for your type. Don't wanna look all suspicious-like if the inspectors come. Though sometimes I make a pretty penny off their visits.'
+                    \n'I'm sure you do,' you mumble, backing away, then hurry downriver to find the bridge.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 5
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 27, //new clothes
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "New Clothes",
+                    "image": "",
+                    "text": "Your clothes feel matted and worn and itchy. Your armpits are rank, especially where the fabric has worn through in a hole. The narrow-eyed glances of some passerby are painful reminders that the rattier you get, the more suspicious you'll look. So when you see a house with a clothesline strung outside and laundry swaying in the breeze, with nobody watching it, you're tempted to take a more respectable looking outfit for yourself.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Steal the clothes",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 1,
+                            "checkVal": 3,
+                            "successStage": 2,
+                            "failStage": 3
+                        }
+                        {
+                            "buttonText": "Keep walking",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "New Clothes",
+                    "image": "",
+                    "text": "Someone could be watching from the window, or someone could walk by on the street. Besides, as long as you're clothed with something, surely you won't draw too much attention.
+                    \n\n<color=#00FF00>Lose 1 Acting</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 7,
+                            "effectValB": -1 //amount changed
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Steamboat Crossing",
+                    "image": "",
+                    "text": "You may look ragged, but you can still run. From the street, you scope out which of the clothes you think might fit. Then you run into the yard and yank them off the line, causing it to tremble and snap back and forth. Then you dash off as quickly as you came, running down the road until the house is out of sight. When you're sure the coast is clear and you haven't been followed, you dip into the woods to change. The new clothes feel expensive and snug compared to your old ones, which you abandon in the gap under a fallen tree trunk. You glance at your reflection in a puddle and smooth a few stray strands of hair into place: much less suspicious.
+                    \n\n<color=#00FF00>Gain +1 Acting</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 7,
+                            "effectValB": 1 //amount changed
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "New Clothes",
+                    "image": "",
+                    "text": "You've barely approached the clothesline before you hear a child's laughter nearby. You jump as a small girl peeks out at you from behind a damp tablecloth. She giggles. 'What are you doing?'
+                    \n'I'm, um. Borrowing some clothes.'
+                    \n'Borrowing?'
+                    \n'...Yes.'
+                    \nShe gives you a big-eyed look for a moment, then turns towards the house. 'Mama! Someone is borrowing our clothes!'
+                    \n'Borrowing?' Someone bellows from inside. You drop the clothes you're holding as a large, aproned woman storms out of the house, rolling pin in one hand. 'Stealing, more like.'
+                    \nThe last thing you want is a fight. You put up your hands apologetically. 'S-sorry, ma'am. Ma'ams.'
+                    \nBut the woman keeps advancing, and rather than risk her getting within rolling-pin-smacking distance, you flee back to the road.
+                    \n\n<color=#00FF00>Lose 1 Acting</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 7,
+                            "effectValB": -1 //amount changed
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 28, //robber (difficult)
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Robber",
+                    "image": "",
+                    "text": "You don't hear the man until he has a an arm around your neck and something sharp at your back. You can't tell if it's a knife. 'Give me all your money,' a deep voice growls. You smell the stink of meat on his breath and catch a glimpse of stubble over your shoulder.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Fight",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 0,
+                            "checkVal": 4,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Give up the money",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Robber",
+                    "image": "",
+                    "text": "Your money is precious. You lunge suddenly backward, slamming your head into the robber's. Your ears ring and your skull smarts, but the man reels back with a cry, arm loosening. 
+                    \nYou pull yourself free and shove him backwards. He stumbles on the uneven road and trips to the ground, coins spilling from his pockets. You kick him until he wails with pain and drags himself away from you. Now that you can see him clearly, you notice that his 'knife' is nothing more than a sharp-looking twig. He pulls himself to his feet and flees down the road away from you.
+                    \nAdrenaline still pumping in your veins, you kneel to gather his ill-begotten coins and then move along quickly. You don't want to be here when he finds a real knife to cut you with.
+                    \n\n<color=#00FF00>Gain 1 Dollar</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 1,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Robber",
+                    "image": "",
+                    "text": "Your money is precious. You lunge suddenly backward, slamming your head into the robber's. Your ears ring and your skull smarts. The man grunts, but his arm only tightens. A burst of pain shoots down your spine as he presses the sharp object deeper. You can feel a trickle of blood run down your back.
+                    \n'I said hand it over,' he hisses. 'Or I'll leave this black body of yours for the crows to bury.'
+                    \nMoney is precious, but your coins aren't worth dying for. There are some in your pockets that he didn't think of. You close your eyes and picture Canada as you pass your purse to him. He gives a low chuckle and pulls back. You catch a glimpse of scruffy hair and an unshaven face scarred with razor marks before he vanishes into the woods as quickly as he appeared.
+                    \nWith a shudder you count what's left as you hurry on your way, hot blood trickling down your back.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 1,
+                            "effectValB": -2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Robber",
+                    "image": "",
+                    "text": "Money is precious, but your coins aren't worth dying for. There are some in your pockets that he didn't think of. You close your eyes and picture Canada as you pass your purse to him. He gives a low chuckle and pulls back. You catch a glimpse of scruffy hair and an unshaven face scarred with razor marks before he vanishes into the woods as quickly as he appeared.
+                    \nWith a shudder you count what's left as you hurry on your way.",
+                    "effectsNum": 0,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 1,
+                            "effectValB": -2
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 29, //cliff
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Cliff",
+                    "image": "",
+                    "text": "The trees part in a broad clearing, giving you a good look at what's ahead. A large hill rises in front of you - no, more of a cliff, a rockface. Boulders and muck piled at the base give evidence of some kind of mudslide recently. The road curves around the massive hill, diverted by the slide, but you're sure it would be faster to go up over it.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices":[
+                        {
+                            "buttonText": "Climb the cliff",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 2,
+                            "checkVal": 3,
+                            "successStage": 1,
+                            "failStage": 2
+                        }
+                        {
+                            "buttonText": "Go around",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Cliff",
+                    "image": "",
+                    "text": "You walk to the base of the cliff and peer up it, tracking the safest path with your eyes. It'll require some careful footwork, but you can manage it.
+                    \nYou haul yourself up onto the first of the boulders and carefully climb towards the rockface. Then, carefully groping for handholds and kicking at the dirt to carve footholds, you pull yourself up hand over hand, foot over foot. Pebbles bounce away from under your feet, and the muddy bits threaten to send your feet slipping out from under you. Sweat soon beads on your forehead and slides down the sides of your face.
+                    \nBut you make it. You haul yourself over the lip of the cliff, panting and sweaty, and give yourself a moment to catch your ragged breath. The cliff gives a good lookout point to gaze over the miles and miles of forest and farmland stretching out below you, and you can vaguely trace the winding road you came by.
+                    \nYou force yourself to stand and continue on your way over the hill until you can join up with the trail again.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Rabbit",
+                    "image": "",
+                    "text": "You walk to the base of the cliff and peer up it, tracking the safest path with your eyes. It'll require some careful footwork, but you can manage it.
+                    \nYou haul yourself up onto the first of the boulders and carefully climb towards the rockface. Then, carefully groping for handholds and kicking at the dirt to carve footholds, you pull yourself up hand over hand, foot over foot. Pebbles bounce away from under your feet, and the muddy bits threaten to send your feet slipping out from under you. Sweat soon beads on your forehead and slides down the sides of your face.
+                    \nSomething crackles under your fingers. Cracks shoot out from the rock you're holding onto. You freeze. Then the rock gives way under your weight with a groaning of stone. You fall backwards with a cry, arms reeling, and roll down the steep cliffside, scrabbling desperately for a hold. It's all you can do to keep your head from bashing against the jagged rocks.
+                    \nYou finally come to a sudden stop against a bounder near the base. The sky seems to spin overhead. You can feel bruises forming along your back, small cuts stinging with dirt.
+                    \nWith a moan and a few choice curse words, you push yourself into a sitting position, holding your head. You're not trying that again.
+                    \nSore and bruised, you stumble back to the path to take the long way.
+                    \n\n<color=#00FF00>Lose 2 Health</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -2
+                        }
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 7
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Rabbit",
+                    "image": "",
+                    "text": "As you walk by, you get a full view of the cliff face, sheer and sharp-looking. You could've bashed your head in falling from that wall - but taking the long way stings all the same.",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 5
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+        {
+            "id": 30, //beggar
+            "stageNum": 6,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Beggar",
+                    "image": "",
+                    "text": "In a sparsely populated area, you come upon a ragged-looking, thin Black man seated at the edge of the road, an overturned hat in his hands, ugly boils on his face. When he turns his eyes to you, you see they are milky with cataracts. 'Is tha' a traveler?' he croaks. 'Please, can you spare anythin' for an old man in pain?'",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 4,
+                    "choices":[
+                        {
+                            "buttonText": "Give 50 cents",
+                            "hasCheck": true,                            
+                            "checkType": 2,
+                            "checkID": 3,
+                            "checkVal": 0.50, //amount needed
+                            "successStage": 1,
+                            "failStage": 4
+                        }
+                        {
+                            "buttonText": "Give 2 food",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 1,
+                            "checkVal": 2,
+                            "successStage": 2,
+                            "failStage": 4
+                        }
+                        {
+                            "buttonText": "Give 2 medicine",
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 2,
+                            "checkVal": 2,
+                            "successStage": 3,
+                            "failStage": 4
+                        }
+                        {
+                            "buttonText": "Ignore him",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 5,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 0
+                }
+                {
+                    "stageId": 1,
+                    "title": "Beggar",
+                    "image": "",
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I have a few coins,' you offer.
+                    \n'Anythin',' he says. 'Anythin'.'
+                    \nYou hand him 50 cents from your purse.
+                    \n'Bless you, traveler,' he croaks, pressing his hands together as if in prayer. 'Bless you.'",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 8,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 2,
+                    "title": "Beggar",
+                    "image": "",
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I have a bit of food,' you offer.
+                    \n'Anythin',' he says. 'Anythin'.'
+                    \nYou hand him 2 loaves from your bag.
+                    \n'Bless you, traveler,' he croaks, pressing his hands together as if in prayer. 'Bless you.'",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 8,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 3,
+                    "title": "Beggar",
+                    "image": "",
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I have a bit of medicine for those sores,' you offer.
+                    \n'Anythin',' he says. 'Anythin'.'
+                    \nYou hand him a bit of medication from your bag.
+                    \n'Bless you, traveler,' he croaks, pressing his hands together as if in prayer. 'Bless you.'",
+                    "effectsNum": 0,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 8,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 4,
+                    "title": "Beggar",
+                    "image": "",
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I - I can't give anything,' you mumble. 'I'm sorry.'
+                    \n'Anythin',' he says. 'Anythin'. Please'
+                    \n'I'm sorry,' you say again, pushing past him. 'I can't. I can't.'
+                    \nYou hurry down the road with a new heaviness. He reminded you of the elderly back at your former plantation - just as uncared for as he.",
+                    "effectsNum": 0,
+                    "effects": [
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 8,
+                            "effectValB": 1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+                {
+                    "stageId": 5,
+                    "title": "Beggar",
+                    "image": "",
+                    "text": "You force yourself to look away. You need everything in your bag, which you grip tighter to yourself as you push by him.
+                    \n'Please, traveler,' he calls, as you pass by, but you're already hurrying out of his sight.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices":[],
+                    "timeBeforeNextEvent": 30
+                }
+            ]
+        },
+    ]
+}

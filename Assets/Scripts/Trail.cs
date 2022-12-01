@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Trail : MonoBehaviour {
-    private static int trailNum = 0; // trail number
+    public static int trailNum = 0; // trail number
 
     public static float length {get; private set;} // trail length
     public static float progress {get; private set;} // player progress on trail
@@ -29,6 +29,7 @@ public class Trail : MonoBehaviour {
                 length = 60f;
                 traits = new string[]{"medium"};
                 timeToNextEvent = 10;
+                SlaveCatcher.Activate();
                 return;
             case 2: // trail from town 2 to town 3
                 length = 90f;
@@ -58,6 +59,7 @@ public class Trail : MonoBehaviour {
         if (SceneController.gameState == GameState.ON_TRAIL) {
             // update time and distance
             World.TickTime(); // +0.1 hours every second, also handles set events since we don't do event loading in here anymore
+            SlaveCatcher.TickTime();
             progress += 0.1f * CharacterStats.moveSpeed;
             Debug.Log(progress);
             
