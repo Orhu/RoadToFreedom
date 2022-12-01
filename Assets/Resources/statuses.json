@@ -1,0 +1,28 @@
+{
+    "statuses": [
+        {
+            "id": 0,
+            "name": "Hunger",
+            "description": "<color=#FF0000>-1 max health</color>",
+            "effects": [0, 0, 0, 0, 0, 0, 0, 0, 0, -1]
+        },
+        {
+            "id": 1,
+            "name": "Exhausted",
+            "description": "<color=#FF0000>-1 to all Body and Mind stats</color>",
+            "effects": [-1, -1, -1, -1, -1, -1, -1, 0, 0, 0]
+        },
+        {
+            "id": 2,
+            "name": "Forged Free Papers",
+            "description": "You have a set of forged free papers.",
+            "effects": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        {
+            "id": 99,
+            "name": "name",
+            "description": "description",
+            "effects": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    ]
+}

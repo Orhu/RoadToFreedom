@@ -72,29 +72,45 @@ public class CharacterSheet : MonoBehaviour {
     }
 
     public static int GetStat(int statNum) {
+        int statScore = 0;
         switch (statNum) {
             case 0:
-                return statStr + statAug[statNum];
+                statScore = statStr + statAug[statNum];
+                break;
             case 1:
-                return statSpd + statAug[statNum];
+                statScore = statSpd + statAug[statNum];
+                break;
             case 2:
-                return statSrv + statAug[statNum];
+                statScore = statSrv + statAug[statNum];
+                break;
             case 3:
-                return statKnw + statAug[statNum];
+                statScore = statKnw + statAug[statNum];
+                break;
             case 4:
-                return statMed + statAug[statNum];
+                statScore = statMed + statAug[statNum];
+                break;
             case 5:
-                return statSpc + statAug[statNum];
+                statScore = statSpc + statAug[statNum];
+                break;
             case 6:
-                return statVit + statAug[statNum];
+                statScore = statVit + statAug[statNum];
+                break;
             case 7:
-                return statAct + statAug[statNum];
+                statScore = statAct + statAug[statNum];
+                break;
             case 8:
-                return statLck + statAug[statNum];
+                statScore = statLck + statAug[statNum];
+                break;
             default:
                 Debug.LogWarning($"Attempting to get an invalid stat: {statNum}");
                 return 0;
         }
+
+        if (statScore > 6)
+            return 6;
+        if (statScore < 0)
+            return 0;
+        return statScore;
     }
 
     public static void ChangeStat(int statNum, int change) {
