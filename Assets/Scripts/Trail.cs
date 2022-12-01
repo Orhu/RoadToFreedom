@@ -10,7 +10,7 @@ public class Trail : MonoBehaviour {
 
     public static string[] traits {get; private set;} // trail traits
 
-    private int timeToNextEvent = 2;
+    private static int timeToNextEvent = 2;
 
     public void StartTrail() {
         InitializeTrail();
@@ -75,5 +75,10 @@ public class Trail : MonoBehaviour {
         }
         // go again
         StartCoroutine(TrailUpdate());
+    }
+
+    public static void UpdateTimeToNextEvent(int nextTime) {
+        if (SceneController.gameState == GameState.ON_TRAIL)
+            timeToNextEvent = nextTime;
     }
 }

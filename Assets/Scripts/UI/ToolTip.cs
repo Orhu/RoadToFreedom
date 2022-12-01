@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     [Tooltip("Text to be displayed in the tooltip box.")]
+    [TextArea]
     [SerializeField] string toolTipText;
 
     private IEnumerator activeCr;

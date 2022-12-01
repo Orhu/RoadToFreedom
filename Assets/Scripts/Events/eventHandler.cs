@@ -274,6 +274,7 @@ public class eventHandler : MonoBehaviour
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
                 SceneController.EndEvent();
+                Trail.UpdateTimeToNextEvent(curStage.timeToNextEvent);
                 gameObject.SetActive(false);
                 return;
             }
@@ -312,6 +313,7 @@ public class eventHandler : MonoBehaviour
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
                 SceneController.EndEvent();
+                Trail.UpdateTimeToNextEvent(curStage.timeToNextEvent);
                 gameObject.SetActive(false);
             }
             // else{
