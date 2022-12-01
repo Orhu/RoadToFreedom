@@ -8,7 +8,6 @@ public class CharacterBuilderUI : MonoBehaviour {
     // Fields
     private string pName = "";
     private int pJob = 0;
-    private string pPerk = "<i>Perk name here</i>";
     private int statBody = 1;
     private int statMind = 1;
     private int statSoul = 1;
@@ -21,8 +20,6 @@ public class CharacterBuilderUI : MonoBehaviour {
     [SerializeField] Button[] plusButtons;
     [SerializeField] Button[] minusButtons;
     [SerializeField] Button doneButton;
-    [Tooltip("Perk text game object")]
-    [SerializeField] GameObject perkText;
     [Tooltip("Points remaining text object")]
     [SerializeField] TMP_Text ptsRemainingText;
     [Tooltip("Text objects for big stat numbers")]
@@ -36,7 +33,6 @@ public class CharacterBuilderUI : MonoBehaviour {
     
     public void Refresh() { // Refresh UI elements
         bool doneButtonAvailable = false;
-        perkText.GetComponent<TMP_Text>().text = pPerk; // update perk textbox
 
         switch (ptsRemaining) { // update remaining points text + available buttons
             case 0:
@@ -164,7 +160,6 @@ public class CharacterBuilderUI : MonoBehaviour {
         string minus = "<color=#FF0000>-</color>";
         if (pJob != newJob) {
             pJob = newJob;
-            // perk update
             switch (pJob) { // stat updates
                 case 0: // default
                     ChangeScore(1,0);
@@ -196,7 +191,7 @@ public class CharacterBuilderUI : MonoBehaviour {
     }
 
     public void OnDone() {
-        CharacterSheet.FillCharacterSheet(new string[] {pName, pPerk}, pJob, new int[] {statBody, statMind, statSoul});
+        CharacterSheet.FillCharacterSheet(pName, pJob, new int[] {statBody, statMind, statSoul});
         Destroy(this.gameObject);
     }
 }
