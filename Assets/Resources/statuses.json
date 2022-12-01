@@ -19,6 +19,12 @@
             "effects": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
         {
+            "id": 3,
+            "name": "Travel Pass",
+            "description": "Pass that says you are allowed to travel to the destination listed on the card.",
+            "effects": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        {
             "id": 99,
             "name": "name",
             "description": "description",
