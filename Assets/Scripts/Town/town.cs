@@ -22,5 +22,10 @@ public class town : MonoBehaviour
         World.LoadEvent(shopID); 
     }
 
+    // Closes out town and continues journey
+    public static void continueJourney(){
+        SceneController.EndEvent();
+    }
+
 
 }
