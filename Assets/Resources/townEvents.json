@@ -95,6 +95,132 @@
                     "timeBeforeNextEvent": 1
                 }
             ]
+        },
+        {
+            "id": 1,
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Nearby Store",
+                    "image": "",
+                    "text": "You enter a general store that was near the plantation. Behind the counter stood a hired out slave who you tend to see managing the store while the store's owner is away.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Buy Food: 5 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 5,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "Nearby Store",
+                    "image": "",
+                    "text": "You enter a general store that was near the plantation. Behind the counter stood a hired out slave who you tend to see managing the store while the store's owner is away.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Buy Food: 5 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 5,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "Nearby Store",
+                    "image": "",
+                    "text": "You enter a general store that was near the plantation. Behind the counter stood a hired out slave who you tend to see managing the store while the store's owner is away.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Buy Food: 5 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 5,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 3,
+                    "title": "Nearby Store",
+                    "image": "",
+                    "text": "You enter a general store that was near the plantation. Behind the counter stood a hired out slave who you tend to see managing the store while the store's owner is away.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Buy Food: 5 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 5,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
         }
     ]
 }
