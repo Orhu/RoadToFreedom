@@ -3,31 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterSheet : MonoBehaviour {
-    public string characterName {get; private set;}
-    public int job {get; private set;}
-    public string dispJob {get; private set;}
-    /*not yet implemented */ public string perk {get; private set;} // may change depending on how we do perks 
+    public static string characterName {get; private set;}
+    public static int job {get; private set;}
+    public static string dispJob {get; private set;}
+    /*not yet implemented */ public static string perk {get; private set;} // may change depending on how we do perks 
 
     // Character Stats
     // Body
     public static int statBody {get; private set;} // body
-    public static int statStr {get; private set;} // strength (statNum = 0)
-    public static int statSpd {get; private set;} // speed (statNum = 1)
-    public static int statSrv {get; private set;} // survival (statNum = 2)
+    private static int statStr; // strength (statNum = 0)
+    private static int statSpd; // speed (statNum = 1)
+    private static int statSrv; // survival (statNum = 2)
     
     // Mind
     public static int statMind {get; private set;} // mind
-    public static int statKnw {get; private set;} // knowledge (statNum = 3)
-    public static int statMed {get; private set;} // medicine (statNum = 4)
-    public static int statSpc {get; private set;} // speech (statNum = 5)
+    private static int statKnw; // knowledge (statNum = 3)
+    private static int statMed; // medicine (statNum = 4)
+    private static int statSpc; // speech (statNum = 5)
 
     // Soul
     public static int statSoul {get; private set;} // soul
-    public static int statVit {get; private set;} // vitality (statNum = 6)
-    public static int statAct {get; private set;} // acting (statNum = 7)
-    public static int statLck {get; private set;} // luck (statNum = 8)
+    private static int statVit; // vitality (statNum = 6)
+    private static int statAct; // acting (statNum = 7)
+    private static int statLck; // luck (statNum = 8)
 
-    public void FillCharacterSheet(string[] details, int jobID, int[] statScores) {
+    private static int[] statAug = new int[9]; // status based stat augmentations
+
+    public static void FillCharacterSheet(string[] details, int jobID, int[] statScores) {
         characterName = details[0];
         job = jobID;
         //perk = details[1];
@@ -52,12 +54,12 @@ public class CharacterSheet : MonoBehaviour {
                 break;
         }
 
-        GetComponent<CharacterStats>().Setup(statVit);
+        CharacterStats.Setup();
         SceneController.CharacterBuilderComplete();
         
     }
 
-    private void SetStats(int[] statVals) {
+    private static void SetStats(int[] statVals) {
         statStr = statBody + statVals[0];
         statSpd = statBody + statVals[1];
         statSrv = statBody + statVals[2];
@@ -69,7 +71,49 @@ public class CharacterSheet : MonoBehaviour {
         statLck = statSoul + statVals[8];
     }
 
-    public void changeStat(int statNum, int change) {
+    public static int GetStat(int statNum) {
+        int statScore = 0;
+        switch (statNum) {
+            case 0:
+                statScore = statStr + statAug[statNum];
+                break;
+            case 1:
+                statScore = statSpd + statAug[statNum];
+                break;
+            case 2:
+                statScore = statSrv + statAug[statNum];
+                break;
+            case 3:
+                statScore = statKnw + statAug[statNum];
+                break;
+            case 4:
+                statScore = statMed + statAug[statNum];
+                break;
+            case 5:
+                statScore = statSpc + statAug[statNum];
+                break;
+            case 6:
+                statScore = statVit + statAug[statNum];
+                break;
+            case 7:
+                statScore = statAct + statAug[statNum];
+                break;
+            case 8:
+                statScore = statLck + statAug[statNum];
+                break;
+            default:
+                Debug.LogWarning($"Attempting to get an invalid stat: {statNum}");
+                return 0;
+        }
+
+        if (statScore > 6)
+            return 6;
+        if (statScore < 0)
+            return 0;
+        return statScore;
+    }
+
+    public static void ChangeStat(int statNum, int change) {
         switch (statNum) {
             case 0:
                 statStr += change;
@@ -146,6 +190,16 @@ public class CharacterSheet : MonoBehaviour {
             default:
                 Debug.LogWarning($"Attempting to change an invalid stat: {statNum}");
                 break;
+        }
+    }
+
+    public static void SheetStatusRefresh() {
+        statAug = new int[]{0,0,0,0,0,0,0,0,0}; // zero out the array before processing statuses
+        foreach(var item in CharacterStats.statusDictionary) {
+            int[] cEff = item.Value.effects; // current effects array
+            for (int i = 0; i < 9; i++) {
+                statAug[i] += cEff[i];
+            }
         }
     }
 }
