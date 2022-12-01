@@ -10,9 +10,10 @@ public class Trail : MonoBehaviour {
 
     public static string[] traits {get; private set;} // trail traits
 
-    private static int timeToNextEvent = 2;
+    private static int timeToNextEvent = 10;
 
     public void StartTrail() {
+        progress = 0f;
         InitializeTrail();
         StartCoroutine(TrailUpdate());
     }
@@ -63,8 +64,7 @@ public class Trail : MonoBehaviour {
             // end trail check
             if (progress >= length) {
                 trailNum++;
-                //EndTrail();
-                //return;
+                EndTrail();
             }
             
             // next event countdown
@@ -80,5 +80,9 @@ public class Trail : MonoBehaviour {
     public static void UpdateTimeToNextEvent(int nextTime) {
         if (SceneController.gameState == GameState.ON_TRAIL)
             timeToNextEvent = nextTime;
+    }
+
+    public static void EndTrail() {
+        SceneController.LoadTown(trailNum);
     }
 }
