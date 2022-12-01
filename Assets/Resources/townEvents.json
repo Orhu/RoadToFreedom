@@ -1,0 +1,100 @@
+{
+    "events": [
+        {
+            "id": 0,
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "The Plantation House",
+                    "image": "",
+                    "text": "You approach the mansion that looms over the rest of the plantation.\n\n Upon the porch sits your enslaver reading a newspaper.\n",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Ask for a pass",
+                            "hasCheck": true,
+                            "checkType": 1,
+                            "checkID": 5,
+                            "checkVal": 4,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "The Plantation House",
+                    "image": "",
+                    "text": "You ask the Master of the plantation for a pass to visit family at a nearby plantation (even if that was not where you planned to go with it).\n\n After a moment of thought the Master agrees, writes you a pass, and hands it to you.\n\n <color=#FF0000>Gained a Travel Pass.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "a",
+                            "effectValA": 3,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Take the pass",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "The Plantation House",
+                    "image": "",
+                    "text": "You ask the Master of the plantation for a pass to visit family at a nearby plantation (even if that was not where you planned to go with it).\n\n The Master says no and waves for you to go back to your work.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Walk away empty handed",
+                            "hasCheck": false,
+                            "checkType": 0,
+                            "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 3,
+                    "title": "The Plantation House",
+                    "image": "",
+                    "text": "You decide not to bother with the house and walk away.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
+        }
+    ]
+}
