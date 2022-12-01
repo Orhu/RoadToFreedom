@@ -71,7 +71,7 @@
                     "timeBeforeNextEvent": 20
                 },
                 {
-                    "stageId": 1,
+                    "stageId": 2,
                     "title": "Time to Sleep",
                     "image": "",
                     "text": "You set up a small camp off the side of the road and drift off to sleep. When you awaken in the morning, you feel well-rested, but without any food, you must continuing down the road with an empty stomach.\n\n<color=#FF0000>You grow hungry.</color>",
