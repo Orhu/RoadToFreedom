@@ -97,10 +97,13 @@ public class SceneController : MonoBehaviour {
         if ((gameState == GameState.IN_TOWN || gameState == GameState.ON_TRAIL) && (newGameState != GameState.IN_TOWN || newGameState != GameState.ON_TRAIL)) 
             prevState = gameState;
         gameState = newGameState;
+        Debug.Log($"Updating Game State to {gameState}");
     }
 
     public static void RevertGameState() {
-        if (prevState == GameState.IN_TOWN || prevState == GameState.ON_TRAIL)
+        if (prevState == GameState.IN_TOWN || prevState == GameState.ON_TRAIL) {
             gameState = prevState;
+            Debug.Log($"Updating Game State to {gameState}");
+        }
     }
 }

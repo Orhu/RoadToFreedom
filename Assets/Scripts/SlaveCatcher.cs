@@ -21,6 +21,7 @@ public class SlaveCatcher : MonoBehaviour {
     //public static float getCaughtChance = 0f;
 
     public static void Activate() {
+        Debug.Log("activating slave catchers");
         active = true;
         if (latestLocation == -1) {
             ArriveInTown();
@@ -28,6 +29,7 @@ public class SlaveCatcher : MonoBehaviour {
     }
 
     public static void Deactivate() {
+        Debug.Log("deactivating slave catchers");
         active = false;
     }
 
@@ -36,7 +38,8 @@ public class SlaveCatcher : MonoBehaviour {
         if (active) {
             if (scState == SlaveCatcherState.ON_TRAIL) {
                 if (World.time >= 6.0f && World.time < 22.0f) {
-                    scProgress += 0.1f * scSpeed;
+                    scProgress = Mathf.Round((scProgress + (0.1f * scSpeed))*10f)/10f;
+                    Debug.Log($"slave catcher progress on trail {scTrailNum} = {scProgress}/{scCurrentTrailLength}");
                 }
 
                 if (scTrailNum == Trail.trailNum) {
@@ -59,7 +62,8 @@ public class SlaveCatcher : MonoBehaviour {
                         CatchPlayer();
                     }
                 } else{
-                    currentStallTime -= 0.1f;
+                    currentStallTime = Mathf.Round((currentStallTime - 0.1f)*10f)/10f;
+                    Debug.Log($"slave catcher stall time in town {latestLocation} = {currentStallTime}");
                 }
             }
         }
@@ -84,9 +88,11 @@ public class SlaveCatcher : MonoBehaviour {
                     } else if ((World.time > 22f && resultTime > 30f)) {
                         timeAdvance = resultTime - 30f;
                     }
-                    scProgress += scSpeed * timeAdvance;
+                    scProgress = Mathf.Round((scProgress + (scSpeed * timeAdvance))*10f)/10f;
+                    Debug.Log($"slave catcher progress on trail {scTrailNum} = {scProgress}/{scCurrentTrailLength}");
                 } else if (scState == SlaveCatcherState.INVESTIGATING_TOWN) {
                     currentStallTime -= timeAdvance;
+                    Debug.Log($"slave catcher stall time in town {latestLocation} = {currentStallTime}");
                     if(currentStallTime <= 0f) {
                         scState = SlaveCatcherState.FINDING_PLAYER;
                     }
@@ -96,6 +102,7 @@ public class SlaveCatcher : MonoBehaviour {
     }
 
     public static void EmbarkToTrail() {
+        Debug.Log($"Embarking on trail {scTrailNum}");
         // embark to trail from town
         scCurrentTrailLength = scTrailLengths[scTrailNum];
         currentStallTime = 0f;
@@ -105,6 +112,7 @@ public class SlaveCatcher : MonoBehaviour {
     public static void ArriveInTown() {
         // arriving in town from trail
         latestLocation++; // arrive in next town
+        Debug.Log($"Arriving in town {latestLocation}");
         currentStallTime = townStallTimes[scTrailNum];
         scProgress = 0f;
         ChangeSCState(SlaveCatcherState.INVESTIGATING_TOWN);
@@ -130,6 +138,7 @@ public class SlaveCatcher : MonoBehaviour {
     }
 
     public static void ChangeSCState(SlaveCatcherState newSCState) {
+        Debug.Log($"Changing SC State from {scState} to {newSCState}");
         scState = newSCState;
     }
 }

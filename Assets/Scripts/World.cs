@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class World : MonoBehaviour {
-    public static float time {get; private set;} = 0f;
+    public static float time {get; private set;} = 6.0f;
     //public static string weather {get; private set;} = "clear"; cut weather
-    public static string timeOfDay {get; private set;} = "night";
+    public static string timeOfDay {get; private set;} = "morning";
 
     public static void TickTime() {
         time += 0.1f;
-        time = ((time*10f) % 240f)/10f;
-        Debug.Log(time);
+        time = Mathf.Round((((time*10f) % 240f)/10f)*10f)/10f;
+        Debug.Log($"Current World Time: {time}");
         UpdateTimeOfDay();
 
         switch (time) {

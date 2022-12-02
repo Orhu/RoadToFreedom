@@ -32,7 +32,7 @@ public class Stage{
     public Effect[] effects;
     public int choiceNum;
     public Choice[] choices;
-    public int timeToNextEvent;
+    public int timeBeforeNextEvent;
 }
 
 //     CHOICE AND EFFECT VALUE INDEX
@@ -274,7 +274,7 @@ public class eventHandler : MonoBehaviour
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
                 SceneController.EndEvent();
-                Trail.UpdateTimeToNextEvent(curStage.timeToNextEvent);
+                Trail.UpdateTimeToNextEvent(curStage.timeBeforeNextEvent);
                 gameObject.SetActive(false);
                 return;
             }
@@ -313,7 +313,7 @@ public class eventHandler : MonoBehaviour
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
                 SceneController.EndEvent();
-                Trail.UpdateTimeToNextEvent(curStage.timeToNextEvent);
+                Trail.UpdateTimeToNextEvent(curStage.timeBeforeNextEvent);
                 gameObject.SetActive(false);
             }
             // else{

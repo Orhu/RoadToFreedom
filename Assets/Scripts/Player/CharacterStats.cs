@@ -92,6 +92,7 @@ public class CharacterStats : MonoBehaviour
     */
 
     public static void AddStatus(int statusID) { //Adds a status and it's description
+        Debug.Log($"Adding status with id {statusID}");
         if (statusDictionary.ContainsKey(statusID)) {
             statusDictionary[statusID].ChangeLevel(1);
             CharacterSheet.SheetStatusRefresh();
@@ -104,6 +105,7 @@ public class CharacterStats : MonoBehaviour
     }
 
     public static void RemoveStatus(int statusID) { //Overloaded function which only takes the status name and removes it from the list and description
+        Debug.Log($"Removing status with id {statusID}");
         if (statusDictionary.ContainsKey(statusID)) {
             if (statusDictionary[statusID].level <= 1) {
                 statusDictionary.Remove(statusID);
@@ -122,5 +124,6 @@ public class CharacterStats : MonoBehaviour
             health = maxHealth;
         }
         moveSpeed = 2.5f + (0.5f * Utilities.GetBonus(CharacterSheet.GetStat(1)));
+        _gameUI.RefreshCounters(food, medicine, money, health);
     }
 }

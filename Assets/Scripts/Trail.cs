@@ -59,19 +59,21 @@ public class Trail : MonoBehaviour {
         if (SceneController.gameState == GameState.ON_TRAIL) {
             // update time and distance
             World.TickTime(); // +0.1 hours every second, also handles set events since we don't do event loading in here anymore
-            SlaveCatcher.TickTime();
-            progress += 0.1f * CharacterStats.moveSpeed;
-            Debug.Log(progress);
-            
+            progress = Mathf.Round((progress + (0.1f * CharacterStats.moveSpeed))*10f)/10f;
+            timeToNextEvent--;
+            Debug.Log($"Player progress on trail = {progress}/{length}\nTime to next event: {timeToNextEvent}");
+
             // end trail check
             if (progress >= length) {
                 trailNum++;
                 EndTrail();
             }
+
+            SlaveCatcher.TickTime();
             
             // next event countdown
-            timeToNextEvent--;
-            if (timeToNextEvent <= 0) {
+            if (timeToNextEvent <= 0 && SceneController.gameState == GameState.ON_TRAIL) {
+                Debug.Log("Loading Random Event");
                 World.LoadRandomEvent();
             }
         }
@@ -80,8 +82,10 @@ public class Trail : MonoBehaviour {
     }
 
     public static void UpdateTimeToNextEvent(int nextTime) {
-        if (SceneController.gameState == GameState.ON_TRAIL)
+        if (SceneController.gameState == GameState.ON_TRAIL && nextTime != 0) {
             timeToNextEvent = nextTime;
+            Debug.Log($"Updating time to next event. Values should match: {nextTime}, {timeToNextEvent}");
+        }
     }
 
     public static void EndTrail() {
