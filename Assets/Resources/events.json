@@ -627,7 +627,7 @@
                             "hasCheck": true,
                             "checkType": 2,
                             "checkID": 3,
-                            "checkVal": 0.25,
+                            "checkVal": 25,
                             "successStage": 1,
                             "failStage": 3
                         }
@@ -645,7 +645,7 @@
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": -0.25
+                            "effectValB": -25
                         }
                     ],
                     "choiceNum": 0,
@@ -889,7 +889,7 @@
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": 0.75
+                            "effectValB": 75
                         },
                         {
                             "effectType": 7,
@@ -999,7 +999,7 @@
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": 0.50
+                            "effectValB": 50
                         },
                         {
                             "effectType": 7,
@@ -1864,7 +1864,7 @@
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": 0.5
+                            "effectValB": 5
                         }
                     ],
                     "choiceNum": 0,
@@ -2000,7 +2000,7 @@
                         {
                             "checkType": 2,
                             "checkID": 3,
-                            "checkVal": 0.60,
+                            "checkVal": 60,
                             "successStage": 1,
                             "failStage": 2
                         }
@@ -2018,7 +2018,7 @@
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": -0.50
+                            "effectValB": -50
                         }
                     ],
                     "choiceNum": 0,
