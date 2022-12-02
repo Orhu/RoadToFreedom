@@ -85,13 +85,13 @@ public class World : MonoBehaviour {
 
     public IEnumerator QueueTimeSkip(float timeAdvance) {
         while(SceneController.gameState != GameState.ON_TRAIL) {
-            yield return new WaitForSeconds(0.1f); // will create a weird delay, watch out for that
+            yield return null; // will create a weird delay, watch out for that
         }
 
         TimeSkip(timeAdvance);
     }
 
-    private IEnumerator TimeSkip(float timeAdvance) { // make sure you only advance time in the last stage of an event and only pop up events after the last one resolves
+    public static void TimeSkip(float timeAdvance) { // make sure you only advance time in the last stage of an event and only pop up events after the last one resolves
         float oldTime = time;
         World.AdvanceTime(timeAdvance);
         SlaveCatcher.AdvanceTime(timeAdvance);
@@ -99,28 +99,31 @@ public class World : MonoBehaviour {
 
         // check if any mandatory events happened during the time skip and display them after a few seconds
         if (oldTime > newTime) { // past midnight, also look out for the case where the sleep event advances time
-            yield return new WaitForSeconds(0.25f);
             LoadEvent(0);
+            return;
         } else if ((oldTime > 0f && oldTime < 5.9f) && newTime >= 5.9f) { // look out for sleep event here too
-            yield return new WaitForSeconds(0.5f);
             if (CharacterStats.GetResource(1) >= 1) {
                 LoadEvent(1);
+                return;
             } else {
                 LoadEvent(2);
+                return;
             }
         } else if ((oldTime > 6f && oldTime < 12f) && newTime >= 12f) {
-            yield return new WaitForSeconds(0.5f);
             if (CharacterStats.GetResource(1) >= 1) {
                 LoadEvent(3);
+                return;
             } else {
                 LoadEvent(4);
+                return;
             }
         } else if ((oldTime > 12f && oldTime < 18f) && newTime >= 18f) {
-            yield return new WaitForSeconds(0.5f);
             if (CharacterStats.GetResource(1) >= 1) {
                 LoadEvent(5);
+                return;
             } else {
                 LoadEvent(6);
+                return;
             }
         }
     }

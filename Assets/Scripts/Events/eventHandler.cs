@@ -81,7 +81,7 @@ public class Choice{
 [System.Serializable]
 public class Effect{
     public int effectType;
-    public char effectOperation;
+    public string effectOperation;
     public int effectValA;
     public int effectValB;
 }
@@ -200,27 +200,33 @@ public class eventHandler : MonoBehaviour
     public void processEffect(Stage s){
         if (s.effectsNum > 0){
             for (int i = 0; i < s.effectsNum; i++){
+                Debug.Log($"Processing Effect {i}, type {s.effects[i].effectType}");
                 switch(s.effects[i].effectType){
                     case 0: // None
                         break;
                     case 1: // Skill
-                        if(s.effects[i].effectOperation == 'c'){ // Change
+                        if(s.effects[i].effectOperation == "c"){ // Change
                             CharacterSheet.ChangeStat(s.effects[i].effectValA, s.effects[i].effectValB);
                         }
                         break;
                     case 2: // Resource
-                        if(s.effects[i].effectOperation == 'c'){ // Change
+                        Debug.Log($"effect operation {i} {s.effects[i].effectOperation}");
+                        if(s.effects[i].effectOperation == "c"){ // Change
                             switch(s.effects[i].effectValA){
                                 case 0: // health
+                                    Debug.Log($"Changing Health by {s.effects[i].effectValA}");
                                     CharacterStats.ChangeHealth(s.effects[i].effectValB);
                                     break;
                                 case 1: // food
+                                    Debug.Log($"Changing Food by {s.effects[i].effectValA}");
                                     CharacterStats.ChangeFood(s.effects[i].effectValB);
                                     break;
                                 case 2: // medicine
+                                    Debug.Log($"Changing Meds by {s.effects[i].effectValA}");
                                     CharacterStats.ChangeMedicine(s.effects[i].effectValB);
                                     break;
                                 case 3: // money
+                                    Debug.Log($"Changing Money by {s.effects[i].effectValA}");
                                     CharacterStats.ChangeMoney(s.effects[i].effectValB);
                                     break;
                             }
@@ -231,10 +237,10 @@ public class eventHandler : MonoBehaviour
                         // No, I don't think so - Malcolm
                         break;
                     case 4: // Status
-                        if(s.effects[i].effectOperation == 'a'){ // add skill here
+                        if(s.effects[i].effectOperation == "a"){ // add skill here
                             CharacterStats.AddStatus(s.effects[i].effectValA);
                         }
-                        else if(s.effects[i].effectOperation == 'r'){ // remove skill
+                        else if(s.effects[i].effectOperation == "r"){ // remove skill
                             CharacterStats.RemoveStatus(s.effects[i].effectValA);
                         }
                         break;
@@ -246,7 +252,7 @@ public class eventHandler : MonoBehaviour
                         break;
                     case 7: // time
                         float timeToSkip = s.effects[i].effectValA + s.effects[i].effectValB/10f;
-                        _world.QueueTimeSkip(timeToSkip);
+                        World.TimeSkip(timeToSkip);
                         break;
                 }
             }
@@ -308,14 +314,14 @@ public class eventHandler : MonoBehaviour
             }
         
             // Presscount being greater than 0 allows for button to become exit window command
-            if(pressCount > 0){
+            /*if(pressCount > 0){
                 Debug.Log("Event concluded");
                 pressCount = 0;
                 // Replace with code for closing scene/window to handle consequence
                 SceneController.EndEvent();
                 Trail.UpdateTimeToNextEvent(curStage.timeBeforeNextEvent);
                 gameObject.SetActive(false);
-            }
+            }*/
             // else{
             //     pressCount++;
             // }

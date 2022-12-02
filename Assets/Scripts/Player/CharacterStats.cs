@@ -62,7 +62,7 @@ public class CharacterStats : MonoBehaviour
             health = maxHealth;
         }
         if (health <= 0) {
-            // game over
+            Debug.Log("GAME OVER");
         }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
@@ -70,18 +70,27 @@ public class CharacterStats : MonoBehaviour
     public static void ChangeFood(int ration) { //Changes food stored based on ration
         Debug.Log("changing food");
         food += ration;
+        if(food < 0) {
+            food = 0;
+        }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
     public static void ChangeMedicine(int meds) { //Changes medicine based on meds
         Debug.Log("changing meds");
         medicine += meds;
+        if(medicine < 0) {
+            medicine = 0;
+        }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
     public static void ChangeMoney(int cash) { //Changes money based on cash 
         Debug.Log("changing munny");
         money += cash;
+        if(money < 0) {
+            money = 0;
+        }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 

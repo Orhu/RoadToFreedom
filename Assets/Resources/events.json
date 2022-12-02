@@ -2,7 +2,7 @@
     "events":[
         {
             "id": 0,
-            "stageNum": 0,
+            "stageNum": 4,
             "stages": [
                 {
                     "stageId": 0,
@@ -115,7 +115,7 @@
         },
         {
             "id": 1,
-            "stageNum": 0,
+            "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
@@ -151,7 +151,7 @@
         },
         {
             "id": 2,
-            "stageNum": 0,
+            "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
@@ -181,7 +181,7 @@
         },
         {
             "id": 3,
-            "stageNum": 0,
+            "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
@@ -217,7 +217,7 @@
         },
         {
             "id": 4,
-            "stageNum": 0,
+            "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
@@ -241,7 +241,7 @@
         },
         {
             "id": 5,
-            "stageNum": 0,
+            "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
@@ -277,7 +277,7 @@
         },
         {
             "id": 6,
-            "stageNum": 0,
+            "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
@@ -312,7 +312,7 @@
                     "effects": [
                         {
                             "effectType": 2,
-                            "effectOperation": "add",
+                            "effectOperation": "c",
                             "effectValA": 1,
                             "effectValB": 4
                         }
@@ -390,7 +390,7 @@
         },
         {
             "id": 9,
-            "stageNum": 5,
+            "stageNum": 6,
             "stages": [
                 {
                     "stageId": 0,
@@ -447,7 +447,7 @@
                     "stageId": 2,
                     "title": "Pharmacy Stop",
                     "image": "",
-                    "text": "You wander blindly around the shop, unfamiliar words looming up around you. Fluid extract of baptista. Chlorodine. Creosote. Permanganate of Potash.\n The owner’s glowering eyes follow you suspiciously until he stands up with his fists on his hips. “I think that’s enough browsing, stranger. Leave this shop now.” There’s a current of threat to his voice.\n It’s dangerous to argue. You shuffle away from the pharmacy empty-handed.",
+                    "text": "You wander blindly around the shop, unfamiliar words looming up around you. Fluid extract of baptista. Chlorodine. Creosote. Permanganate of Potash.\n The owner's glowering eyes follow you suspiciously until he stands up with his fists on his hips. \"I think that's enough browsing, stranger. Leave this shop now.\" There's a current of threat to his voice.\n It's dangerous to argue. You shuffle away from the pharmacy empty-handed.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
@@ -511,10 +511,10 @@
                     "timeBeforeNextEvent": 0
                 },
                 {
-                    "stageId": 5,
+                    "stageId": 6,
                     "title": "Pharmacy Stop",
                     "image": "",
-                    "text": "His eyes narrow as you approach. “Say, what’s a dark fella/missus like you doing up here, anyway?”\n\n You stammer out something about a trip to assist your master, but the shopkeep seems unconvinced. He leans forward on his elbows to peer at you close across the counter.\n “Lotta runaways pass through this town. There’s a bulletin full of ‘em. And lots of rewards besides. Call themselves ‘freedom seekers.’” He scoffs, not taking his eyes off you. “You wouldn’t know anything about that, would you, stranger?”\n\n You don’t like the way he’s looking at you. Mumbling something about being behind schedule, you back out of the shop.\n",
+                    "text": "His eyes narrow as you approach. \"Say, what's a dark fella/missus like you doing up here, anyway?\"\n\n You stammer out something about a trip to assist your master, but the shopkeep seems unconvinced. He leans forward on his elbows to peer at you close across the counter.\n \"Lotta runaways pass through this town. There's a bulletin full of 'em. And lots of rewards besides. Call themselves 'freedom seekers.'\" He scoffs, not taking his eyes off you. \"You wouldn't know anything about that, would you, stranger?\"\n\n You don't like the way he's looking at you. Mumbling something about being behind schedule, you back out of the shop.\n",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
@@ -525,7 +525,7 @@
         },
         {
             "id": 10,
-            "stageNum": 3,
+            "stageNum": 4,
             "stages": [
                 {
                     "stageId": 0,
@@ -541,7 +541,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 4,
-                            "checkVal": 1,
+                            "checkVal": 2,
                             "successStage": 1,
                             "failStage": 2
                         }
@@ -603,7 +603,7 @@
                             "effectValB": -1
                         }
                     ],
-                    "choiceNum": 2,
+                    "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
                 }
@@ -678,8 +678,15 @@
                     "title": "Toll Bridge",
                     "image": "",
                     "text": "You can hear the guard cackling to himself as you make your way down to the water. He leers at you from over the side of the bridge. You dip a foot in; it's icy cold, but shallower than you'd thought. You take off your shoes and, holding them over your head, wade across the river.\nThe rushing water beats against you, but you keep your balance and emerge on the other side, wet but safe.\nYou're surprised to hear clapping, and you turn to see the bridge guard on the other side applauding. 'Didn't think you had it in you,' the guard says. 'I'll tell your master when he comes along that he sure bought a strong one.'\nYou yank your shoes on and hurry away from the bridge before he can talk about your made-up master any longer.",
-                    "effectsNum": 0,
-                    "effects": [],
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 3
+                        }
+                    ],
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
@@ -688,20 +695,20 @@
                     "stageId": 4,
                     "title": "Toll Bridge",
                     "image": "",
-                    "text": "You can hear the guard cackling to himself as you make your way down to the water. He leers at you from over the side of the bridge. You dip a foot in; it's icy cold, but shallower than you'd thought. You take off your shoes and, holding them over your head, wade into the river.\nYou quickly find that though the river is shallow, its current is a force to be reckoned with. It pummels you from the side with icy fists. As you step into the raging center, the gravel beneath your foot gives way and you splash down into the freezing water. You get a desperate gasp of air before you're dragged under, kicking and flailing.\nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled in a calm pocket half-mile away from the road, bruised all down your torso from where the river threw you against the rocky far shore.\nYou're across the river now, at least. And somehow you've kept hold of your shoes. Shivering, you put them on and drag yourself back towards the road. \n\n<color=#00FF00>Lose 2 Health</color>",
-                    "effectsNum": 1,
+                    "text": "You can hear the guard cackling to himself as you make your way down to the water. He leers at you from over the side of the bridge. You dip a foot in; it's icy cold, but shallower than you'd thought. You take off your shoes and, holding them over your head, wade into the river.\nYou quickly find that though the river is shallow, its current is a force to be reckoned with. It pummels you from the side with icy fists. As you step into the raging center, the gravel beneath your foot gives way and you splash down into the freezing water. You get a desperate gasp of air before you're dragged under, kicking and flailing.\nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled in a calm pocket half-mile away from the road, bruised all down your torso from where the river threw you against the rocky far shore.\nYou're across the river now, at least. And somehow you've kept hold of your shoes. Shivering, you put them on and drag yourself back towards the road. \n\n<color=#00FF00>Lose 1 Health</color>",
+                    "effectsNum": 2,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 0,
-                            "effectValB": -2
+                            "effectValB": -1
                         },
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": -2
+                            "effectValA": 1,
+                            "effectValB": 0
                         }
                     ],
                     "choiceNum": 0,
@@ -723,7 +730,7 @@
                     "effects": [
                         {
                             "effectType": 2,
-                            "effectOperation": "add",
+                            "effectOperation": "c",
                             "effectValA": 1,
                             "effectValB": 4
                         }
@@ -778,8 +785,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 3
+                            "effectValA": 1,
+                            "effectValB": 0
                         }
                     ],
                     "choiceNum": 0,
@@ -795,7 +802,7 @@
                     "effects": [
                         {
                             "effectType": 2,
-                            "effectOperation": "add",
+                            "effectOperation": "c",
                             "effectValA": 1,
                             "effectValB": 3
                         },
@@ -894,8 +901,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 3
+                            "effectValA": 2,
+                            "effectValB": 0
                         }
                     ],
                     "choiceNum": 0,
@@ -1023,7 +1030,7 @@
                             "effectType": 7,
                             "effectOperation": "n",
                             "effectValA": 1,
-                            "effectValB": 0
+                            "effectValB": 5
                         }
                     ],
                     "choiceNum": 0,
@@ -1170,7 +1177,7 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 1,
+                            "effectValA": 4,
                             "effectValB": 0
                         }
                     ],
@@ -1390,8 +1397,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 5
+                            "effectValA": 2,
+                            "effectValB": 0
                         }
                     ],
                     "choiceNum": 0,
@@ -1466,8 +1473,15 @@
                     "title": "Bloodroot",
                     "image": "",
                     "text": "You poke at the roots and pull a few up, but nothing comes to mind, and you're not sure what would happen if you prepared it wrong. Some plants are poisonous that way. You decide it's best to not risk it.",
-                    "effectsNum": 0,
-                    "effects": [],
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
@@ -1773,7 +1787,7 @@
                     "stageId": 2,
                     "title": "River Crossing",
                     "image": "",
-                    "text": "You take off your shoes and stuff them in your bag - for all the good that will do - and wade into the river. Already the chilly current buffets you from side to side. You dip a hand in experimentally, feeling the strength of the flow, then throw a leaf in and watch it whirl wildly away downstream. The current is fast, but think you can handle it, despite the pull.\nYou quickly realize how wrong you were. The current is a force to be reckoned with. It pummels you from the side with icy fists. As you near into the raging center, gasping and splashing, an unexpected whirlpool of water sucks onto your legs with a sudden pull. You get a desperate gasp of air before you're dragged under, kicking and flailing.\nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled in a calm pocket half-mile away from the road, bruised all down your torso from where the river threw you against the rocky far shore. Worse, your bag popped open in the flood, and while your shoes are still there, much of your food and a few bottles of medicine got washed away.\nYou're across the river now, at least, you tell yourself, to abate your sinking dread. You rest there until you can breathe easy again, then climb the opposite embankment to continue along the road with a lighter pack and a heavier heart.\n\n<color=#00FF00>Lose 4 Food</color>\n\n<color=#00FF00>Lose 2 Medicine</color>\n\n<color=#00FF00>Lose 3 Health</color>",
+                    "text": "You take off your shoes and stuff them in your bag - for all the good that will do - and wade into the river. Already the chilly current buffets you from side to side. You dip a hand in experimentally, feeling the strength of the flow, then throw a leaf in and watch it whirl wildly away downstream. The current is fast, but think you can handle it, despite the pull.\nYou quickly realize how wrong you were. The current is a force to be reckoned with. It pummels you from the side with icy fists. As you near into the raging center, gasping and splashing, an unexpected whirlpool of water sucks onto your legs with a sudden pull. You get a desperate gasp of air before you're dragged under, kicking and flailing.\nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled in a calm pocket half-mile away from the road, bruised all down your torso from where the river threw you against the rocky far shore. Worse, your bag popped open in the flood, and while your shoes are still there, much of your food and a few bottles of medicine got washed away.\nYou're across the river now, at least, you tell yourself, to abate your sinking dread. You rest there until you can breathe easy again, then climb the opposite embankment to continue along the road with a lighter pack and a heavier heart.\n\n<color=#00FF00>Lose 4 Food</color>\n<color=#00FF00>Lose 2 Medicine</color>\n<color=#00FF00>Lose 3 Health</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -2272,7 +2286,7 @@
                 },
                 {
                     "stageId": 2,
-                    "title": "Rabbit",
+                    "title": "Cliff",
                     "image": "",
                     "text": "You walk to the base of the cliff and peer up it, tracking the safest path with your eyes. It'll require some careful footwork, but you can manage it.\nYou haul yourself up onto the first of the boulders and carefully climb towards the rockface. Then, carefully groping for handholds and kicking at the dirt to carve footholds, you pull yourself up hand over hand, foot over foot. Pebbles bounce away from under your feet, and the muddy bits threaten to send your feet slipping out from under you. Sweat soon beads on your forehead and slides down the sides of your face.\nSomething crackles under your fingers. Cracks shoot out from the rock you're holding onto. You freeze. Then the rock gives way under your weight with a groaning of stone. You fall backwards with a cry, arms reeling, and roll down the steep cliffside, scrabbling desperately for a hold. It's all you can do to keep your head from bashing against the jagged rocks.\nYou finally come to a sudden stop against a bounder near the base. The sky seems to spin overhead. You can feel bruises forming along your back, small cuts stinging with dirt.\nWith a moan and a few choice curse words, you push yourself into a sitting position, holding your head. You're not trying that again.\nSore and bruised, you stumble back to the path to take the long way.\n\n<color=#00FF00>Lose 2 Health</color>",
                     "effectsNum": 2,
@@ -2296,7 +2310,7 @@
                 },
                 {
                     "stageId": 3,
-                    "title": "Rabbit",
+                    "title": "Cliff",
                     "image": "",
                     "text": "As you walk by, you get a full view of the cliff face, sheer and sharp-looking. You could've bashed your head in falling from that wall - but taking the long way stings all the same.",
                     "effectsNum": 1,
@@ -2489,7 +2503,7 @@
                     "stageId": 1,
                     "title": "The Plantation House",
                     "image": "",
-                    "text": "You ask the Master of the plantation for a pass to visit family at a nearby plantation (even if that was not where you planned to go with it).\n\n After a moment of thought the Master agrees, writes you a pass, and hands it to you.\n\n <color=#FF0000>Gained a Travel Pass.</color>",
+                    "text": "You ask the Master of the plantation for a pass to visit family at a nearby plantation (even if that was not where you planned to go with it).\n\n After a moment of thought the Master agrees, writes you a pass, and hands it to you.\n\n <color=#00FF00>Gained a Travel Pass.</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -2499,18 +2513,8 @@
                             "effectValB": 0
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Take the pass",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2520,18 +2524,8 @@
                     "text": "You ask the Master of the plantation for a pass to visit family at a nearby plantation (even if that was not where you planned to go with it).\n\n The Master says no and waves for you to go back to your work.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Walk away empty handed",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2585,7 +2579,7 @@
                     "stageId": 1,
                     "title": "Nearby Store",
                     "image": "",
-                    "text": "You hand over the coins and buy some food.\n\n <color=#FF0000>Gained 10 Food.</color>",
+                    "text": "You hand over the coins and buy some food.\n\n <color=#00FF00>Gained 10 Food.</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
@@ -2601,18 +2595,8 @@
                             "effectValB": -50
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 3,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2622,18 +2606,8 @@
                     "text": "You don't have enough money to afford food.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2643,18 +2617,8 @@
                     "text": "After shopping, you decide to head back to the plantation.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 3,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 }
             ]
@@ -2667,7 +2631,7 @@
                     "stageId": 0,
                     "title": "Friend's Cabin",
                     "image": "",
-                    "text": "You head over to the cabin of your friend to say goodbye before you depart. You both say goodbye, knowing that this may be the last time you see each other.\n\n Before you go, your friend hands you 50 cents saying that it would do you more good then it would them.\n\n <color=#FF0000>Gained 50 Cents.</color>",
+                    "text": "You head over to the cabin of your friend to say goodbye before you depart. You both say goodbye, knowing that this may be the last time you see each other.\n\n Before you go, your friend hands you 50 cents saying that it would do you more good then it would them.\n\n <color=#00FF00>Gained 50 Cents.</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -2722,7 +2686,7 @@
                     "title": "Your Cabin",
                     "image": "",
                     "text": "You sleep and wake up well rested.\n\n",
-                    "effectsNum": 1,
+                    "effectsNum": 2,
                     "effects": [
                         {
                             "effectType": 4,
@@ -2737,18 +2701,8 @@
                             "effectValB": 0
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2758,18 +2712,8 @@
                     "text": "You exit the cabin and head back to the plantation.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 }
             ]
@@ -2812,7 +2756,7 @@
                     "stageId": 1,
                     "title": "General Store",
                     "image": "",
-                    "text": "You hand over the coins and buy some food.\n\n <color=#FF0000>Gained 10 Food.</color>",
+                    "text": "You hand over the coins and buy some food.\n\n <color=#00FF00>Gained 10 Food.</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
@@ -2828,18 +2772,8 @@
                             "effectValB": -50
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 3,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2849,18 +2783,8 @@
                     "text": "You don't have enough money to afford food.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2870,18 +2794,8 @@
                     "text": "After shopping, you decide to head back into town.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 3,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 }
             ]
@@ -2924,7 +2838,7 @@
                     "stageId": 1,
                     "title": "Doctor's Office",
                     "image": "",
-                    "text": "You hand over the coins and the doctor heals you.\n\n <color=#FF0000>Gained Health.</color>",
+                    "text": "You hand over the coins and the doctor heals you.\n\n <color=#00FF00>Gained Health.</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
@@ -2940,18 +2854,8 @@
                             "effectValB": -75
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 3,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -2961,18 +2865,8 @@
                     "text": "You don't have enough money to afford help.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -3026,7 +2920,7 @@
                     "stageId": 1,
                     "title": "The Inn",
                     "image": "",
-                    "text": "You hand over the coins and head to your room to rest.\n\n <color=#FF0000>Remove Exhaustion.</color>",
+                    "text": "You hand over the coins and head to your room to rest.\n\n <color=#00FF00>Remove Exhaustion.</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
@@ -3048,18 +2942,8 @@
                             "effectValB": -25
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 3,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -3069,18 +2953,8 @@
                     "text": "You don't have enough money to afford to stay.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 0,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -3134,7 +3008,7 @@
                     "stageId": 1,
                     "title": "Lumberyard",
                     "image": "",
-                    "text": "You work for a few hours then are handed some money for your labors.\n\n <color=#FF0000>Gain 25 cents.</color>",
+                    "text": "You work for a few hours then are handed some money for your labors.\n\n <color=#00FF00>Gain 25 cents.</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
@@ -3150,18 +3024,8 @@
                             "effectValB": 25
                         }
                     ],
-                    "choiceNum": 1,
-                    "choices": [
-                        {
-                            "buttonText": "Leave",
-                            "hasCheck": false,
-                            "checkType": 0,
-			                "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 2,
-                            "failStage": 0
-                        }
-                    ],
+                    "choiceNum": 0,
+                    "choices": [],
                     "timeBeforeNextEvent": 1
                 },
                 {
@@ -3169,6 +3033,23 @@
                     "title": "Lumberyard",
                     "image": "",
                     "text": "You head back into town.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "stageNum": 1,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Newspaper Stand",
+                    "image": "",
+                    "text": "The boy at the newspaper stand looks at you. \"Hey Dingaling! The paper ain't out yet! Ha ha! What a wacky conundrum! Come back later once we've made the paper and added it to this news stand *wink*.\"\nYou're not sure why he said \"wink\" out loud, but you assume it's just some cheeky new phrase. Better get going.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
