@@ -322,6 +322,409 @@
                     "timeBeforeNextEvent": 1
                 }
             ]
+        },
+        {
+            "id": 4,
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "General Store",
+                    "image": "",
+                    "text": "You enter a general store. The shop owner stands behind the counter.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Buy Food: 50 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 50,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "General Store",
+                    "image": "",
+                    "text": "You hand over the coins and buy some food.\n\n <color=#FF0000>Gained 10 Food.</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": 10
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -50
+                        }
+                    ],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "General Store",
+                    "image": "",
+                    "text": "You don't have enough money to afford food.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 3,
+                    "title": "General Store",
+                    "image": "",
+                    "text": "After shopping, you decide to head back into town.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Doctor's Office",
+                    "image": "",
+                    "text": "You enter the Doctor's Office.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Heal: 75 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 75,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "Doctor's Office",
+                    "image": "",
+                    "text": "You hand over the coins and the doctor heals you.\n\n <color=#FF0000>Gained Health.</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": 9999
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -75
+                        }
+                    ],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "Doctor's Office",
+                    "image": "",
+                    "text": "You don't have enough money to afford help.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 3,
+                    "title": "Doctor's Office",
+                    "image": "",
+                    "text": "You head back into town.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "The Inn",
+                    "image": "",
+                    "text": "You enter a local inn run by a free person.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Stay to rest: 25 cents",
+                            "hasCheck": true,
+                            "checkType": 2,
+			                "checkID": 3,
+                            "checkVal": 25,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "The Inn",
+                    "image": "",
+                    "text": "You hand over the coins and head to your room to rest.\n\n <color=#FF0000>Remove Exhaustion.</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 4,
+                            "effectOperation": "r",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 6,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -25
+                        }
+                    ],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 3,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "The Inn",
+                    "image": "",
+                    "text": "You don't have enough money to afford to stay.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 0,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 3,
+                    "title": "The Inn",
+                    "image": "",
+                    "text": "You head back into town.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "stageNum": 4,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Lumberyard",
+                    "image": "",
+                    "text": "You enter a lumberyard. You can act as a hired out slave to earn some money.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 2,
+                    "choices": [
+                        {
+                            "buttonText": "Work for money",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 1,
+                            "failStage": 2
+                        },
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 1,
+                    "title": "Lumberyard",
+                    "image": "",
+                    "text": "You work for a few hours then are handed some money for your labors.\n\n <color=#FF0000>Gain 25 cents.</color>",
+                    "effectsNum": 2,
+                    "effects": [
+                        {
+                            "effectType": 7,
+                            "effectOperation": "n",
+                            "effectValA": 2,
+                            "effectValB": 0
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 25
+                        }
+                    ],
+                    "choiceNum": 1,
+                    "choices": [
+                        {
+                            "buttonText": "Leave",
+                            "hasCheck": false,
+                            "checkType": 0,
+			                "checkID": 0,
+                            "checkVal": 0,
+                            "successStage": 2,
+                            "failStage": 0
+                        }
+                    ],
+                    "timeBeforeNextEvent": 1
+                },
+                {
+                    "stageId": 2,
+                    "title": "Lumberyard",
+                    "image": "",
+                    "text": "You head back into town.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 1
+                }
+            ]
         }
     ]
 }
