@@ -119,8 +119,8 @@ public class SlaveCatcher : MonoBehaviour {
     }
 
     public static void CatchPlayer() {
-        // to do
-        // Basically trigger a game over via an event
+        // trigger slave catcher event depending on the game state
+        SceneController.GameOver(false, "You were caught by slave catchers.");
     }
 
     public static void ResetSlaveCatchers(int resetType) { // 0 = trail, 1 = full (for game overs)

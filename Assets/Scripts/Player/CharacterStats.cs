@@ -62,7 +62,7 @@ public class CharacterStats : MonoBehaviour
             health = maxHealth;
         }
         if (health <= 0) {
-            Debug.Log("GAME OVER");
+            SceneController.GameOver(false, "You have become too weak to continue on the road to freedom. You will are found by slave catchers and returned to your plantation.");
         }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }

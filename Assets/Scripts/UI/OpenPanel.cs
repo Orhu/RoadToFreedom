@@ -8,12 +8,17 @@ public class OpenPanel : MonoBehaviour
     public bool PanelActive;
     //public Text Dname;
 
-    public void Open()
-    {
+    public void Open() {
         if(Panel != null)
         {
             PanelActive = Panel.activeSelf;
             Panel.SetActive(!PanelActive);
+
+            if (PanelActive) {
+                SceneController.UpdateGameState(GameState.IN_MENU);
+            } else {
+                SceneController.RevertGameState();
+            }
         }
     }
 

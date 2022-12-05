@@ -15,7 +15,8 @@ public class Trail : MonoBehaviour {
     public void StartTrail() {
         progress = 0f;
         InitializeTrail();
-        StartCoroutine(TrailUpdate());
+        if (trailNum == 0)
+            StartCoroutine(TrailUpdate());
     }
 
     private void InitializeTrail() {
