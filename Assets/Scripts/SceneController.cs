@@ -106,4 +106,9 @@ public class SceneController : MonoBehaviour {
             Debug.Log($"Updating Game State to {gameState}");
         }
     }
+
+    public static void GameOver(bool isWin, string message) {
+        // TO DO
+        Debug.Log($"GAME OVER! WIN = {isWin}, {message}");
+    }
 }

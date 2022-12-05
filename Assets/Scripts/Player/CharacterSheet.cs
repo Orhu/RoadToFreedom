@@ -28,7 +28,7 @@ public class CharacterSheet : MonoBehaviour {
 
     private static int[] statAug = new int[9]; // status based stat augmentations
 
-    public static void FillCharacterSheet(string pName, int jobID, int[] statScores) {
+    public static void FillCharacterSheet(string pName, int jobID, int[] statScores, int[] minorStatScores) {
         characterName = pName;
         job = jobID;
 
@@ -37,20 +37,7 @@ public class CharacterSheet : MonoBehaviour {
         statSoul = statScores[2];
 
         // fill substats on formula
-        switch (jobID) {
-            case 1: // farmer
-                SetStats(new int[]{1,-1,0,-1,0,1,1,0,-1});
-                break;
-            case 2: // butler
-                SetStats(new int[]{-1,1,0,1,-1,0,-1,1,0});
-                break;
-            case 3: // chef
-                SetStats(new int[]{0,-1,1,0,1,-1,0,-1,1});
-                break;
-            default:
-                Debug.LogError("Invalid Job Type Selected.");
-                break;
-        }
+        SetStats(minorStatScores);
 
         CharacterStats.Setup();
         SceneController.CharacterBuilderComplete();
