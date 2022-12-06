@@ -63,7 +63,6 @@ public class Stage{
 
 //     effectValB and checkVal
 //     // int for skill / resources value changes
-// }
 
 // Holds choice information for choice outcomes
 [System.Serializable]
@@ -86,7 +85,7 @@ public class Effect{
     public int effectValB;
 }
 
-
+// Handles the effects, checks, and text appearence of events
 public class eventHandler : MonoBehaviour
 {
     [SerializeField] TextAsset eventJson;
@@ -109,6 +108,7 @@ public class eventHandler : MonoBehaviour
     private World _world; 
 
     void Start() {
+        // Reads in json and stores in an object that will be accessed to get events
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
         _world = GameObject.Find("Scene Controller").GetComponent<World>();
         
@@ -116,13 +116,18 @@ public class eventHandler : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    // Builds specific event based from provided event id (id) and stageId (default should begin at 0)
     public void BuildEvent(int id, int stageId) {
+        // Gathers requested event information
         Event e = getEvent(id);
         curEvent = e;
         curEventId = id;
+
+        // Gets starting stage information
         Stage s = getStage(e, stageId);
         processEffect(s); // Processes effect of stage
 
+        // Processes text in titles, event text, and option texts for options ranging from 0 to 4
         if (s.choiceNum == 0){
             pressCount++;
             curStage = s;
@@ -259,22 +264,16 @@ public class eventHandler : MonoBehaviour
         }
     }
 
+    // Handles the update based on the pressed option by player
     public void optionButtonPress(int option){ // Option 0 to 3
         // Makes sure option info is not out of available bounds
 
         if (option < 0){
+            // Error handler
             Debug.LogError("Option not in valid range");
         }
         else{
-            //processAttribute(option);
-            // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
-
-            // Sets buttons to close options and none other
-            // text.text = curEvent.eventChoices[option].choicePassText;
-            // option1.text = "Close";
-            // option2.text = "";
-            // option3.text = "";
-            // option4.text = "";
+            // Ends the event
             if (curStage.choiceNum == 0) {
                 Debug.Log("Event concluded");
                 pressCount = 0;
@@ -289,7 +288,7 @@ public class eventHandler : MonoBehaviour
             if (c.hasCheck == true){
                 bool pass = false;
 
-            // HANDLE CHECKS HERE BY CHECKING RESOURCES AND
+                // HANDLE CHECKS HERE BY CHECKING RESOURCES, SKILLS, AND STATUSES
                 switch(c.checkType){
                     case 1: // Skill
                         pass = CharacterSheet.GetStat(c.checkID) >= c.checkVal;
@@ -302,6 +301,7 @@ public class eventHandler : MonoBehaviour
                         break;
                 }
 
+                // Builds event based off if check was passed or failed
                 if (pass == true){
                     BuildEvent(curEventId, c.successStage);
                 }
@@ -310,6 +310,7 @@ public class eventHandler : MonoBehaviour
                 }
             }
             else{
+                // Builds event based from default state (i.e no checks)
                 BuildEvent(curEventId, c.successStage);
             }
         
@@ -337,121 +338,4 @@ public class eventHandler : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
-    // void processAttribute(int option){
-    //     Debug.Log("processing attributes");
-    //     // Ex; attrStr = L_C_O_-1
-    //     // split string over '_'
-    //     // switch statement to process type with nested (probably a shitty idea - Malcolm) switches for param which call
-    //     // different methods in other scripts
-    //     string attr = curEvent.eventChoices[option].choicePassResults;
-    //     Debug.Log(attr);
-    //     //foreach (string attr in attrAll) {   
-    //         string[] attrVals = attr.Split("_");
-    //         Debug.Log(attrVals[0]);
-    //         string type = attrVals[0];
-    //         string param = attrVals[1];
-    //         string a = attrVals[2];
-    //         string b = attrVals[3];
-
-    //         if (type == "0"){ // None
-    //             if (param != "n"){
-    //                 Debug.LogError("How did we screw up None?");
-    //             }
-    //         }
-    //         else if (type == "1"){ // Skill
-    //             if (param == "q"){
-    //                 // ADD CHECK SKILL
-    //             }
-    //             else if (param == "c"){
-    //                 // ADD CHANGE SKILL
-    //             }
-    //             else if (param == "r"){
-    //                 // ADD REVEAL SKILL
-    //             }
-    //             else{
-    //                 Debug.LogError("Skill param not valid");
-    //             }
-    //         }
-    //         else if (type == "2"){ // Resource
-    //             if (param == "c"){ // change resource
-    //                 if (a == "0"){ // health
-    //                     int numVal = Int32.Parse(b);
-    //                     _charStats.ChangeHealth(numVal);
-    //                 }
-    //                 else if (a == "1"){ // food
-    //                     int numVal = Int32.Parse(b);
-    //                     _charStats.ChangeFood(numVal);
-    //                 }
-    //                 else if (a == "2"){ // medicine
-    //                     int numVal = Int32.Parse(b);
-    //                     _charStats.ChangeMedicine(numVal);
-    //                 }
-    //                 else if (a == "3"){ // money
-    //                     float numVal = float.Parse(b);
-    //                     _charStats.ChangeMoney(numVal);
-    //                 }
-    //                 else{
-    //                     Debug.LogError("resource key not valid");
-    //                 }
-    //             }
-    //             else if (param == "q"){ // query resource
-
-    //             }
-    //             else{
-    //                 Debug.LogError("Resource param not valid");
-    //             }
-    //         }
-    //         else if (type == "3"){ // Item
-    //             if (param == "q"){
-    //                 // ADD INFO TO CHECK RESOURCE NUM
-    //             }
-    //             else if (param == "a"){
-    //                 // ADD INFO TO ADD ITEMS
-    //             }
-    //             else if (param == "r"){
-    //                 // ADD INFO TO REMOVE ITEMS
-    //             }
-    //             else{
-    //                 Debug.LogError("Item param not valid");
-    //             }
-    //         }
-    //         else if (type == "4"){ // Status
-    //             if (param == "q"){
-    //                 // ADD CHECK CURRENT STATUS
-    //             }
-    //             else if (param == "a"){
-    //                 // ADD ADD STATUS
-    //             }
-    //             else if (param == "r"){
-    //                 // ADD REMOVE STATUS
-    //             }
-    //             else{
-    //                 Debug.LogError("Status param not valid");
-    //             }
-    //         }
-    //         else if (type == "5"){ // Location
-    //             if (param == "c"){
-    //                 // ADD LOCATION CHANGE INFO HERE
-    //             }
-    //             else{
-    //                 Debug.LogError("Location param not valid");
-    //             }
-    //         }
-    //         else if (type == "6"){ // Game
-    //             if (param == "w"){
-    //                 // ADD WIN INFO HERE
-    //             }
-    //             else if (param == "l"){
-    //                 // ADD LOSS INFO HERE
-    //             }
-    //             else{
-    //                 Debug.LogError("Game param not valid");
-    //             }
-    //         }
-    //         else{
-    //             Debug.LogError("Attribute Type is not specified values");
-    //         }
-    //     //}
-    // }
 }
