@@ -1,0 +1,9 @@
+======================================
+Sprites
+-----------------
+plantation.png = https://www.whitneyplantation.org/history/the-big-house-and-the-outbuildings/
+troy.png = 
+bowlingGreen.png = 
+wapakontea.png = 
+detroit.png =
+======================================
