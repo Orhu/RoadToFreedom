@@ -2,8 +2,8 @@
 Sprites
 -----------------
 plantation.png = https://www.whitneyplantation.org/history/the-big-house-and-the-outbuildings/
-troy.png = 
-bowlingGreen.png = 
-wapakontea.png = 
+troy.png = https://upload.wikimedia.org/wikipedia/commons/b/b7/Fall_River_Village_%3B_Map_of_the_town_of_Fall_River%2C_Bristol_County%2C_Massachusetts_%2814775362187%29.jpg
+grandRapids.png = https://commons.wikimedia.org/wiki/File:1853_Grand_Rapids,_Michigan.jpg
+wapakontea.png = https://nara.getarchive.net/media/1940-census-enumeration-district-maps-ohio-auglaize-county-wapakoneta-ed-6-f685ff
 detroit.png =
 ======================================

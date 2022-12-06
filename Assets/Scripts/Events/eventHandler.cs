@@ -85,7 +85,7 @@ public class Effect{
     public int effectValB;
 }
 
-
+// Handles the effects, checks, and text appearence of events
 public class eventHandler : MonoBehaviour
 {
     [SerializeField] TextAsset eventJson;
@@ -108,6 +108,7 @@ public class eventHandler : MonoBehaviour
     private World _world; 
 
     void Start() {
+        // Reads in json and stores in an object that will be accessed to get events
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
         _world = GameObject.Find("Scene Controller").GetComponent<World>();
         
@@ -115,13 +116,18 @@ public class eventHandler : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    // Builds specific event based from provided event id (id) and stageId (default should begin at 0)
     public void BuildEvent(int id, int stageId) {
+        // Gathers requested event information
         Event e = getEvent(id);
         curEvent = e;
         curEventId = id;
+
+        // Gets starting stage information
         Stage s = getStage(e, stageId);
         processEffect(s); // Processes effect of stage
 
+        // Processes text in titles, event text, and option texts for options ranging from 0 to 4
         if (s.choiceNum == 0){
             pressCount++;
             curStage = s;
@@ -258,17 +264,16 @@ public class eventHandler : MonoBehaviour
         }
     }
 
+    // Handles the update based on the pressed option by player
     public void optionButtonPress(int option){ // Option 0 to 3
         // Makes sure option info is not out of available bounds
 
         if (option < 0){
+            // Error handler
             Debug.LogError("Option not in valid range");
         }
         else{
-            //processAttribute(option);
-            // ADD CODE HERE LATER TO MARK IF CHANGES ARE SUCCESS CONDITION OR FAILURE
-
-            // Sets buttons to close options and none other
+            // Ends the event
             if (curStage.choiceNum == 0) {
                 Debug.Log("Event concluded");
                 pressCount = 0;
@@ -283,7 +288,7 @@ public class eventHandler : MonoBehaviour
             if (c.hasCheck == true){
                 bool pass = false;
 
-            // HANDLE CHECKS HERE BY CHECKING RESOURCES AND
+                // HANDLE CHECKS HERE BY CHECKING RESOURCES, SKILLS, AND STATUSES
                 switch(c.checkType){
                     case 1: // Skill
                         pass = Utilities.RollSkillCheck(CharacterSheet.GetStat(c.checkID)) >= c.checkVal;
@@ -296,6 +301,7 @@ public class eventHandler : MonoBehaviour
                         break;
                 }
 
+                // Builds event based off if check was passed or failed
                 if (pass == true){
                     BuildEvent(curEventId, c.successStage);
                 }
