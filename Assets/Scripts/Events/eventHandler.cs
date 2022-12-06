@@ -286,7 +286,7 @@ public class eventHandler : MonoBehaviour
             // HANDLE CHECKS HERE BY CHECKING RESOURCES AND
                 switch(c.checkType){
                     case 1: // Skill
-                        pass = CharacterSheet.GetStat(c.checkID) >= c.checkVal;
+                        pass = Utilities.RollSkillCheck(CharacterSheet.GetStat(c.checkID)) >= c.checkVal;
                         break;
                     case 2: // Resource
                         pass = CharacterStats.GetResource(c.checkID) >= c.checkVal;
@@ -303,7 +303,7 @@ public class eventHandler : MonoBehaviour
                     BuildEvent(curEventId, c.failStage);
                 }
             }
-            else{
+            else {
                 BuildEvent(curEventId, c.successStage);
             }
         }
