@@ -298,7 +298,7 @@ public class eventHandler : MonoBehaviour
                         pass = CharacterStats.GetResource(c.checkID) >= c.checkVal;
                         break;
                     case 4: // Status
-                        // HANDLE STATUS EFFECTS HERE
+                        pass = CharacterStats.statusDictionary.ContainsKey(c.checkID);
                         break;
                 }
 
