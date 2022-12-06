@@ -313,19 +313,6 @@ public class eventHandler : MonoBehaviour
                 // Builds event based from default state (i.e no checks)
                 BuildEvent(curEventId, c.successStage);
             }
-        
-            // Presscount being greater than 0 allows for button to become exit window command
-            /*if(pressCount > 0){
-                Debug.Log("Event concluded");
-                pressCount = 0;
-                // Replace with code for closing scene/window to handle consequence
-                SceneController.EndEvent();
-                Trail.UpdateTimeToNextEvent(curStage.timeBeforeNextEvent);
-                gameObject.SetActive(false);
-            }*/
-            // else{
-            //     pressCount++;
-            // }
         }
     }
 
@@ -337,5 +324,4 @@ public class eventHandler : MonoBehaviour
     public void HideEvent() {
         gameObject.SetActive(false);
     }
-
 }
