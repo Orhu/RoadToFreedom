@@ -312,7 +312,7 @@ public class DynamicEventHandler : MonoBehaviour {
         var rng = new System.Random();
         int pickVal = rng.Next(masterPool.Count);
         RemoveEventFromPool(masterPool[pickVal]);
-        return pickVal;
+        return masterPool[pickVal];
     }
 
 }
