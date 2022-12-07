@@ -1348,7 +1348,7 @@
                     "stageId": 0,
                     "title": "Deer Trail",
                     "image": "",
-                    "text": "As the terrain becomes hillier, the trail takes switchbacks back and forth across the slopes. The zigzagging route makes frustratingly slow forward progress. \nHowever, at the beginning of one of the switchbacks, you notice that a small trail leads off into the woods and then sharply downhill. Narrow and a bit hard to see, you can tell that this is probably a path carved by deer making their way through the woods. It could get you past the switchbacks faster - if you don't lose the trail.",
+                    "text": "As the terrain becomes hillier, the trail takes switchbacks back and forth across the slopes. The zigzagging route makes frustratingly slow forward progress. \nHowever, at the beginning of one of the switchbacks, you notice that a small trail leads off into the woods and then sharply downhill. Narrow and a bit hard to see, you think that this might be a path carved by deer making their way through the woods. It could get you past the switchbacks faster - if you don't lose the trail.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 2,
@@ -1494,7 +1494,7 @@
                     "stageId": 0,
                     "title": "Abandoned Cart",
                     "image": "",
-                    "text": "An empty horsecart sits in the ditch at the side of the road in front of a long driveway. Nobody seems to be tending the cart, especially if they're busy at the other end of the driveway. It seems that nobody is around to see you if you look inside.",
+                    "text": "An empty horsecart sits in the ditch at the side of the road in front of a long driveway. You can't see anyone from the road, so it might be safe to take a peak inside.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 2,
@@ -1504,7 +1504,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 8,
-                            "checkVal": 3,
+                            "checkVal": 4,
                             "successStage": 1,
                             "failStage": 2
                         },
@@ -1524,14 +1524,14 @@
                     "stageId": 1,
                     "title": "Abandoned Cart",
                     "image": "",
-                    "text": "The inside of the cart is surprisingly plush, with pillows on the seats and everything. In the back is what seems to be a picnic basket covered in an embroidered cloth. As you lift the cloth, the smell of fresh cheese and warm bread makes your mouth water. You snatch the basket and run.\n\n<color=#00FF00>Gain 2 Food</color>",
+                    "text": "The inside of the cart is surprisingly plush, with pillows on the seats and everything. In the back is what seems to be a picnic basket covered in an embroidered cloth. As you lift the cloth, the smell of fresh cheese and warm bread makes your mouth water. You snatch the basket and run.\n\n<color=#00FF00>Gain 1 Food</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 1,
-                            "effectValB": 2
+                            "effectValB": 1
                         }
                     ],
                     "choiceNum": 0,
@@ -1552,7 +1552,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 1,
-                            "checkVal": 3,
+                            "checkVal": 5,
                             "successStage": 3,
                             "failStage": 4
                         }
@@ -1574,7 +1574,7 @@
                     "stageId": 4,
                     "title": "Abandoned Cart",
                     "image": "",
-                    "text": "Your foot catches on the jagged ground and you fall over. You throw your hands up in a desperate attempt to sheild yourself. \"Please, didn't mean any harm -\"\nYou glimpse old, patched clothes, battered shoes. Dark skin.\n\"What's that, John?\" someone calls from down the path.\nJohn takes you by the elbow and hauls you to your feet.\n\"Run,\" he hisses. \"Before my master gets here.\"\nThe crunch of footsteps descend towards you down the driveway and you flee.\nOnly later do you stop and think what John risked for you.\n\n<color=#00FF00>Lose 1 Health.</color>",
+                    "text": "Your foot catches on the jagged ground and you fall over. You throw your hands up in a desperate attempt to sheild yourself. \"Please, didn't mean any harm -\"\nYou glimpse old, patched clothes, battered shoes. Dark skin.\n\"What's that, John?\" someone calls from down the path.\nThe man takes you by the elbow and hauls you to your feet.\n\"Run,\" he hisses. \"Before the others get here.\"\nThe crunch of footsteps descend towards you down the driveway and you flee.\n\n<color=#00FF00>Lose 1 Health.</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -1592,7 +1592,7 @@
                     "stageId": 5,
                     "title": "Abandoned Cart",
                     "image": "",
-                    "text": "The cart looks well-kept. You can make out plush pillows inside. It probably belongs to someone rich, someone white. You can't risk setting someone like that against you. You hurry on your way.",
+                    "text": "The cart looks well-kept. It probably belongs to someone rich, someone white. You can't risk setting someone like that against you. You hurry on your way.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
@@ -1609,7 +1609,7 @@
                     "stageId": 0,
                     "title": "Rattlesnake",
                     "image": "",
-                    "text": "While attempting a shortcut across a field, you hear a telltale rattling, buzzing noise from the tall grass. You freeze instantly, looking around. There, a pace from your foot, is a coiled bundle of mottled green scales and lean muscle. The rattlesnake hisses at you, its head swaying slightly back and forth. The rattle comes again, louder, as you try to step to the side. You see those muscles bunching together as if ready to strike.",
+                    "text": "While attempting a shortcut across a field, you hear a rattling, buzzing noise from the tall grass. You freeze instantly, looking around. There, a pace from your foot, is a coiled bundle of mottled green scales and lean muscle. The snake hisses at you, its head swaying slightly back and forth. The rattle comes again, louder, as you try to step to the side. You see those muscles bunching together as if ready to strike.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 1,
@@ -1619,7 +1619,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 1,
-                            "checkVal": 2,
+                            "checkVal": 4,
                             "successStage": 1,
                             "failStage": 2
                         },
@@ -1628,7 +1628,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 0,
-                            "checkVal": 2,
+                            "checkVal": 4,
                             "successStage": 3,
                             "failStage": 4
                         },
@@ -1659,14 +1659,14 @@
                     "stageId": 2,
                     "title": "Rattlesnake",
                     "image": "",
-                    "text": "You leap sideways, but the head comes whipping around, and you feel a sharp, stabbing pain in your ankle. You cry out and try to kick it off, but it's already detached, pulling back into its coils. After an angry hiss, the snake vanishes into the grass in a flicker of green. Your ankle throbs with pain as you hobble through the rest of the field, peering anxiously at every stone and loop of grass before you step.\n\n<color=#FF0000>Lose 1 Health</color>",
+                    "text": "You leap sideways, but the head comes whipping around, and you feel a sharp, stabbing pain in your ankle. You cry out and try to kick it off, but it's already detached, pulling back into its coils. After an angry hiss, the snake vanishes into the grass in a flicker of green. Your ankle throbs with pain as you hobble through the rest of the field, peering anxiously at every stone and loop of grass before you step.\n\n<color=#FF0000>Lose 2 Health</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 0,
-                            "effectValB": -1
+                            "effectValB": -2
                         }
                     ],
                     "choiceNum": 0,
@@ -1695,14 +1695,14 @@
                     "stageId": 4,
                     "title": "Rattlesnake",
                     "image": "",
-                    "text": "You strike out with your heavy, booted foot and hit the snake before it can bite, but the head comes whipping around, and you feel a sharp, stabbing pain in your ankle. You cry out and try to kick it off, but it's already detached, pulling back into its coils. After an angry hiss, the snake vanishes into the grass in a flicker of green. Your ankle throbs with pain as you hobble through the rest of the field, peering anxiously at every stone and loop of grass before you step.\n\n<color=#FF0000>Lose 1 Health</color>",
+                    "text": "You strike out with your heavy, booted foot and hit the snake before it can bite, but the head comes whipping around, and you feel a sharp, stabbing pain in your ankle. You cry out and try to kick it off, but it's already detached, pulling back into its coils. After an angry hiss, the snake vanishes into the grass in a flicker of green. Your ankle throbs with pain as you hobble through the rest of the field, peering anxiously at every stone and loop of grass before you step.\n\n<color=#FF0000>Lose 2 Health</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 0,
-                            "effectValB": -1
+                            "effectValB": -2
                         }
                     ],
                     "choiceNum": 0,
@@ -1737,7 +1737,7 @@
                     "stageId": 0,
                     "title": "River Crossing",
                     "image": "",
-                    "text": "You hear the rush water ahead of you and are surprised to find a river through over a crevace in the road. Peering down into it, you can see that there used to be a bridge here, based on the rotten pilings sticking out of the water, but it's fallen. A makeshift road leads sideways along the river, probably to another bridge further down. If you followed, you'd have to walk all the way there and all the way back to the road. On the other hand, the water looks deep and dangerous, but you might be a strong enough swimmer to make the crossing.",
+                    "text": "You hear the rush water ahead of you and are surprised to find a river through over a crevace in the road. Peering down into it, you can see that there used to be a bridge here, but it's fallen. A makeshift road leads sideways along the river, probably to another bridge further down. If you followed, you'd have to walk all the way there and all the way back to the road. On the other hand, the water looks deep and dangerous, but you might be able to swim across.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 1,
@@ -1785,7 +1785,7 @@
                     "stageId": 2,
                     "title": "River Crossing",
                     "image": "",
-                    "text": "The current pummels you from the side with icy fists. As you near into the raging center, gasping and splashing, an unexpected whirlpool of water sucks onto your legs. You get a desperate gasp of air before you're dragged under, kicking and flailing.\n\nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled a half-mile away from the road, bruised from where the river threw you against the rocky shore. Worse, your bag popped open in the flood and much of your food and a few bottles of medicine got washed away.\n\n<color=#FF0000>Lose 4 Food</color>\n<color=#FF0000>Lose 2 Medicine</color>\n<color=#FF0000>Lose 3 Health</color>",
+                    "text": "The current pummels you from the side with icy fists. As you near into the raging center, gasping and splashing, an unexpected whirlpool of water sucks onto your legs. You get a desperate gasp of air before you're dragged under, kicking and flailing.\n\nLuckily, the river spits you out rather than pulling you to a watery death. You find yourself sprawled a half-mile away from the road, bruised from where the river threw you against the rocky shore. Worse, your bag popped open in the flood and some of your food was washed away.\n\n<color=#FF0000>Lose 4 Food</color>\n<color=#FF0000>Lose 2 Health</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -1797,14 +1797,8 @@
                         {
                             "effectType": 2,
                             "effectOperation": "c",
-                            "effectValA": 2,
-                            "effectValB": -2
-                        },
-                        {
-                            "effectType": 2,
-                            "effectOperation": "c",
                             "effectValA": 0,
-                            "effectValB": -3
+                            "effectValB": -2
                         }
                     ],
                     "choiceNum": 0,
@@ -1821,8 +1815,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 5
+                            "effectValA": 2,
+                            "effectValB": 0
                         }
                     ],
                     "choiceNum": 0,
@@ -1839,7 +1833,7 @@
                     "stageId": 0,
                     "title": "Bucking Horse",
                     "image": "",
-                    "text": "You hear a frenzied nickering and neighing on the path ahead and see a woman on the back of a bucking horse. She spots you and yells for help. 'He's gone mad! Spooked! Please help me!' She drops the reins and seizes the stomping, angry horse around the neck to keep from falling as her saddle slips and slides.",
+                    "text": "You hear a frenzied nickering and neighing on the path ahead and see a woman on the back of a bucking horse. She spots you and yells for help. \"He's gone mad! Spooked! Please help me!\" She drops the reins and seizes the stomping, angry horse around the neck to keep from falling as her saddle slips and slides.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 2,
@@ -1869,7 +1863,7 @@
                     "stageId": 1,
                     "title": "Bucking Horse",
                     "image": "",
-                    "text": "You grab the fallen reins that flop like dead snakes on the horse's neck. \"Whoa!\" You pull on the reins to turn its head, putting a hand on its broad, heavy nose. \"Whoa.\"\n\nThe horse shakes its head with a huff of air that blows the scent of stale hay over your face. But it's stopped bucking. The woman buries her head in the horse's mane, forehead shiny with sweat. 'Thank the Lord,' she sighs, and finally sits up. \"He saw a rat or - or some crawling beast and just lost his mind. How can I repay you?\"\n\nYou mumble, \"Money never hurts.\"\n\n<color=#00FF00>Gain 50 Cents.</color>",
+                    "text": "You grab the fallen reins that flop like dead snakes on the horse's neck. \"Whoa!\" You pull on the reins to turn its head, putting a hand on its broad, heavy nose. \"Whoa.\"\n\nThe horse shakes its head with a huff of air that blows the scent of stale hay over your face. But it's stopped bucking. The woman buries her head in the horse's mane, forehead shiny with sweat. \"Thank the Lord,\" she sighs, and finally sits up. \"He saw a rat or - or some crawling beast and just lost his mind. How can I repay you?\"\n\nYou mumble, \"Money never hurts.\"\n\n<color=#00FF00>Gain 50 Cents.\nGain 1 Knowledge.</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -1877,6 +1871,12 @@
                             "effectOperation": "c",
                             "effectValA": 3,
                             "effectValB": 5
+                        },
+                        {
+                            "effectType": 1,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": 1
                         }
                     ],
                     "choiceNum": 0,
@@ -1898,7 +1898,7 @@
                     "stageId": 3,
                     "title": "Bucking Horse",
                     "image": "",
-                    "text": "'Sorry, missus,' you call, dodging around the horse's lethal hooves striking the ground as you dash by. 'I can't!'\n\nThe horse rears up high on its hind legs, jarring the woman off its back. She falls hard on the ground with a cry of pain. 'Bastard!' she screams after you, but you're already out of sight.",
+                    "text": "\"Sorry, missus,\" you call, dodging around the horse's lethal hooves striking the ground as you dash by. \"I can't!\"\n\nThe horse rears up high on its hind legs, jarring the woman off its back. She falls hard on the ground with a cry of pain. \"Bastard!\" she screams after you, but you're already out of sight.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
@@ -2012,7 +2012,7 @@
                         {
                             "checkType": 2,
                             "checkID": 3,
-                            "checkVal": 60,
+                            "checkVal": 50,
                             "successStage": 1,
                             "failStage": 2
                         }
@@ -2047,7 +2047,7 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 1,
+                            "effectValA": 2,
                             "effectValB": 5
                         }
                     ],
@@ -2075,7 +2075,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 1,
-                            "checkVal": 3,
+                            "checkVal": 5,
                             "successStage": 2,
                             "failStage": 3
                         },
@@ -2095,16 +2095,9 @@
                     "stageId": 1,
                     "title": "New Clothes",
                     "image": "",
-                    "text": "Someone could be watching from the window, or someone could walk by on the street. Besides, as long as you're clothed with something, surely you won't draw too much attention.\n\n<color=#FF0000>Lose 1 Acting</color>",
-                    "effectsNum": 1,
-                    "effects": [
-                        {
-                            "effectType": 1,
-                            "effectOperation": "c",
-                            "effectValA": 7,
-                            "effectValB": -1
-                        }
-                    ],
+                    "text": "Someone could be watching from the window, or someone could walk by on the street. Besides, as long as you're clothed with something, surely you won't draw too much attention.",
+                    "effectsNum": 0,
+                    "effects": [],
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
@@ -2113,7 +2106,7 @@
                     "stageId": 2,
                     "title": "Steamboat Crossing",
                     "image": "",
-                    "text": "You may look ragged, but you can still run. From the street, you scope out which of the clothes you think might fit. Then you speed into the yard and yank them off the line. You dash off as quickly as you came. When you're sure the coast is clear and you haven't been followed, you dip into the woods to change. The new clothes feel expensive and snug compared to your old ones, which you abandon in the gap under a fallen tree trunk. You glance at your reflection in a puddle and smooth a few stray strands of hair into place: much less suspicious.\n\n<color=#00FF00>Gain +1 Acting</color>",
+                    "text": "You may look ragged, but you can still run. From the street, you scope out which of the clothes you think might fit. Then you speed into the yard and yank them off the line. You dash off as quickly as you came. When you're sure the coast is clear and you haven't been followed, you dip into the woods to change. The new clothes feel expensive and snug compared to your old ones, which you abandon in the gap under a fallen tree trunk. You glance at your reflection in a puddle and smooth a few stray strands of hair into place: much less suspicious.\n\n<color=#00FF00>Gain 1 Acting</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -2131,16 +2124,9 @@
                     "stageId": 3,
                     "title": "New Clothes",
                     "image": "",
-                    "text": "You've barely approached the clothesline a small girl peeks out at you from behind a tablecloth. She giggles. 'What are you doing?'\n\n'I'm, um. Borrowing some clothes.\n\nShe gives you a big-eyed look, then turns towards the house. 'Mama! Someone is borrowing our clothes!'\n\nYou drop the clothes you're holding as a large, aproned woman storms out of the house, rolling pin in one hand. 'Stealing, more like.'\n\nThe last thing you want is a fight. Rather than risk her getting within rolling- pin reach distance, you flee back to the road.\n\n<color=#FF0000>Lose 1 Acting</color>",
-                    "effectsNum": 1,
-                    "effects": [
-                        {
-                            "effectType": 1,
-                            "effectOperation": "c",
-                            "effectValA": 7,
-                            "effectValB": -1
-                        }
-                    ],
+                    "text": "You've barely approached the clothesline a small girl peeks out at you from behind a tablecloth. She giggles. \"What are you doing?\"\n\n\"I'm, um. Borrowing some clothes.\"\n\nShe gives you a big-eyed look, then turns towards the house. \"Mama! Someone is borrowing our clothes!\"\n\nYou drop the clothes you're holding as a large, aproned woman storms out of the house, rolling pin in one hand. \"Stealing, more like.\"\n\nThe last thing you want is a fight. Rather than risk her getting within rolling- pin reach distance, you flee back to the road.",
+                    "effectsNum": 0,
+                    "effects": [],
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
@@ -2155,7 +2141,7 @@
                     "stageId": 0,
                     "title": "Robber",
                     "image": "",
-                    "text": "You don't hear the man until he has a an arm around your neck and something sharp at your back. You can't tell if it's a knife. 'Give me all your money,' a deep voice growls. You smell the stink of meat on his breath and catch a glimpse of stubble over your shoulder.",
+                    "text": "You don't hear the man until he has a an arm around your neck and something sharp at your back. You can't tell if it's a knife. \"Give me all your money,\" a deep voice growls. You smell the stink of meat on his breath and catch a glimpse of stubble over your shoulder.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 2,
@@ -2203,7 +2189,7 @@
                     "stageId": 2,
                     "title": "Robber",
                     "image": "",
-                    "text": "You lunge suddenly backward, slamming your head into the robber's. Your ears ring and your skull smarts. The man grunts, but his arm only tightens. A burst of pain shoots down your spine as he presses the sharp object deeper. You can feel a trickle of blood run down your back.\n\n'I said hand it over,' he hisses. 'Or I'll leave this black body of yours for the crows to bury.'\n\nYou close your eyes and picture Canada as you pass your purse to him. With a low chuckle, he vanishes into the woods as quickly as he appeared.\n\nShuddering, you count what coin is left, hot blood trickling down your back.\n\n<color=#FF0000>Lose 2 Dollars</color>",
+                    "text": "You lunge suddenly backward, slamming your head into the robber's. Your ears ring and your skull smarts. The man grunts, but his arm only tightens. A burst of pain shoots down your spine as he presses the sharp object deeper. You can feel a trickle of blood run down your back.\n\n\"I said hand it over,\" he hisses. \"Or I'll leave this black body of yours for the crows to bury.\"\n\nYou close your eyes and picture Canada as you pass your purse to him. With a low chuckle, he vanishes into the woods as quickly as he appeared.\n\nShuddering, you count what coin is left, hot blood trickling down your back.\n\n<color=#FF0000>Lose 2 Dollars</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
@@ -2221,14 +2207,14 @@
                     "stageId": 3,
                     "title": "Robber",
                     "image": "",
-                    "text": "Money is precious, but your coins aren't worth dying for. There are some in your pockets that he didn't think of. You close your eyes and picture Canada as you pass your purse to him. He gives a low chuckle and pulls back. You catch a glimpse of scruffy hair and an unshaven face scarred with razor marks before he vanishes into the woods as quickly as he appeared.\nWith a shudder you count what's left as you hurry on your way.",
+                    "text": "Money is precious, but your coins aren't worth dying for. There are some in your pockets that he didn't think of. You close your eyes and picture Canada as you pass your purse to him. He gives a low chuckle and pulls back. You catch a glimpse of scruffy hair and an unshaven face scarred with razor marks before he vanishes into the woods as quickly as he appeared.\nWith a shudder you count what's left as you hurry on your way.\n\n<color=#FF0000>Lose 2 Dollars</color>",
                     "effectsNum": 0,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": -2
+                            "effectValB": -200
                         }
                     ],
                     "choiceNum": 0,
@@ -2298,8 +2284,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 7
+                            "effectValA": 1,
+                            "effectValB": 5
                         }
                     ],
                     "choiceNum": 0,
@@ -2317,7 +2303,7 @@
                             "effectType": 7,
                             "effectOperation": "n",
                             "effectValA": 0,
-                            "effectValB": 5
+                            "effectValB": 7
                         }
                     ],
                     "choiceNum": 0,
@@ -2334,7 +2320,7 @@
                     "stageId": 0,
                     "title": "Beggar",
                     "image": "",
-                    "text": "In a sparsely populated area, you come upon a ragged-looking, thin Black man seated at the edge of the road, an overturned hat in his hands, ugly boils on his face. When he turns his eyes to you, you see they are milky with cataracts. 'Is tha' a traveler?' he croaks. 'Please, can you spare anythin' for an old man in pain?'",
+                    "text": "In a sparsely populated area, you come upon a ragged-looking, thin Black man seated at the edge of the road, an overturned hat in his hands, ugly boils on his face. When he turns his eyes to you, you see they are milky with cataracts. \"Is tha' a traveler?\" he croaks. \"Please, can you spare anythin' for an old man in pain?\"",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 4,
@@ -2382,9 +2368,15 @@
                     "stageId": 1,
                     "title": "Beggar",
                     "image": "",
-                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I have a few coins,' you offer.\n'Anythin',' he says. 'Anythin'.'\nYou hand him 50 cents from your purse.\n'Bless you, traveler,' he croaks, pressing his hands together as if in prayer. 'Bless you.'",
-                    "effectsNum": 1,
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. \"I have a few coins,\" you offer.\n\"Anythin',\" he says. \"Anythin'.\"\nYou hand him 50 cents from your purse.\n\"Bless you, traveler,\" he croaks, pressing his hands together as if in prayer. \"Bless you.\"",
+                    "effectsNum": 2,
                     "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 3,
+                            "effectValB": -50
+                        },
                         {
                             "effectType": 1,
                             "effectOperation": "c",
@@ -2400,14 +2392,20 @@
                     "stageId": 2,
                     "title": "Beggar",
                     "image": "",
-                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I have a bit of food,' you offer.\n'Anythin',' he says. 'Anythin'.'\nYou hand him 2 loaves from your bag.\n'Bless you, traveler,' he croaks, pressing his hands together as if in prayer. 'Bless you.'",
-                    "effectsNum": 1,
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. \"I have a bit of food,\" you offer.\n\"Anythin',\" he says. \"Anythin'.\"\nYou hand him 2 loaves from your bag.\n\"Bless you, traveler,\" he croaks, pressing his hands together as if in prayer. \"Bless you.\"",
+                    "effectsNum": 2,
                     "effects": [
                         {
                             "effectType": 1,
                             "effectOperation": "c",
                             "effectValA": 8,
                             "effectValB": 1
+                        },
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 1,
+                            "effectValB": -2
                         }
                     ],
                     "choiceNum": 0,
@@ -2418,9 +2416,15 @@
                     "stageId": 3,
                     "title": "Beggar",
                     "image": "",
-                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I have a bit of medicine for those sores,' you offer.\n'Anythin',' he says. 'Anythin'.'\nYou hand him a bit of medication from your bag.\n'Bless you, traveler,' he croaks, pressing his hands together as if in prayer. 'Bless you.'",
-                    "effectsNum": 0,
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. \"I have a bit of medicine for those sores,\" you offer.\n\"Anythin',\" he says. \"Anythin'.\"\nYou hand him a bit of medication from your bag.\n\"Bless you, traveler,\" he croaks, pressing his hands together as if in prayer. \"Bless you.\"",
+                    "effectsNum": 2,
                     "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 2,
+                            "effectValB": -2
+                        },
                         {
                             "effectType": 1,
                             "effectOperation": "c",
@@ -2436,16 +2440,9 @@
                     "stageId": 4,
                     "title": "Beggar",
                     "image": "",
-                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. 'I - I can't give anything,' you mumble. 'I'm sorry.'\n'Anythin',' he says. 'Anythin'. Please'\n'I'm sorry,' you say again, pushing past him. 'I can't. I can't.'\nYou hurry down the road with a new heaviness. He reminded you of the elderly back at your former plantation - just as uncared for as he.",
+                    "text": "You feel bad for the poor man, as he hobbles toward you from the edge of the road. \"I - I can't give anything,\" you mumble. \"I'm sorry.\"\n\"Anythin',\" he says. \"Anythin'. Please\"\n\"I'm sorry,\" you say again, pushing past him. \"I can't. I can't.\"\nYou hurry down the road with a new heaviness. He reminded you of the elderly back at your former plantation - just as uncared for as he.",
                     "effectsNum": 0,
-                    "effects": [
-                        {
-                            "effectType": 1,
-                            "effectOperation": "c",
-                            "effectValA": 8,
-                            "effectValB": 1
-                        }
-                    ],
+                    "effects": [],
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
@@ -2454,7 +2451,7 @@
                     "stageId": 5,
                     "title": "Beggar",
                     "image": "",
-                    "text": "You force yourself to look away. You need everything in your bag, which you grip tighter to yourself as you push by him.\n'Please, traveler,' he calls, as you pass by, but you're already hurrying out of his sight.",
+                    "text": "You force yourself to look away. You need everything in your bag, which you grip tighter to yourself as you push by him.\n\"Please, traveler,\" he calls, as you pass by, but you're already hurrying out of his sight.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
@@ -2471,14 +2468,14 @@
                     "stageId": 0,
                     "title": "Mold",
                     "image": "",
-                    "text": "You notice an unpleasant smell eminating from your pack - musty and earthy. Wrinkling your nose, you pull it open. The odor washes over you, and you notice a loaf of your bread is covered in slimy, fuzzy-looking gray mold. Moisture probably leaked in at some point. The bread is unedible. \n\n<color=#FF0000>Lose 2 Food</color>",
+                    "text": "You notice an unpleasant smell eminating from your pack - musty and earthy. Wrinkling your nose, you pull it open. The odor washes over you, and you notice a loaf of your bread is covered in slimy, fuzzy-looking gray mold. Moisture probably leaked in at some point. The bread is unedible. \n\n<color=#FF0000>Lose 5 Food</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 1,
-                            "effectValB": -2
+                            "effectValB": -5
                         }
                     ],
                     "choiceNum": 0,
@@ -2495,14 +2492,14 @@
                     "stageId": 0,
                     "title": "Mouse",
                     "image": "",
-                    "text": "As you take a rest in the shade of a large oak, you reach into your pack for a drink. Your fingers brush a ragged edge. Looking closer, you see that the sack for one of your bags of oats has been gnawed through and nearly the whole bag is missing. The tiny tooth-marks prove it: a mouse got into your bag at some point during the night.\n\n<color=#FF0000>Lose 1 Food</color>",
+                    "text": "As you take a rest in the shade of a large oak, you reach into your pack for a drink. Your fingers brush a ragged edge. Looking closer, you see that the sack for one of your bags of oats has been gnawed through and nearly the whole bag is missing. The tiny tooth-marks prove it: a mouse got into your bag at some point during the night.\n\n<color=#FF0000>Lose 2 Food</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 1,
-                            "effectValB": -1
+                            "effectValB": -2
                         }
                     ],
                     "choiceNum": 0,
@@ -2513,7 +2510,7 @@
         },
         {
             "id": 33,
-            "stageNum": 3,
+            "stageNum": 4,
             "stages": [
                 {
                     "stageId": 0,
@@ -2526,12 +2523,12 @@
                     "choices":[
                         {
                             "buttonText": "Apply medicine",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
+                            "hasCheck": true,
+                            "checkType": 2,
+                            "checkID": 2,
+                            "checkVal": 1,
                             "successStage": 1,
-                            "failStage": 0
+                            "failStage": 3
                         },
                         {
                             "buttonText": "Find a natural remedy",
@@ -2573,12 +2570,30 @@
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
-                } 
+                },
+                {
+                    "stageId": 3,
+                    "title": "Bee Sting",
+                    "image": "",
+                    "text": "Unable to ease the pain, you take a deep breath and continue onwards.\n\n<color=#FF0000>Lose 1 Health</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 2,
+                            "effectOperation": "c",
+                            "effectValA": 0,
+                            "effectValB": -1
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 30
+                }
             ]
         },
         {
             "id": 34,
-            "stageNum": 3,
+            "stageNum": 4,
             "stages": [
                 {
                     "stageId": 0,
@@ -2614,18 +2629,18 @@
                     "stageId": 1,
                     "title": "Hunter's Cache",
                     "image": "",
-                    "text": "The box is mostly empty except for some dust, a hatchet, and, to your delight, some sort of dried meat sealed in a bag and a roll of bandages.\n\n<color=#00FF00>Gain 2 Food</color>\n\n<color=#00FF00>Gain 1 Medicine</color>",
-                    "effectsNum": 1,
+                    "text": "The box is mostly empty except for some dust, a hatchet, and, to your delight, some sort of dried meat sealed in a bag and a roll of bandages.\n\n<color=#00FF00>Gain 2 Food</color>\n<color=#00FF00>Gain 1 Medicine</color>",
+                    "effectsNum": 2,
                     "effects": [
                         {
                             "effectType": 2,
-                            "effectOperation": "a",
+                            "effectOperation": "c",
                             "effectValA": 1,
                             "effectValB": 2
                         },
                         {
                             "effectType": 2,
-                            "effectOperation": "a",
+                            "effectOperation": "c",
                             "effectValA": 2,
                             "effectValB": 1
                         }
@@ -2708,8 +2723,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 2
+                            "effectValA": 1,
+                            "effectValB": 0
                         }
                     ],
                     "choiceNum": 0,
@@ -2735,77 +2750,6 @@
             "stages": [
                 {
                     "stageId": 0,
-                    "title": "Pawpaw Tree",
-                    "image": "",
-                    "text": "In a ravine down the side of the road, you see a broad-leafed tree laden with thig green fruits. You recognize these from home: pawpaws. Healthy and edible, but clambering up and down the ravine might take time.",
-                    "effectsNum": 0,
-                    "effects": [],
-                    "choiceNum": 2,
-                    "choices":[
-                        {
-                            "buttonText": "Gather pawpaws",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 1,
-                            "failStage": 0
-                        },
-                        {
-                            "buttonText": "Continue on the road",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 2,
-                            "failStage": 0
-                        }
-                    ],
-                    "timeBeforeNextEvent": 0
-                },
-                {
-                    "stageId": 1,
-                    "title": "Pawpaw Tree",
-                    "image": "",
-                    "text": "You scramble down into the ravine, slipping and sliding a little, and approach the trees. The pawpaws are fat and ripe. You stuff several into your pack and then return to the road.\n\n<color=#00FF00>Gain 2 Food</color>",
-                    "effectsNum": 2,
-                    "effects": [
-                        {
-                            "effectType": 2,
-                            "effectOperation": "c",
-                            "effectValA": 1,
-                            "effectValB": 2
-                        },
-                        {
-                            "effectType": 7,
-                            "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 2
-                        }
-                    ],
-                    "choiceNum": 0,
-                    "choices": [],
-                    "timeBeforeNextEvent": 30
-                },
-                {
-                    "stageId": 2,
-                    "title": "Pawpaw Tree",
-                    "image": "",
-                    "text": "You don't have time to forage. You continue along the road.",
-                    "effectsNum": 0,
-                    "effects": [],
-                    "choiceNum": 0,
-                    "choices": [],
-                    "timeBeforeNextEvent": 30
-                }
-            ]
-        },
-        {
-            "id": 37,
-            "stageNum": 3,
-            "stages": [
-                {
-                    "stageId": 0,
                     "title": "Hill",
                     "image": "",
                     "text": "While climbing a tall hill, some gravel under your feet gives way. You slip and fall, bashing your knee against ragged stone. Pain blooms in your leg, and you leave behind a smear of blood on the rock as you limp the rest of the way up the hill.\n\n<color=#FF0000>Lose 1 Health</color>",
@@ -2825,7 +2769,7 @@
             ]
         },
         {
-            "id": 38,
+            "id": 37,
             "stageNum": 3,
             "stages": [
                 {
@@ -2868,8 +2812,8 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 7
+                            "effectValA": 1,
+                            "effectValB": 5
                         }
                     ],
                     "choiceNum": 0,
@@ -2890,7 +2834,7 @@
             ]
         },
         {
-            "id": 39,
+            "id": 38,
             "stageNum": 3,
             "stages": [
                 {
@@ -2916,7 +2860,7 @@
                             "hasCheck": true,
                             "checkType": 1,
                             "checkID": 2,
-                            "checkVal": 3,
+                            "checkVal": 4,
                             "successStage": 2,
                             "failStage": 3
                         }
@@ -2962,7 +2906,7 @@
                         {
                             "effectType": 7,
                             "effectOperation": "n",
-                            "effectValA": 1,
+                            "effectValA": 2,
                             "effectValB": 0
                         }
                     ],
@@ -2973,7 +2917,7 @@
             ]
         },
         {
-            "id": 40,
+            "id": 39,
             "stageNum": 4,
             "stages": [
                 {
@@ -2989,7 +2933,7 @@
                             "buttonText": "Buy food",
                             "checkType": 2,
                             "checkID": 3,
-                            "checkVal": 0.25,
+                            "checkVal": 25,
                             "successStage": 2,
                             "failStage": 3
                         },
@@ -3020,20 +2964,20 @@
                     "stageId": 2,
                     "title": "Farm Stand",
                     "image": "",
-                    "text": "You stop by the stand, smiling at her eagerness. \"What's the best of your crop, missus?\"\n\nShe leans forward across the counter so eagerly she nearly falls over it. \"The carrots are great this year, and the cabbage, and cucumber - and -\" She rattles on, and you select a few veggies from the stand and hand over some coins. She waves wildly at you as you walk away. \"Thank you! Thank you!\"\n\n<color=#FF0000>Lose 25 Cents</color> \n\n<color=#00FF00>Gain 4 Food</color>",
+                    "text": "You stop by the stand, smiling at her eagerness. \"What's the best of your crop, missus?\"\n\nShe leans forward across the counter so eagerly she nearly falls over it. \"The carrots are great this year, and the cabbage, and cucumber - and -\" She rattles on, and you select a few veggies from the stand and hand over some coins. She waves wildly at you as you walk away. \"Thank you! Thank you!\"\n\n<color=#FF0000>Lose 25 Cents</color> \n\n<color=#00FF00>Gain 2 Food</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 3,
-                            "effectValB": -0.25
+                            "effectValB": -25
                         },
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 1,
-                            "effectValB": 4
+                            "effectValB": 2
                         }
                     ],
                     "choiceNum": 0,
@@ -3044,7 +2988,7 @@
                     "stageId": 3,
                     "title": "Farm Stand",
                     "image": "",
-                    "text": "You stop at the stand, but the prices are too high and you shake your head. \"Sorry, miss. Not enough coin.\"\n\nShe blows a disappointed raspberry and crosses her scrawny arms. You smile apologetically and continue on your way.",
+                    "text": "You stop at the stand, but the prices are too high and you shake your head. \"Sorry, miss. Don't have enough.\"\n\nShe blows a disappointed raspberry and crosses her scrawny arms. You smile apologetically and continue on your way.",
                     "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 0,
@@ -3054,51 +2998,26 @@
             ]
         },
         {
-            "id": 41,
+            "id": 40,
             "stageNum": 1,
             "stages": [
                 {
                     "stageId": 0,
                     "title": "Ants",
                     "image": "",
-                    "text": "You feel a prickling at the back of your neck and swipe at it. A tiny black insect falls off. With horror, you realize it came from your bag. You pull it off your back with a shudder and open your bag. One of your containers is swarming with ants. You snatch it out and toss it into the woods, spraying bugs as it bounces a few times across the ground.\n\n<color=#FF0000>Lose 2 Food</color>",
+                    "text": "You feel a prickling at the back of your neck and swipe at it. A tiny black insect falls off. With horror, you realize it came from your bag. You pull it off your back with a shudder and open your bag. One of your containers is swarming with ants. You snatch it out and toss it into the woods, spraying bugs as it bounces a few times across the ground.\n\n<color=#FF0000>Lose 4 Food</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
                             "effectOperation": "c",
                             "effectValA": 1,
-                            "effectValB": -2
+                            "effectValB": -4
                         }
                     ],
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 30
-                }
-            ]
-        },
-        {
-            "id": 42,
-            "stageNum": 1,
-            "stages": [
-                {
-                    "stageId": 0,
-                    "title": "Investigators",
-                    "image": "",
-                    "text": "A sharp blind corner in the road brings you face-to-face with two well-dressed men riding a pair of glossy horses. Compared to the normal travelers - poor whites, servants, farmers in tattered clothes - these two are out of place. From their long, clean coats, silk ties, and polished leather riding shoes, you can tell that they're wealthy. Probably landowners. Probably masters. You back up, but one of the men is already dismounting. \n\nOne of the men removes his hat. \"Greetings, friend,\" he says, in a way that tells you he is not your friend, nor perhaps anyone's. Your eyes fall on a pistol at his belt. \"We have a few questions for you.\"",
-                    "effectsNum": 0,
-                    "effects": [],
-                    "choiceNum": 2,
-                    "choices":[
-                        {
-                            "checkType": 2,
-                            "checkID": 3,
-                            "checkVal": 0.25,
-                            "successStage": 3,
-                            "failStage": 4
-                        }
-                    ],
-                    "timeBeforeNextEvent": 0
                 }
             ]
         },
