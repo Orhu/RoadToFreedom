@@ -171,6 +171,9 @@ public class DynamicEventHandler : MonoBehaviour {
     public static void ResetMasterPool() {
         masterPool.Clear();
     }
+    public static void ResetCalledPool() {
+        calledEvents.Clear();
+    }
 
     public static void ResetSetPool(int poolNum) {
         switch (poolNum) {
@@ -251,8 +254,36 @@ public class DynamicEventHandler : MonoBehaviour {
                 break;
             case 40:
                 break;
+            case 41:
+                calledEvents.Add(eventID);
+                break;
+            case 95:
+            case 96:
+            case 97:
+            case 98:
+                break;
             case 99:
-                // RestoreEvent();
+                RestoreEvent();
+                break;
+            case 116:
+            case 117:
+            case 118:
+            case 119:
+                break;
+            case 120:
+            case 121:
+            case 122:
+            case 123:
+            case 124:
+            case 125:
+            case 126:
+            case 127:
+                calledEvents.Add(eventID);
+                break;  
+            case 128:
+            case 129:
+            case 130:
+            case 131:
                 break;
             default:
                 Debug.LogWarning($"Attempted to dynamically load invalid eventID: {eventID}");
@@ -296,6 +327,13 @@ public class DynamicEventHandler : MonoBehaviour {
                 break;
         }
         UpdatePools();
+    }
+
+    private static void RestoreEvent() {
+        var rng = new System.Random();
+        int pickVal = rng.Next(0,calledEvents.Count);
+        calledEvents.RemoveAll(id => id == calledEvents[pickVal]);
+        AddEventToPool(calledEvents[pickVal]);
     }
 
     private static int PickEvent() {

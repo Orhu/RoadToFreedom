@@ -24,6 +24,7 @@ public class GameOverUI : MonoBehaviour {
         gameObject.SetActive(false);
         SlaveCatcher.Restart();
         DynamicEventHandler.ResetMasterPool();
+        DynamicEventHandler.ResetCalledPool();
         Trail.Restart();
         CharacterStats.Restart(false);
     }
@@ -32,6 +33,7 @@ public class GameOverUI : MonoBehaviour {
         gameObject.SetActive(false);
         SlaveCatcher.Restart();
         DynamicEventHandler.ResetMasterPool();
+        DynamicEventHandler.ResetCalledPool();
         Trail.Restart();
         CharacterStats.Restart(true);
     }

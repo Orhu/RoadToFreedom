@@ -40,7 +40,7 @@ public class Trail : MonoBehaviour {
                 length = 90f;
                 traits = new string[]{"hard"};
                 timeToNextEvent = 15;
-                DynamicEventHandler.AddEventToPool(new int[]{27,30,36});
+                DynamicEventHandler.AddEventToPool(new int[]{27,30,36,41});
                 return;
             case 3: // marathon
                 length = 120f;
