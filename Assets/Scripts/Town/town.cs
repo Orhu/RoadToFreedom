@@ -30,6 +30,14 @@ public class town : MonoBehaviour
         SceneController.LoadTrail();
     }
 
+    public static void continueDetroit(){
+        SceneController.Load();
+    }
+
+    public static void continueCanada(){
+        
+    }
+
     // Prevent infinite money gen from friend
     public static void plantationFriend(){
         if (friend == true){
