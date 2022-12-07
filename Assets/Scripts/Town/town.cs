@@ -10,6 +10,8 @@ public class town : MonoBehaviour
 {
     private static eventHandler _event;
 
+    public static bool friend = true;
+
     // Text GameObjects
     // [SerializeField] TMP_Text shopButtonText;
 
@@ -25,6 +27,14 @@ public class town : MonoBehaviour
     // Closes out town and continues journey
     public static void continueJourney(){
         SceneController.LoadTrail();
+    }
+
+    // Prevent infinite money gen from friend
+    public static void plantationFriend(){
+        if (friend == true){
+            //openShop(102);
+            friend = false;
+        }
     }
 
 
