@@ -258,6 +258,7 @@ public class DynamicEventHandler : MonoBehaviour {
                 Debug.LogWarning($"Attempted to dynamically load invalid eventID: {eventID}");
                 return;
         }
+        World.LoadEvent(eventID);
 
         UpdatePools();
     }
