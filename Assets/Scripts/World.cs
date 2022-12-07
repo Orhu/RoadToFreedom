@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class World : MonoBehaviour {
     public static float time {get; private set;} = 6.0f;
-    //public static string weather {get; private set;} = "clear"; cut weather
     public static string timeOfDay {get; private set;} = "morning";
 
     public static void TickTime() {
