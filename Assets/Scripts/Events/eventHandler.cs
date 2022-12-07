@@ -107,6 +107,8 @@ public class eventHandler : MonoBehaviour
 
     private World _world; 
 
+    private int closeAction = -1;
+
     void Start() {
         // Reads in json and stores in an object that will be accessed to get events
         allEvents = JsonUtility.FromJson<EventCollection>(eventJson.text);
@@ -263,6 +265,9 @@ public class eventHandler : MonoBehaviour
                         float timeToSkip = s.effects[i].effectValA + s.effects[i].effectValB/10f;
                         World.TimeSkip(timeToSkip);
                         break;
+                    case 8: // close action
+                        closeAction = s.effects[i].effectValA;
+                        break;
                 }
             }
         }
@@ -326,5 +331,9 @@ public class eventHandler : MonoBehaviour
 
     public void HideEvent() {
         gameObject.SetActive(false);
+        if (closeAction != -1) {
+            SceneController.ProcessCloseAction(closeAction);
+            closeAction = -1;
+        }
     }
 }

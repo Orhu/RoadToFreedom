@@ -16,6 +16,8 @@ public class SceneController : MonoBehaviour {
     private static Trail _trail;
     private static GameOverUI _gameOver;
     private static CharacterBuilderUI _characterBuilder;
+
+    public static int destinationNum = -1;
     
     void Awake() {
         resourcesUIObject = GameObject.Find("ResourceCounterUI");
@@ -91,6 +93,10 @@ public class SceneController : MonoBehaviour {
         }
     }
 
+    public static void SetDestination(int destNum) {
+        destinationNum = destNum;
+    }
+
     public static void LoadTrail() {
         GameObject townObj = GameObject.Find("TownUI");
         if (townObj != null)
@@ -139,5 +145,16 @@ public class SceneController : MonoBehaviour {
         UpdateGameState(GameState.CHARACTER_BUILDER);
         _characterBuilder.ReopenCharacterBuilder();
         StartCoroutine(AwaitCharacter());
+    }
+
+    public static void ProcessCloseAction(int closeAction) {
+        switch (closeAction) {
+            case 0: // general town entry
+                LoadTown(Trail.trailNum);
+                return;
+            case 1: // transition to marathon/detroit
+                LoadTrail();
+                return;
+        }
     }
 }

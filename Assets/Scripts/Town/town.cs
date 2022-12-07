@@ -29,6 +29,10 @@ public class town : MonoBehaviour
     public static void continueJourney(){
         SceneController.LoadTrail();
     }
+    public static void SetFinalDestination(int destNum) { // 0 = trail, 1 = city
+        SceneController.SetDestination(destNum);
+        SceneController.LoadTrail();
+    }
 
     public static void continueDetroit(){
         SceneController.LoadTrail();

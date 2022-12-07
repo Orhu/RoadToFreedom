@@ -16,7 +16,7 @@ public class SlaveCatcher : MonoBehaviour {
     private static float scProgress = 0f;
     private static float scCurrentTrailLength = 0f;
     private static float[] scTrailLengths = new float[]{45f, 60f, 90f, 90f, 120f, 15f};
-    private static int scTrailNum = 0;
+    public static int scTrailNum = 0;
 
     //public static float getCaughtChance = 0f;
 
@@ -44,12 +44,20 @@ public class SlaveCatcher : MonoBehaviour {
 
                 if (scTrailNum == Trail.trailNum) {
                     if (scProgress >= Trail.progress)
-                        CatchPlayer();
+                        ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                 }
 
                 if (scCurrentTrailLength <= scProgress) {
                     scTrailNum++;
-                    ArriveInTown();
+
+                    if (scTrailNum == 4) {
+                        if (Trail.trailNum == 5) {
+                            scTrailNum = 5;
+                        }
+                        EmbarkToTrail();
+                    } else {
+                        ArriveInTown();
+                    }
                 }
             }
 
@@ -72,6 +80,18 @@ public class SlaveCatcher : MonoBehaviour {
     public static void AdvanceTime(float timeAdvance) { // maybe this works. feels like it won't!
         // for skipping time forward
         if (active) {
+            if(timeAdvance == 24f) {
+                if (scState == SlaveCatcherState.INVESTIGATING_TOWN) {
+                    currentStallTime = 0f;
+                }
+                else if (scState == SlaveCatcherState.ON_TRAIL) {
+                    if (scProgress + scSpeed * 24f >= scCurrentTrailLength) {
+                        scProgress = scCurrentTrailLength;
+                    } else {
+                        scProgress += scSpeed * 24f;
+                    }
+                }
+            }
             if (scState == SlaveCatcherState.FINDING_PLAYER) {
                 CatchPlayer();
                 //SearchForPlayer();
@@ -121,7 +141,7 @@ public class SlaveCatcher : MonoBehaviour {
     public static void CatchPlayer() {
         // trigger slave catcher event depending on the game state
         Debug.Log("You Are Caught");
-        SceneController.GameOver(false, "You were caught by slave catchers.");
+        World.LoadEvent(96);
     }
 
     public static void ResetSlaveCatchers(int resetType) { // 0 = trail, 1 = full (for game overs)

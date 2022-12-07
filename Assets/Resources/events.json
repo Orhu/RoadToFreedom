@@ -4876,8 +4876,15 @@
                     "title": "Entering Wapakoneta",
                     "image": "",
                     "text": "The tiny farmhouses and shanties dotting the land gradually begin to cluster into small residential areas. Travel carriages clip-clop by you. Soon, you can see the church spires of Wapakoneta ahead, nestled between great rolling farm fields. A bridge over the Auglaize River leads you onto the wide main street, first past houses and then shops, restaurants, and a <color=#00FFFF>doctor's office</color>. The air reeks of the horses that pull carts and carriages to and from <color=#00FFFF>a livery at the road's end,</color>, <color=#00FFFF>a newspaper boy</color>waves his papers from the middle of the street, and throaty laughter drifts from the open windows of <color=#00FFFF>a saloon inn</color> across the way. After the silence of the woods, the noise is a shock. You stand there for a moment just to take it in.",
-                    "effectsNum": 0,
-                    "effects": [],
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 8,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        }
+                    ],
                     "choiceNum": 0,
                     "choices": [],
                     "timeBeforeNextEvent": 10
@@ -4893,8 +4900,15 @@
                     "title": "Entering Troy",
                     "image": "",
                     "text": "Pausing at the top of one of the rolling hills that dot the landscape, you see from afar the town of Troy clustered around the Great Miami River that lays like a thick snake through the center. You pick your way down to the main road, amazed at the number of buildings. The steeples of several churches jut into the sky, the post office is bustling with locals, and wooden clattering from the <color=#00FFFF>lumber yard</color> drifts down. People talk and laugh loudly, shoving past you on the street as if you weren't even there. Down the road you can see a <color=#00FFFF>a small in</color>, probably cheap, the local <color=#00FFFF>general store</color>, and at least two <color=#00FFFF>doctor's offices</color>.",
-                    "effectsNum": 0,
-                    "effects": [],
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 8,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        }
+                    ],
                     "choiceNum": 0,
                     "choices": [],
                     "timeBeforeNextEvent": 10
@@ -4910,8 +4924,15 @@
                     "title": "Entering Bowling Green",
                     "image": "",
                     "text": "It feels generous to call the main street of Bowling Green a downtown. A few horses pull carriages along the road, kicking up dust that sends the few passerby into coughing fits. The post office has a line of only a few people clutching packages. A farmer holding a fresh cut of meat leaves the <color=#00FFFF>butcher shop</color> across the street; an old woman argues with a shopkeep in the front door of the <color=#00FFFF>general store</color>. Further off, muffled <color=#00FFFF>church</color> organ music swells. A stumpy brick building at the end of the street looks to be a <color=#00FFFF>local inn</color>. None of the sleepy-looking people walking by give you a second glance.",
-                    "effectsNum": 0,
-                    "effects": [],
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 8,
+                            "effectOperation": "n",
+                            "effectValA": 0,
+                            "effectValB": 0
+                        }
+                    ],
                     "choiceNum": 0,
                     "choices": [],
                     "timeBeforeNextEvent": 10
@@ -4927,8 +4948,15 @@
                     "title": "Entering Detroit",
                     "image": "",
                     "text": "Detroit sprawls like a lumpy blanket across the land. Buildings taller than any you've seen press their ceilings against the sky, boasting stonework facades finer than that of the fanciest churches back home. Smog belches from the smokestacks of boats and factories alike along the banks of the Detroit River. Horse-drawn carriages speed by with barely a thought, leaving you to dodge the spray of dirt and pounding hooves. Shopkeepers shout their wares from beneath fabric awnings along the wide boulevards; pedestrians curse at the reckless carriages and yell to one another.You've never seen so many people in one place, and you find yourself slack-jawed as the crowds jostle and push you. You shake yourself. Somehow, in this massive city, <color=#00FFFF>you must find your way to the ferry.</color>",
-                    "effectsNum": 0,
-                    "effects": [],
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 8,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
                     "choiceNum": 0,
                     "choices": [],
                     "timeBeforeNextEvent": 10
@@ -5653,7 +5681,7 @@
             "stages": [
                 {
                     "stageId": 0,
-                    "title": "City Ending",
+                    "title": "Exhaustion",
                     "image": "",
                     "text": "The tall stone buildings that seemed so impressive when you entered now loom over you like thousand-eyed crows. Through the haze of your exhaustion, the sounds of conversation and the clatter of horse-hooves and wheels distort and echo in your head. Your legs burn, and your heavy bag sags off your worn, tired frame. You lean against the side of a steeple-like tower to catch your breath and look up into the sky. The tower's tip seems to sway against the smoggy sky. Dizzy, <color=#00FFFF>you sink down the wall to the cold, grimy sidewalk.</color> You close your eyes and try to picture Canada, its great pines and free peoples tilling the rich, cold soil, Black people like you, in homes and bodies they themselves own. But the image wavers and fades in your mind's eye <color=#00FFFF>until all you see is blackness.</color>",
                     "effectsNum": 0,
@@ -5694,6 +5722,31 @@
                     "timeBeforeNextEvent": 0
                 }
             ]
+        },
+        {
+            "id": 131,
+            "stageNum": 1,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Onward to Freedom",
+                    "image": "",
+                    "text": "You've reached the final stretch. Freedom is calling to you.\n\n<color=#FF00FF>You have reached the final trail. When you complete this trail, you will have reached the end of the game. Good luck.</color>",
+                    "effectsNum": 1,
+                    "effects": [
+                        {
+                            "effectType": 8,
+                            "effectOperation": "n",
+                            "effectValA": 1,
+                            "effectValB": 0
+                        }
+                    ],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 0
+                }
+            ]
+            
         }
     ]
 }
