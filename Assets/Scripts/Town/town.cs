@@ -35,6 +35,9 @@ public class town : MonoBehaviour
             openShop(102);
             friend = false;
         }
+        else{
+            Debug.Log("Friend already visited.");
+        }
     }
 
 
