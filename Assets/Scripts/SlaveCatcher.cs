@@ -120,6 +120,7 @@ public class SlaveCatcher : MonoBehaviour {
 
     public static void CatchPlayer() {
         // trigger slave catcher event depending on the game state
+        Debug.Log("You Are Caught");
         SceneController.GameOver(false, "You were caught by slave catchers.");
     }
 
