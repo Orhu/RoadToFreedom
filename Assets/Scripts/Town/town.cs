@@ -31,11 +31,11 @@ public class town : MonoBehaviour
     }
 
     public static void continueDetroit(){
-        SceneController.Load();
+        SceneController.LoadTrail();
     }
 
     public static void continueCanada(){
-        
+        SceneController.LoadTrail();
     }
 
     // Prevent infinite money gen from friend
