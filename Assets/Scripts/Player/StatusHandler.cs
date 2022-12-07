@@ -30,9 +30,9 @@ public class Status {
 }
 
 public class StatusHandler : MonoBehaviour {
+    [SerializeField] TextAsset statusJson;
     private static StatusCollection allStatuses;
     void Start() {
-        var statusJson = Resources.Load<TextAsset>("statuses");
         allStatuses = JsonUtility.FromJson<StatusCollection>(statusJson.text);
     }
     

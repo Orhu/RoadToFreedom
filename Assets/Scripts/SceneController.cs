@@ -77,6 +77,9 @@ public class SceneController : MonoBehaviour {
             case 3:
                 SceneManager.LoadScene("Town3", LoadSceneMode.Additive);
                 return;
+            case 4:
+                GameOver(true, "You have reached Canada! Congratulations!");
+                return;
             default:
                 Debug.LogError($"Attempted to load invalid town: {townNum}");
                 return;

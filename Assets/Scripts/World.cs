@@ -103,26 +103,26 @@ public class World : MonoBehaviour {
             return;
         } else if ((oldTime > 0f && oldTime < 5.9f) && newTime >= 5.9f) { // look out for sleep event here too
             if (CharacterStats.GetResource(1) >= 1) {
-                LoadEvent(1);
+                DynamicEventHandler.LoadEvent(1);
                 return;
             } else {
-                LoadEvent(2);
+                DynamicEventHandler.LoadEvent(2);
                 return;
             }
         } else if ((oldTime > 6f && oldTime < 12f) && newTime >= 12f) {
             if (CharacterStats.GetResource(1) >= 1) {
-                LoadEvent(3);
+                DynamicEventHandler.LoadEvent(3);
                 return;
             } else {
-                LoadEvent(4);
+                DynamicEventHandler.LoadEvent(4);
                 return;
             }
         } else if ((oldTime > 12f && oldTime < 18f) && newTime >= 18f) {
             if (CharacterStats.GetResource(1) >= 1) {
-                LoadEvent(5);
+                DynamicEventHandler.LoadEvent(5);
                 return;
             } else {
-                LoadEvent(6);
+                DynamicEventHandler.LoadEvent(6);
                 return;
             }
         }

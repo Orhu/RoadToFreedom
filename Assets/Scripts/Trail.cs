@@ -24,33 +24,36 @@ public class Trail : MonoBehaviour {
             case 0: // trail from start to town 1
                 length = 45f;
                 traits = new string[]{"easy"};
-                timeToNextEvent = 10;
+                timeToNextEvent = 15;
+                DynamicEventHandler.AddEventToPool(new int[]{7,8,13,14,17,20,35});
                 return;
             case 1: // trail from town 1 to town 2
                 length = 60f;
                 traits = new string[]{"medium"};
-                timeToNextEvent = 10;
+                timeToNextEvent = 15;
+                DynamicEventHandler.AddEventToPool(new int[]{19,21,22,23,24,26,29,33,34,39});
                 SlaveCatcher.Activate();
                 return;
             case 2: // trail from town 2 to town 3
                 length = 90f;
-                traits = new string[]{"medium"};
-                timeToNextEvent = 10;
-                return;
-            case 3: // trail from town 3 to final challenge
-                length = 90f;
                 traits = new string[]{"hard"};
-                timeToNextEvent = 10;
+                timeToNextEvent = 15;
+                DynamicEventHandler.AddEventToPool(new int[]{27,30,36});
+                return;
+            case 3: // marathon
+                length = 120f;
+                traits = new string[]{"marathon"};
+                timeToNextEvent = 15;
                 return;
             case 4: // marathon final challenge
                 length = 120f;
                 traits = new string[]{"marathon"};
-                timeToNextEvent = 10;
+                timeToNextEvent = 15;
                 return;
             case 5: // city final challenge
                 length = 15f;
                 traits = new string[]{"city"};
-                timeToNextEvent = 10;
+                timeToNextEvent = 15;
                 return;
         }
     }
@@ -75,7 +78,7 @@ public class Trail : MonoBehaviour {
             // next event countdown
             if (timeToNextEvent <= 0 && SceneController.gameState == GameState.ON_TRAIL) {
                 Debug.Log("Loading Random Event");
-                World.LoadRandomEvent();
+                DynamicEventHandler.LoadEvent();
             }
         }
         // go again
