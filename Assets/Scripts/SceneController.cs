@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour {
     
     private static eventHandler _event;
     private static Trail _trail;
+    private static GameOverUI _gameOver;
+    private static CharacterBuilderUI _characterBuilder;
     
     void Awake() {
         resourcesUIObject = GameObject.Find("ResourceCounterUI");
@@ -25,10 +27,13 @@ public class SceneController : MonoBehaviour {
         SceneManager.LoadScene("event", LoadSceneMode.Additive);
 
         _trail = GameObject.Find("Trail Manager").GetComponent<Trail>();
+        _gameOver = GameObject.Find("Game Over UI").GetComponent<GameOverUI>();
+        _gameOver.gameObject.SetActive(false);
     }
 
     void Start() {
         _event = GameObject.Find("eventUI").GetComponent<eventHandler>();
+        _characterBuilder = GameObject.Find("CharacterBuilderUI").GetComponent<CharacterBuilderUI>();
     }
 
     public static void CharacterBuilderComplete() {
@@ -59,11 +64,11 @@ public class SceneController : MonoBehaviour {
         Debug.Log("Character Building Complete!");
 
         LoadTown(0);
-        resourcesUIObject.SetActive(true);
     }
 
     public static void LoadTown(int townNum) {
         UpdateGameState(GameState.IN_TOWN);
+        resourcesUIObject.SetActive(true);
         switch (townNum) {
             case 0:
                 SceneManager.LoadScene("Plantation", LoadSceneMode.Additive);
@@ -89,7 +94,7 @@ public class SceneController : MonoBehaviour {
     public static void LoadTrail() {
         GameObject townObj = GameObject.Find("TownUI");
         if (townObj != null)
-            Destroy(townObj);
+            SceneManager.UnloadSceneAsync(Trail.trailNum+3);
         UpdateGameState(GameState.ON_TRAIL);
         _trail.StartTrail();
 
@@ -112,6 +117,27 @@ public class SceneController : MonoBehaviour {
 
     public static void GameOver(bool isWin, string message) {
         // TO DO
+        // show game over screen
+        if (gameState == GameState.IN_TOWN) {
+            GameObject townObj = GameObject.Find("TownUI");
+            if (townObj != null)
+                SceneManager.UnloadSceneAsync(Trail.trailNum+3);
+        }
+        UpdateGameState(GameState.GAME_OVER);
+
+        resourcesUIObject.SetActive(false);
+        gameUIObject.SetActive(false);
+
+        _gameOver.gameObject.SetActive(true);
+        _gameOver.FillScreen(isWin, message);
+
         Debug.Log($"GAME OVER! WIN = {isWin}, {message}");
+    }
+
+    public void RebuildCharacter() {
+        characterBuilt = false;
+        UpdateGameState(GameState.CHARACTER_BUILDER);
+        _characterBuilder.ReopenCharacterBuilder();
+        StartCoroutine(AwaitCharacter());
     }
 }
