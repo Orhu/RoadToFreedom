@@ -142,4 +142,14 @@ public class SlaveCatcher : MonoBehaviour {
         Debug.Log($"Changing SC State from {scState} to {newSCState}");
         scState = newSCState;
     }
+
+    public static void Restart(){
+        scProgress = 0f;
+        scTrailNum = 0;
+        currentStallTime = 0f;
+        latestLocation = -1;
+        scCurrentTrailLength = 0f;
+        townStallTimes = new float[]{48f, 48f, 48f, 48f};
+        Deactivate();
+    }
 }

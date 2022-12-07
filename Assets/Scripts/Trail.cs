@@ -11,11 +11,13 @@ public class Trail : MonoBehaviour {
     public static string[] traits {get; private set;} // trail traits
 
     private static int timeToNextEvent = 10;
+    private static bool running = false;
 
     public void StartTrail() {
         progress = 0f;
         InitializeTrail();
-        if (trailNum == 0)
+        if (!running)
+            running = true;
             StartCoroutine(TrailUpdate());
     }
 
@@ -94,5 +96,11 @@ public class Trail : MonoBehaviour {
 
     public static void EndTrail() {
         SceneController.LoadTown(trailNum);
+    }
+
+    public static void Restart() {
+        trailNum = 0;
+        timeToNextEvent = 10;
+        progress = 0f;
     }
 }

@@ -32,6 +32,7 @@ public class CharacterBuilderUI : MonoBehaviour {
     [SerializeField] TMP_Text[] minorStatImbalanceText;
 
     void Start() {
+        Debug.Log("opening character builder");
         Refresh();
     }
     
@@ -254,6 +255,11 @@ public class CharacterBuilderUI : MonoBehaviour {
 
     public void OnDone() {
         CharacterSheet.FillCharacterSheet(pName, pJob, new int[] {statBody, statMind, statSoul}, minorStatScores);
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
+    }
+
+    public void ReopenCharacterBuilder() {
+        this.gameObject.SetActive(true);
+        Refresh();
     }
 }

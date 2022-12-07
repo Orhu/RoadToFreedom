@@ -29,13 +29,16 @@ public class CharacterStats : MonoBehaviour
         _gameUI = GetComponent<GameUI>();
     }
 
-    public static void Setup() { //Sets Initial health to the player based on their vitality
+    public static void Setup() { //Sets Initial health to the player based on their vitality and set resources to 0
         maxHealth = 2 + CharacterSheet.GetStat(6) - healthAug;
         health = maxHealth;
         moveSpeed = 2.5f + (0.5f * Utilities.GetBonus(CharacterSheet.GetStat(1)));
         if(health < 1){ //If vitality is 0, we assign them the minimum amount of health
             health = 1;
         }
+        food = 0;
+        medicine = 0;
+        money = 0;
         _gameUI.RefreshCounters(food, medicine, money, health);
     }
 
@@ -134,5 +137,18 @@ public class CharacterStats : MonoBehaviour
         }
         moveSpeed = 2.5f + (0.5f * Utilities.GetBonus(CharacterSheet.GetStat(1)));
         _gameUI.RefreshCounters(food, medicine, money, health);
+    }
+
+    public static void Restart(bool isHardReset) {
+        // clear statuses
+        statusDictionary.Clear();
+        StatStatusRefresh();
+
+        if (isHardReset) {
+            GameObject.Find("Scene Controller").GetComponent<SceneController>().RebuildCharacter();
+        } else {
+            Setup();
+            SceneController.LoadTown(Trail.trailNum);
+        }
     }
 }
