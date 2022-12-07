@@ -16,10 +16,12 @@ public class Trail : MonoBehaviour {
     public void StartTrail() {
         progress = 0f;
         InitializeTrail();
-        if (!running)
+        if (!running) {
             running = true;
             StartCoroutine(TrailUpdate());
+        }
     }
+    
 
     private void InitializeTrail() {
         switch (trailNum) {
@@ -56,6 +58,8 @@ public class Trail : MonoBehaviour {
                 length = 15f;
                 traits = new string[]{"city"};
                 timeToNextEvent = 15;
+                DynamicEventHandler.ResetMasterPool();
+                DynamicEventHandler.AddEventToPool(new int[]{120,121,122,123,124,125,126,127});
                 return;
         }
     }
@@ -71,8 +75,7 @@ public class Trail : MonoBehaviour {
 
             // end trail check
             if (progress >= length) {
-                trailNum++;
-                EndTrail();
+                EndTrail();                
             }
 
             SlaveCatcher.TickTime();
@@ -95,7 +98,32 @@ public class Trail : MonoBehaviour {
     }
 
     public static void EndTrail() {
-        SceneController.LoadTown(trailNum);
+        if (trailNum == 3) {
+            trailNum = 4 + SceneController.destinationNum;
+            if (trailNum == 4) {
+                World.LoadEvent(132); // enter marathon
+            } else if (trailNum == 5) {
+                World.LoadEvent(119); // enter detroit
+            }
+        }
+        else if (trailNum == 4) {
+            World.LoadEvent(131); // trail ending
+        } else if (trailNum == 5) {
+            World.LoadEvent(128); // boat ending
+        } else {
+            switch (trailNum) {
+                case 0:
+                    World.LoadEvent(116);
+                    break;
+                case 1:
+                    World.LoadEvent(117);
+                    break;
+                case 2:
+                    World.LoadEvent(118);
+                    break;
+            }
+            trailNum++;
+        }
     }
 
     public static void Restart() {

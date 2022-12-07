@@ -52,6 +52,8 @@ public class CharacterStats : MonoBehaviour
                 return medicine;
             case 3:
                 return money;
+            case 4:
+                return maxHealth + healthAug;
             default:
                 Debug.LogWarning($"Attempting to get unknown resource: {resourceNum}");
                 return 0;
@@ -65,7 +67,11 @@ public class CharacterStats : MonoBehaviour
             health = maxHealth;
         }
         if (health <= 0) {
-            SceneController.GameOver(false, "You have become too weak to continue on the road to freedom. You will are found by slave catchers and returned to your plantation.");
+            if (Trail.trailNum != 5) {
+                World.LoadEvent(129);
+            } else {
+                World.LoadEvent(130);
+            }
         }
         _gameUI.RefreshCounters(food, medicine, money, health);
     }

@@ -14,11 +14,29 @@ public class DynamicEventHandler : MonoBehaviour {
     public static List<int> dinnerPool {get; private set;}= new List<int>(); // poolNum = 2
     public static List<int> sleepPool {get; private set;}= new List<int>(); // poolNum = 3
 
+    private static int healCD = 0;
+    private static bool noWarning = true;
+
     void Start() {
         //AddEventToSetPool(,0);
         //AddEventToSetPool(,1);
         //AddEventToSetPool(,2);
         //AddEventToSetPool(,3);
+    }
+
+    void Update() {
+        // mandatory events
+        if (Trail.trailNum == 5 && masterPool.Count == 0 && nextEvent == -1) {
+            SetNextEvent(128);
+        } else if (SlaveCatcher.scState == SlaveCatcherState.FINDING_PLAYER && nextEvent == -1) {
+            SetNextEvent(95);
+        } else if (SlaveCatcher.scTrailNum == Trail.trailNum && SlaveCatcher.scState == SlaveCatcherState.ON_TRAIL && noWarning && nextEvent == -1) { // slave catcher warning
+            noWarning = false;
+            SetNextEvent(97);
+        } else if (CharacterStats.GetResource(0) < CharacterStats.GetResource(4) && CharacterStats.GetResource(2) > 0 && healCD == 0 && nextEvent == -1) { // first aid
+            healCD = 10;
+            SetNextEvent(98);
+        }
     }
 
 
@@ -164,12 +182,15 @@ public class DynamicEventHandler : MonoBehaviour {
                 AddEventToPool(9);
         } else {
             RemoveEventFromPool(9);
-        }   
+        }
     }
 
     // Resets
     public static void ResetMasterPool() {
         masterPool.Clear();
+        nextEvent = -1;
+        healCD = 0;
+        noWarning = true;
     }
     public static void ResetCalledPool() {
         calledEvents.Clear();
@@ -198,6 +219,10 @@ public class DynamicEventHandler : MonoBehaviour {
 
     // Event Picking
     public static void LoadEvent() {
+        if (healCD > 0) {
+            healCD--;
+        }
+
         int eventID = PickEvent();
 
         switch (eventID) {
