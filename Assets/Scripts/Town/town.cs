@@ -32,7 +32,7 @@ public class town : MonoBehaviour
     // Prevent infinite money gen from friend
     public static void plantationFriend(){
         if (friend == true){
-            //openShop(102);
+            openShop(102);
             friend = false;
         }
     }
