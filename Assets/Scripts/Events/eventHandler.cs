@@ -249,8 +249,12 @@ public class eventHandler : MonoBehaviour
                             CharacterStats.RemoveStatus(s.effects[i].effectValA);
                         }
                         break;
-                    case 5: // Location
-                        // LOCATION HANDLING EFFECTS ADDED HERE
+                    case 5: // Game
+                        if (s.effects[1].effectValA == 1) {
+                            SceneController.GameOver(true,s.effects[1].effectOperation);
+                        } else if (s.effects[1].effectValA == 0) {
+                            SceneController.GameOver(false,s.effects[1].effectOperation);
+                        }
                         break;
                     case 6: // Game
                         // WIN LOSS EFFECTS ADDED HERE

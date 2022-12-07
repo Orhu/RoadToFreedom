@@ -2729,77 +2729,6 @@
         },
         {
             "id": 36,
-            "stageNum": 3,
-            "stages": [
-                {
-                    "stageId": 0,
-                    "title": "Pawpaw Tree",
-                    "image": "",
-                    "text": "In a ravine down the side of the road, you see a broad-leafed tree laden with thig green fruits. You recognize these from home: pawpaws. Healthy and edible, but clambering up and down the ravine might take time.",
-                    "effectsNum": 0,
-                    "effects": [],
-                    "choiceNum": 2,
-                    "choices":[
-                        {
-                            "buttonText": "Gather pawpaws",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 1,
-                            "failStage": 0
-                        },
-                        {
-                            "buttonText": "Continue on the road",
-                            "hasCheck": false,
-                            "checkType": 0,
-                            "checkID": 0,
-                            "checkVal": 0,
-                            "successStage": 2,
-                            "failStage": 0
-                        }
-                    ],
-                    "timeBeforeNextEvent": 0
-                },
-                {
-                    "stageId": 1,
-                    "title": "Pawpaw Tree",
-                    "image": "",
-                    "text": "You scramble down into the ravine, slipping and sliding a little, and approach the trees. The pawpaws are fat and ripe. You stuff several into your pack and then return to the road.\n\n<color=#00FF00>Gain 2 Food</color>",
-                    "effectsNum": 2,
-                    "effects": [
-                        {
-                            "effectType": 2,
-                            "effectOperation": "c",
-                            "effectValA": 1,
-                            "effectValB": 2
-                        },
-                        {
-                            "effectType": 7,
-                            "effectOperation": "n",
-                            "effectValA": 0,
-                            "effectValB": 2
-                        }
-                    ],
-                    "choiceNum": 0,
-                    "choices": [],
-                    "timeBeforeNextEvent": 30
-                },
-                {
-                    "stageId": 2,
-                    "title": "Pawpaw Tree",
-                    "image": "",
-                    "text": "You don't have time to forage. You continue along the road.",
-                    "effectsNum": 0,
-                    "effects": [],
-                    "choiceNum": 0,
-                    "choices": [],
-                    "timeBeforeNextEvent": 30
-                }
-            ]
-        },
-        {
-            "id": 37,
             "stageNum": 1,
             "stages": [
                 {
@@ -2823,7 +2752,7 @@
             ]
         },
         {
-            "id": 38,
+            "id": 37,
             "stageNum": 3,
             "stages": [
                 {
@@ -2894,7 +2823,7 @@
             ]
         },
         {
-            "id": 39,
+            "id": 38,
             "stageNum": 4,
             "stages": [
                 {
@@ -2977,7 +2906,7 @@
             ]
         },
         {
-            "id": 40,
+            "id": 39,
             "stageNum": 4,
             "stages": [
                 {
@@ -3058,7 +2987,7 @@
             ]
         },
         {
-            "id": 41,
+            "id": 40,
             "stageNum": 1,
             "stages": [
                 {
@@ -3082,7 +3011,7 @@
             ]
         },
         {
-            "id": 42,
+            "id": 41,
             "stageNum": 3,
             "stages": [
                 {
@@ -3120,7 +3049,7 @@
                     "stageId": 2,
                     "title": "Investigators",
                     "image": "",
-                    "text": "You know you have no pass. Your arms tremble as you stall, making a show of reaching into your bag and searching for the pass. Your brain whirls to form a plan. \"Sorry, sirs, I must have lost it somewhere...\"\n\nYour hand finds a jar of pickled vegetables. With a sudden heave you throw it at the investigator, catching him in the temple. The other man shouts. You turn and <color=#00FFFF>flee into the woods,</color> crushing bushes, ducking between trees. Three shots ring out. You feel something bury itself in your arm and clap a hand over your mouth to keep from crying out.\n\n<color=#FF0000>Lose 1 Food</color>\n\n<color=#FF0000>Lose 5 Health</color> ",
+                    "text": "You know you have no pass. Your arms tremble as you stall, making a show of reaching into your bag and searching for the pass. Your brain whirls to form a plan. \"Sorry, sirs, I must have lost it somewhere...\"\n\nYour hand finds a jar of pickled vegetables. With a sudden heave you throw it at the investigator, catching him in the temple. The other man shouts. You turn and <color=#00FFFF>flee into the woods,</color> crushing bushes, ducking between trees. Three shots ring out. You feel something bury itself in your arm and clap a hand over your mouth to keep from crying out.\n\n<color=#FF0000>Lose 1 Food</color>\n\n<color=#FF0000>Lose 5 Health</color>",
                     "effectsNum": 2,
                     "effects": [
                         {
@@ -3139,6 +3068,23 @@
                     "choiceNum": 0,
                     "choices":[],
                     "timeBeforeNextEvent": 0
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "stageNum": 1,
+            "stages": [
+                {
+                    "stageId": 0,
+                    "title": "Travelling...",
+                    "image": "",
+                    "text": "Travelling on the road can get boring without anything to do. You thank the Lord that misfortune hasn't found it's way to you, but hope deep down that something will come along and interrupt the mundanity.",
+                    "effectsNum": 0,
+                    "effects": [],
+                    "choiceNum": 0,
+                    "choices": [],
+                    "timeBeforeNextEvent": 30
                 }
             ]
         },
