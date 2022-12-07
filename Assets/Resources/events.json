@@ -748,7 +748,7 @@
                     "title": "Toll Bridge",
                     "image": "",
                     "text": "You hand over the money and continue on your way.",
-                    "effectsNum": 2,
+                    "effectsNum": 1,
                     "effects": [
                         {
                             "effectType": 2,
@@ -3144,7 +3144,7 @@
                     "timeBeforeNextEvent": 30
                 },
                 {
-                    "stageId": 1,
+                    "stageId": 2,
                     "title": "Farm Work",
                     "image": "",
                     "text": "You wave back, but shake your head. \"Sorry, fellas, got places to be.\" The men make good-natured sounds of disappointment as you breeze by, but soon they and their labored grunts are out of sight behind you.",

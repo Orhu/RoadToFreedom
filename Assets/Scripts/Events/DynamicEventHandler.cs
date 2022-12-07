@@ -375,8 +375,11 @@ public class DynamicEventHandler : MonoBehaviour {
         // randomly pick an event id from masterPool
         var rng = new System.Random();
         int pickVal = rng.Next(0,masterPool.Count);
-        RemoveEventFromPool(masterPool[pickVal]);
-        return masterPool[pickVal];
+        Debug.Log($"{masterPool.Count}, {pickVal}");
+        RemoveEventFromPool(masterPool[masterPool.Count-1]);
+        return masterPool[masterPool.Count-1];
+        //RemoveEventFromPool(masterPool[pickVal]);
+        //return masterPool[pickVal];
     }
 
 }
