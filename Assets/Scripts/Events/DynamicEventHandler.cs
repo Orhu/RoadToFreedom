@@ -6,11 +6,13 @@ public class DynamicEventHandler : MonoBehaviour {
     public static List<int> masterPool {get; private set;}= new List<int>(); // master event pool
     public static int nextEvent {get; private set;} = -1;
 
+    public static List<int> calledEvents {get; private set;}= new List<int>(); // list of all called events (not set)
+
     // Set Event Pools
-    public static List<int> breakfastPool {get; private set;}= new List<int>(); // poolID = 0
-    public static List<int> lunchPool {get; private set;}= new List<int>(); // poolID = 1
-    public static List<int> dinnerPool {get; private set;}= new List<int>(); // poolID = 2
-    public static List<int> sleepPool {get; private set;}= new List<int>(); // poolID = 3
+    public static List<int> breakfastPool {get; private set;}= new List<int>(); // poolNum = 0
+    public static List<int> lunchPool {get; private set;}= new List<int>(); // poolNum = 1
+    public static List<int> dinnerPool {get; private set;}= new List<int>(); // poolNum = 2
+    public static List<int> sleepPool {get; private set;}= new List<int>(); // poolNum = 3
 
     void Start() {
         //AddEventToSetPool(,0);
@@ -23,7 +25,7 @@ public class DynamicEventHandler : MonoBehaviour {
     // Pool Management
     // Add
     public static void AddEventToPool(int toAdd) {
-
+        masterPool.Add(toAdd);
     }
     public static void AddEventToPool(int toAdd, int numInstances) {
         for (int i = 0; i < numInstances; i++) {
@@ -37,7 +39,23 @@ public class DynamicEventHandler : MonoBehaviour {
     }
 
     public static void AddEventToSetPool(int toAdd, int poolNum) {
-
+        switch (poolNum) {
+            case 0:
+                breakfastPool.Add(toAdd);
+                return;
+            case 1:
+                lunchPool.Add(toAdd);
+                return;
+            case 2:
+                dinnerPool.Add(toAdd);
+                return;
+            case 3:
+                sleepPool.Add(toAdd);
+                return;
+            default:
+                Debug.LogWarning($"Attempted to add to non-existant set pool: {poolNum}");
+                return;
+        }
     }
 
     public static void SetNextEvent(int nextEventID) {
@@ -46,7 +64,7 @@ public class DynamicEventHandler : MonoBehaviour {
 
     // Remove
     public static void RemoveEventFromPool(int toRemove) {
-
+        masterPool.RemoveAll(id => id == toRemove);
     }
     public static void RemoveEventFromPool(int[] toRemove) {
         foreach (var remID in toRemove) {
@@ -55,7 +73,23 @@ public class DynamicEventHandler : MonoBehaviour {
     }
 
     public static void RemoveEventFromSetPool(int toRemove, int poolNum) {
-
+        switch (poolNum) {
+            case 0: 
+                breakfastPool.RemoveAll(id => id == toRemove);
+                return;
+            case 1:
+                lunchPool.RemoveAll(id => id == toRemove);
+                return;
+            case 2:
+                dinnerPool.RemoveAll(id => id == toRemove);
+                return;
+            case 3:
+                sleepPool.RemoveAll(id => id == toRemove);
+                return;
+            default:
+                Debug.LogWarning($"Attempted to remove from non-existant set pool: {poolNum}");
+                return;
+        }
     }
 
     // Pool Maintenance
@@ -65,11 +99,27 @@ public class DynamicEventHandler : MonoBehaviour {
 
     // Resets
     public static void ResetMasterPool() {
-
+        masterPool.Clear();
     }
 
-    public static void ResetSetPool(int poolID) {
-
+    public static void ResetSetPool(int poolNum) {
+        switch (poolNum) {
+            case 0:
+                breakfastPool.Clear();
+                return;
+            case 1:
+                lunchPool.Clear();
+                return;
+            case 2:
+                dinnerPool.Clear();
+                return;
+            case 3:
+                sleepPool.Clear();
+                return;
+            default:
+                Debug.LogWarning($"Attempted to clear a non-existant set pool: {poolNum}");
+                return;
+        }
     }
 
 
@@ -81,20 +131,33 @@ public class DynamicEventHandler : MonoBehaviour {
             return temp;
         }
 
+        if (masterPool.Count == 0) {
+            return 99;
+        }
+
         // randomly pick an event id from masterPool
+        var rng = new System.Random();
+        int pickVal = rng.Next(masterPool.Count);
+        RemoveEventFromPool(pickVal);
+        return pickVal;
     }
 
     public static void LoadEvent() {
         int eventID = PickEvent();
+        calledEvents.Add(eventID);
 
         switch (eventID) {
-
+            default:
+                Debug.LogWarning($"Attempted to dynamically load invalid eventID: {eventID}");
+                return;
         }
     }
 
-    public static void LoadSetEvent(int baseID) {
-        switch (baseID) {
-
+    public static void LoadEvent(int eventID) {
+        switch (eventID) {
+            default:
+                Debug.LogWarning($"Attempted to dynamically load invalid set eventID: {eventID}");
+                return;
         }
     }
 }

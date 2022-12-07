@@ -26,4 +26,10 @@ public class Utilities : MonoBehaviour {
 
         return ((statScore + 1)/2) - 1 + (statScore/6);
     }
+
+    public static int RollSkillCheck(int statScore) {
+        var random = new System.Random();
+
+        return random.Next(1,7) + GetBonus(statScore);
+    }
 }
