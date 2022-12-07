@@ -11,6 +11,7 @@ public class town : MonoBehaviour
     private static eventHandler _event;
 
     public static bool friend = true;
+    public static bool butcher = true;
 
     // Text GameObjects
     // [SerializeField] TMP_Text shopButtonText;
@@ -37,6 +38,17 @@ public class town : MonoBehaviour
         }
         else{
             Debug.Log("Friend already visited.");
+        }
+    }
+
+    // Butcher Shop
+    public static void butcherShop(){
+        if (butcher == true){
+            openShop(109);
+            butcher = false;
+        }
+        else{
+            openShop(1090);
         }
     }
 

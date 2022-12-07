@@ -236,7 +236,7 @@
                     "title": "Evening Meal",
                     "image": "",
                     "text": "As the sun sets, you decide to enjoy an evening meal.\n\n<color=#FF0000>Lose 1 food.</color>",
-                    "effectsNum": 3,
+                    "effectsNum": 2,
                     "effects": [
                         {
                             "effectType": 2,
@@ -827,7 +827,7 @@
                     "timeBeforeNextEvent": 30
                 },
                 {
-                    "stageId": 4,
+                    "stageId": 5,
                     "title": "Toll Bridge",
                     "image": "",
                     "text": "You scoff at the troll-like man and walk down the riverside path. After a while, you eventually find another bridge, this one manned by only a flock of ducks. You cross free of charge and make your way back to your road.\n\n<color=#FF0000>3 hours have passed</color>",

@@ -10,7 +10,7 @@ public class SlaveCatcher : MonoBehaviour {
     public static SlaveCatcherState scState = SlaveCatcherState.INACTIVE;
 
     private static float currentStallTime = 0f; // time delay in town
-    private static float[] townStallTimes = new float[]{48f, 48f, 48f, 48f};
+    private static float[] townStallTimes = new float[]{40f, 40f, 40f, 40f};
 
     private static float scSpeed = 4f;
     private static float scProgress = 0f;
