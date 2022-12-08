@@ -363,6 +363,9 @@ public class DynamicEventHandler : MonoBehaviour {
     }
 
     private static void RestoreEvent() {
+        if (calledEvents.Count == 0) {
+            return;
+        }
         var rng = new System.Random();
         int pickVal = rng.Next(0,calledEvents.Count);
         calledEvents.RemoveAll(id => id == calledEvents[pickVal]);
