@@ -77,7 +77,8 @@ public class DynamicEventHandler : MonoBehaviour {
     }
 
     public static void SetNextEvent(int nextEventID) {
-        nextEvent = nextEventID;
+        if (nextEvent != 96)
+            nextEvent = nextEventID;
     }
 
     // Remove
@@ -233,7 +234,6 @@ public class DynamicEventHandler : MonoBehaviour {
             case 4:
             case 5:
             case 6:
-                break;
             case 7:
                 calledEvents.Add(eventID);
                 AddEventToPool(10);
