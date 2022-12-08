@@ -30,7 +30,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
     }
 
     private IEnumerator ToolTipCountdown() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
         _mouseTT.ToolTipActivate(toolTipText);
         activeCr = null;
     }
