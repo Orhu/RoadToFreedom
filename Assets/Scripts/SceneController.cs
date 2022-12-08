@@ -145,6 +145,7 @@ public class SceneController : MonoBehaviour {
 
         _gameOver.gameObject.SetActive(true);
         _gameOver.FillScreen(isWin, message);
+        SlaveCatcher.ChangeSCState(SlaveCatcherState.INACTIVE);
 
         Debug.Log($"GAME OVER! WIN = {isWin}, {message}");
     }
