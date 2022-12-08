@@ -336,4 +336,8 @@ public class eventHandler : MonoBehaviour
             closeAction = -1;
         }
     }
+
+    public void SetCloseAction (int closeActionNum) {
+        closeAction = closeActionNum;
+    }
 }

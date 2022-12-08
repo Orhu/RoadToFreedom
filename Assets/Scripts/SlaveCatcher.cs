@@ -149,8 +149,12 @@ public class SlaveCatcher : MonoBehaviour {
     public static void CatchPlayer() {
         // trigger slave catcher event depending on the game state
         Debug.Log("You Are Caught");
-        DynamicEventHandler.SetNextEvent(96);
-        Trail.SetTimeToNext(3);
+        if (SceneController.gameState == GameState.ON_TRAIL) {
+            DynamicEventHandler.SetNextEvent(96);
+            Trail.SetTimeToNext(3);
+        } else {
+            SceneController.QueueFakeCloseAction(2);
+        }
     }
 
     public static void ResetSlaveCatchers(int resetType) { // 0 = trail, 1 = full (for game overs)
@@ -181,4 +185,5 @@ public class SlaveCatcher : MonoBehaviour {
         townStallTimes = new float[]{48f, 48f, 48f, 48f};
         Deactivate();
     }
+    
 }

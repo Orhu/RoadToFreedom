@@ -159,6 +159,13 @@ public class SceneController : MonoBehaviour {
             case 1: // transition to marathon/detroit
                 LoadTrail();
                 return;
+            case 2:
+                World.LoadEvent(96);
+                return;
         }
+    }
+
+    public static void QueueFakeCloseAction(int closeAction) {
+        _event.SetCloseAction(closeAction);
     }
 }
