@@ -97,32 +97,41 @@ public class World : MonoBehaviour {
         float newTime = time;
 
         // check if any mandatory events happened during the time skip and display them after a few seconds
-        if (oldTime > newTime) { // past midnight, also look out for the case where the sleep event advances time
-            LoadEvent(0);
-            return;
-        } else if ((oldTime > 0f && oldTime < 5.9f) && newTime >= 5.9f) { // look out for sleep event here too
-            if (CharacterStats.GetResource(1) >= 1) {
-                DynamicEventHandler.LoadEvent(1);
+        if (SceneController.gameState == GameState.ON_TRAIL || SceneController.prevState == GameState.ON_TRAIL) {
+            if (oldTime > newTime) { // past midnight, also look out for the case where the sleep event advances time
+                DynamicEventHandler.SetNextEvent(0);
+                Trail.SetTimeToNext(3);
                 return;
-            } else {
-                DynamicEventHandler.LoadEvent(2);
-                return;
-            }
-        } else if ((oldTime > 6f && oldTime < 12f) && newTime >= 12f) {
-            if (CharacterStats.GetResource(1) >= 1) {
-                DynamicEventHandler.LoadEvent(3);
-                return;
-            } else {
-                DynamicEventHandler.LoadEvent(4);
-                return;
-            }
-        } else if ((oldTime > 12f && oldTime < 18f) && newTime >= 18f) {
-            if (CharacterStats.GetResource(1) >= 1) {
-                DynamicEventHandler.LoadEvent(5);
-                return;
-            } else {
-                DynamicEventHandler.LoadEvent(6);
-                return;
+            } else if ((oldTime > 0f && oldTime < 5.9f) && newTime >= 5.9f) { // look out for sleep event here too
+                if (CharacterStats.GetResource(1) >= 1) {
+                    DynamicEventHandler.SetNextEvent(1);
+                    Trail.SetTimeToNext(3);
+                    return;
+                } else {
+                    DynamicEventHandler.SetNextEvent(2);
+                    Trail.SetTimeToNext(3);
+                    return;
+                }
+            } else if ((oldTime > 6f && oldTime < 12f) && newTime >= 12f) {
+                if (CharacterStats.GetResource(1) >= 1) {
+                    DynamicEventHandler.SetNextEvent(3);
+                    Trail.SetTimeToNext(3);
+                    return;
+                } else {
+                    DynamicEventHandler.SetNextEvent(4);
+                    Trail.SetTimeToNext(3);
+                    return;
+                }
+            } else if ((oldTime > 12f && oldTime < 18f) && newTime >= 18f) {
+                if (CharacterStats.GetResource(1) >= 1) {
+                    DynamicEventHandler.SetNextEvent(5);
+                    Trail.SetTimeToNext(3);
+                    return;
+                } else {
+                    DynamicEventHandler.SetNextEvent(6);
+                    Trail.SetTimeToNext(3);
+                    return;
+                }
             }
         }
     }

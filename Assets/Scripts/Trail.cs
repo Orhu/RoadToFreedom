@@ -11,6 +11,7 @@ public class Trail : MonoBehaviour {
     public static string[] traits {get; private set;} // trail traits
 
     private static int timeToNextEvent = 10;
+    private static bool mandatedResetTime = false;
     private static bool running = false;
 
     public void StartTrail() {
@@ -45,8 +46,8 @@ public class Trail : MonoBehaviour {
                 DynamicEventHandler.AddEventToPool(new int[]{27,30,36,41});
                 return;
             case 3: // marathon
-                length = 120f;
-                traits = new string[]{"marathon"};
+                length = 1f;
+                traits = new string[]{"last"};
                 timeToNextEvent = 15;
                 return;
             case 4: // marathon final challenge
@@ -55,7 +56,7 @@ public class Trail : MonoBehaviour {
                 timeToNextEvent = 15;
                 return;
             case 5: // city final challenge
-                length = 15f;
+                length = 30f;
                 traits = new string[]{"city"};
                 timeToNextEvent = 15;
                 DynamicEventHandler.ResetMasterPool();
@@ -92,7 +93,9 @@ public class Trail : MonoBehaviour {
     }
 
     public static void UpdateTimeToNextEvent(int nextTime) {
-        if (SceneController.gameState == GameState.ON_TRAIL && nextTime != 0) {
+        if (mandatedResetTime) {
+            mandatedResetTime = false;
+        } else if (SceneController.gameState == GameState.ON_TRAIL && nextTime != 0) {
             timeToNextEvent = nextTime;
             Debug.Log($"Updating time to next event. Values should match: {nextTime}, {timeToNextEvent}");
         }
@@ -131,5 +134,10 @@ public class Trail : MonoBehaviour {
         trailNum = 0;
         timeToNextEvent = 10;
         progress = 0f;
+    }
+
+    public static void SetTimeToNext(int newTime) {
+        timeToNextEvent = newTime;
+        mandatedResetTime = true;
     }
 }

@@ -12,6 +12,7 @@ public class town : MonoBehaviour
 
     public static bool friend = true;
     public static bool butcher = true;
+    public static bool passA = true;
 
     // Text GameObjects
     // [SerializeField] TMP_Text shopButtonText;
@@ -44,6 +45,17 @@ public class town : MonoBehaviour
         }
         else{
             Debug.Log("Friend already visited.");
+        }
+    }
+
+    // prevents from multiple attempts at asking for pass
+    public static void passAttempt(){
+        if (passA == true){
+            openShop(100);
+            passA = false;
+        }
+        else{
+            Debug.Log("Already asked for pass.");
         }
     }
 
