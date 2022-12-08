@@ -22,7 +22,9 @@ public class town : MonoBehaviour
 
     // Handled opening the shop event
     public static void openShop(int shopID){
-        World.LoadEvent(shopID); 
+        if (SlaveCatcher.scState != SlaveCatcherState.FINDING_PLAYER){
+            World.LoadEvent(shopID); 
+        }
     }
 
     // Closes out town and continues journey
@@ -47,12 +49,17 @@ public class town : MonoBehaviour
 
     // Butcher Shop
     public static void butcherShop(){
-        if (butcher == true){
-            openShop(109);
-            butcher = false;
+        if (SlaveCatcher.scState != SlaveCatcherState.FINDING_PLAYER){
+            if (butcher == true){
+                openShop(109);
+                butcher = false;
+            }
+            else{
+                openShop(1090);
+            }
         }
         else{
-            openShop(1090);
+            Debug.Log("THEY FOUND YOU");
         }
     }
 
