@@ -2857,6 +2857,7 @@ MonoBehaviour:
   timeText: {fileID: 2022687580}
   progressText: {fileID: 976633097}
   skyImageTransform: {fileID: 2114716548}
+  stupidAssCharacterMenuButton: {fileID: 813663286}
 --- !u!114 &1223301190
 MonoBehaviour:
   m_ObjectHideFlags: 0
