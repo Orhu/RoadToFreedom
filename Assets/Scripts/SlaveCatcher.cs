@@ -61,7 +61,7 @@ public class SlaveCatcher : MonoBehaviour {
                 }
             }
 
-            if (scState == SlaveCatcherState.INVESTIGATING_TOWN || scState == SlaveCatcherState.FINDING_PLAYER) {
+            if (scState == SlaveCatcherState.INVESTIGATING_TOWN) {
                 if (currentStallTime <= 0f) {
                     if (Trail.trailNum != scTrailNum || SceneController.gameState != GameState.IN_TOWN) { // if player is not in same town
                         EmbarkToTrail();
@@ -114,7 +114,10 @@ public class SlaveCatcher : MonoBehaviour {
                     currentStallTime -= timeAdvance;
                     Debug.Log($"slave catcher stall time in town {latestLocation} = {currentStallTime}");
                     if(currentStallTime <= 0f) {
-                        scState = SlaveCatcherState.FINDING_PLAYER;
+                        if (Trail.trailNum == scTrailNum) {
+                            ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
+                            CatchPlayer();
+                        }
                     }
                 }
             }
