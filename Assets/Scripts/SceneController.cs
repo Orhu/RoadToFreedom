@@ -38,12 +38,6 @@ public class SceneController : MonoBehaviour {
         _characterBuilder = GameObject.Find("CharacterBuilderUI").GetComponent<CharacterBuilderUI>();
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            CharacterStats.ChangeHealth(-3412);
-        }
-    }
-
     public static void CharacterBuilderComplete() {
         characterBuilt = true;
         gameUIObject.SetActive(true);
