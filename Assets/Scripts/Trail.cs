@@ -11,6 +11,7 @@ public class Trail : MonoBehaviour {
     public static string[] traits {get; private set;} // trail traits
 
     private static int timeToNextEvent = 10;
+    private static bool mandatedResetTime = false;
     private static bool running = false;
 
     public void StartTrail() {
@@ -92,7 +93,9 @@ public class Trail : MonoBehaviour {
     }
 
     public static void UpdateTimeToNextEvent(int nextTime) {
-        if (SceneController.gameState == GameState.ON_TRAIL && nextTime != 0) {
+        if (mandatedResetTime) {
+            mandatedResetTime = false;
+        } else if (SceneController.gameState == GameState.ON_TRAIL && nextTime != 0) {
             timeToNextEvent = nextTime;
             Debug.Log($"Updating time to next event. Values should match: {nextTime}, {timeToNextEvent}");
         }
@@ -131,5 +134,10 @@ public class Trail : MonoBehaviour {
         trailNum = 0;
         timeToNextEvent = 10;
         progress = 0f;
+    }
+
+    public static void SetTimeToNext(int newTime) {
+        timeToNextEvent = newTime;
+        mandatedResetTime = true;
     }
 }

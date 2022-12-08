@@ -7,7 +7,7 @@ public class SceneController : MonoBehaviour {
     public static bool characterBuilt {get; private set;} = false;
     public static GameState gameState {get; private set;} = GameState.CHARACTER_BUILDER;
 
-    private static GameState prevState;
+    public static GameState prevState;
 
     private static GameObject gameUIObject;
     private static GameObject resourcesUIObject;
