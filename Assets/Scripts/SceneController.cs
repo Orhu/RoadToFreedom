@@ -118,6 +118,8 @@ public class SceneController : MonoBehaviour {
         if (prevState == GameState.IN_TOWN || prevState == GameState.ON_TRAIL) {
             gameState = prevState;
             Debug.Log($"Updating Game State to {gameState}");
+        } else {
+            Debug.LogWarning($"Couldnt revert game state due to invalid previous state. {prevState}");
         }
     }
 
@@ -151,6 +153,7 @@ public class SceneController : MonoBehaviour {
         switch (closeAction) {
             case 0: // general town entry
                 LoadTown(Trail.trailNum);
+                UpdateGameState(GameState.IN_TOWN);
                 return;
             case 1: // transition to marathon/detroit
                 LoadTrail();

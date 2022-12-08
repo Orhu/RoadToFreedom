@@ -302,7 +302,7 @@
                     "choiceNum": 2,
                     "choices":[
                         {
-                            "buttonText": "Forage.",
+                            "buttonText": "Forage",
                             "hasCheck": false,
                             "checkType": 0,
                             "checkID": 0,
@@ -311,7 +311,7 @@
                             "failStage": 0
                         },
                         {
-                            "buttonText": "Continue.",
+                            "buttonText": "Continue",
                             "hasCheck": false,
                             "checkType": 0,
                             "checkID": 0,
@@ -1383,7 +1383,7 @@
                     "stageId": 2,
                     "title": "Thunderstorm",
                     "image": "",
-                    "text": "You try to pull your shirt over your head to keep out the rain as you walk out of the woods, but it just soaks through. Soon you're as wet as if you climbed out of a river and just as shivery. Lightning flashes periodically, followed by great rumbles of thunder that roll back and forth across the sky. But you're able to keep moving, and the storm passes in an hour.\n\n<color=#00FF00>Lose 1 Health</color>",
+                    "text": "You try to pull your shirt over your head to keep out the rain as you walk out of the woods, but it just soaks through. Soon you're as wet as if you climbed out of a river and just as shivery. Lightning flashes periodically, followed by great rumbles of thunder that roll back and forth across the sky. But you're able to keep moving, and the storm passes in an hour.\n\n<color=#FF0000>Lose 1 Health</color>",
                     "effectsNum": 1,
                     "effects": [
                         {

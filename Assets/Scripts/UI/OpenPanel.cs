@@ -14,7 +14,7 @@ public class OpenPanel : MonoBehaviour
             PanelActive = Panel.activeSelf;
             Panel.SetActive(!PanelActive);
 
-            if (PanelActive) {
+            if (!PanelActive) {
                 SceneController.UpdateGameState(GameState.IN_MENU);
             } else {
                 SceneController.RevertGameState();

@@ -75,6 +75,7 @@ public class Trail : MonoBehaviour {
 
             // end trail check
             if (progress >= length) {
+                progress = 0f;
                 EndTrail();                
             }
 

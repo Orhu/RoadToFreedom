@@ -120,7 +120,7 @@ public class DynamicEventHandler : MonoBehaviour {
         int curLuck = CharacterSheet.GetStat(8);
         float curTime = World.time;
 
-        if (curFood <= 15) {
+        if (curFood >= 15) {
             if (!masterPool.Contains(31)) {
                 AddEventToPool(31);
             }
@@ -362,6 +362,9 @@ public class DynamicEventHandler : MonoBehaviour {
     }
 
     private static int PickEvent() {
+        foreach (var i in masterPool) {
+            Debug.Log(i);
+        }
         if (nextEvent != -1) {
             int temp = nextEvent;
             nextEvent = -1;
@@ -375,11 +378,9 @@ public class DynamicEventHandler : MonoBehaviour {
         // randomly pick an event id from masterPool
         var rng = new System.Random();
         int pickVal = rng.Next(0,masterPool.Count);
-        Debug.Log($"{masterPool.Count}, {pickVal}");
-        RemoveEventFromPool(masterPool[masterPool.Count-1]);
-        return masterPool[masterPool.Count-1];
-        //RemoveEventFromPool(masterPool[pickVal]);
-        //return masterPool[pickVal];
+        int selectedEvent = masterPool[pickVal];
+        RemoveEventFromPool(selectedEvent);
+        return selectedEvent;
     }
 
 }
