@@ -114,10 +114,10 @@ public class Trail : MonoBehaviour {
         } else {
             switch (trailNum) {
                 case 0:
-                    World.LoadEvent(116);
+                    World.LoadEvent(117);
                     break;
                 case 1:
-                    World.LoadEvent(117);
+                    World.LoadEvent(116);
                     break;
                 case 2:
                     World.LoadEvent(118);
