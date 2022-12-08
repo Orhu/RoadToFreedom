@@ -254,6 +254,7 @@ public class eventHandler : MonoBehaviour
                         }
                         break;
                     case 5: // Game
+                        Debug.Log("Recieved instruction to end game");
                         SetCloseAction(3, s.effects[i].effectValA, s.effects[i].effectOperation);
                         break;
                     case 6: // Game

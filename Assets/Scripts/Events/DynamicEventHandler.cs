@@ -316,7 +316,11 @@ public class DynamicEventHandler : MonoBehaviour {
             case 128:
             case 129:
             case 130:
+                SceneController.UpdateGameState(GameState.GAME_OVER);
+                SceneController.QueueFakeCloseAction(3,0,"You collapsed from exhaustion and were caught by the slave catchers.");
+                break;
             case 131:
+            case 132:
                 break;
             default:
                 Debug.LogWarning($"Attempted to dynamically load invalid eventID: {eventID}");

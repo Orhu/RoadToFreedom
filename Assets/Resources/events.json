@@ -5604,7 +5604,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 },
                 {
                     "stageId": 3,
@@ -5622,7 +5622,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 },
                 {
                     "stageId": 4,
@@ -5640,7 +5640,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 }
             ]
         },
@@ -5664,7 +5664,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 }
             ]
         },
@@ -5677,7 +5677,7 @@
                     "title": "Exhaustion",
                     "image": "",
                     "text": "The tall stone buildings that seemed so impressive when you entered now loom over you like thousand-eyed crows. Through the haze of your exhaustion, the sounds of conversation and the clatter of horse-hooves and wheels distort and echo in your head. Your legs burn, and your heavy bag sags off your worn, tired frame. You lean against the side of a steeple-like tower to catch your breath and look up into the sky. The tower's tip seems to sway against the smoggy sky. Dizzy, <color=#00FFFF>you sink down the wall to the cold, grimy sidewalk.</color> You close your eyes and try to picture Canada, its great pines and free peoples tilling the rich, cold soil, Black people like you, in homes and bodies they themselves own. But the image wavers and fades in your mind's eye <color=#00FFFF>until all you see is blackness.</color>",
-                    "effectsNum": 0,
+                    "effectsNum": 1,
                     "effects": [
                         {
                             "effectsNum": 5,
@@ -5688,7 +5688,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 }
             ]
         },
@@ -5712,7 +5712,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 }
             ]
         },
@@ -5736,7 +5736,7 @@
                     ],
                     "choiceNum": 0,
                     "choices": [],
-                    "timeBeforeNextEvent": 0
+                    "timeBeforeNextEvent": 999
                 }
             ]
             

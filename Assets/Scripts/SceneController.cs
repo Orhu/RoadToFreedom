@@ -38,6 +38,12 @@ public class SceneController : MonoBehaviour {
         _characterBuilder = GameObject.Find("CharacterBuilderUI").GetComponent<CharacterBuilderUI>();
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.P)) {
+            CharacterStats.ChangeHealth(-3412);
+        }
+    }
+
     public static void CharacterBuilderComplete() {
         characterBuilt = true;
         gameUIObject.SetActive(true);
@@ -109,6 +115,9 @@ public class SceneController : MonoBehaviour {
     }
 
     public static void UpdateGameState(GameState newGameState) {
+        if (gameState == GameState.GAME_OVER) {
+            return;
+        }
         if ((gameState == GameState.IN_TOWN || gameState == GameState.ON_TRAIL) && (newGameState != GameState.IN_TOWN || newGameState != GameState.ON_TRAIL)) 
             prevState = gameState;
         gameState = newGameState;
@@ -116,6 +125,9 @@ public class SceneController : MonoBehaviour {
     }
 
     public static void RevertGameState() {
+        if (gameState == GameState.GAME_OVER) {
+            return;
+        }
         if (prevState == GameState.IN_TOWN || prevState == GameState.ON_TRAIL) {
             gameState = prevState;
             Debug.Log($"Updating Game State to {gameState}");
@@ -177,5 +189,8 @@ public class SceneController : MonoBehaviour {
 
     public static void QueueFakeCloseAction(int closeAction) {
         _event.SetCloseAction(closeAction);
+    }
+    public static void QueueFakeCloseAction(int closeAction, int caV1, string caStr) {
+        _event.SetCloseAction(closeAction, caV1, caStr);
     }
 }
