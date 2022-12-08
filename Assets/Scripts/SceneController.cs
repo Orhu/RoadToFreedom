@@ -167,6 +167,7 @@ public class SceneController : MonoBehaviour {
         }
     }
     public static void ProcessCloseAction(int closeAction, int valA, string operation) {
+        Debug.Log("process close action");
         if (valA == 1) {
             GameOver(true, operation);
         } else if (valA == 0) {
