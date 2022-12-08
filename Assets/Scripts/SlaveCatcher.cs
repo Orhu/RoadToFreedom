@@ -97,7 +97,8 @@ public class SlaveCatcher : MonoBehaviour {
                 //SearchForPlayer();
             } else {
                 if (scState == SlaveCatcherState.ON_TRAIL) {
-                    scProgress += scSpeed * timeAdvance;
+                    //scProgress += scSpeed * timeAdvance;
+                    
                     // ((time*10f) % 240f)/10f;
                     /*float resultTime = World.time + timeAdvance;
                     if (resultTime > 22f && resultTime - 24f <= 6f) { // if time < 22f but resultant time is between 22f and 6f the next day.
@@ -111,6 +112,9 @@ public class SlaveCatcher : MonoBehaviour {
                     }*/
                     scProgress = Mathf.Round((scProgress + (scSpeed * timeAdvance))*10f)/10f;
                     Debug.Log($"slave catcher progress on trail {scTrailNum} = {scProgress}/{scCurrentTrailLength}");
+                    if (scProgress >= scCurrentTrailLength) {
+                        ArriveInTown();
+                    }
                 } else if (scState == SlaveCatcherState.INVESTIGATING_TOWN) {
                     currentStallTime -= timeAdvance;
                     Debug.Log($"slave catcher stall time in town {latestLocation} = {currentStallTime}");
