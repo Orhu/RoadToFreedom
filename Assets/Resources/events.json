@@ -291,14 +291,7 @@
                     "image": "",
                     "text": "You find a bush of berries as you are walking along the trail. You could to stop and gather some berries to eat later on your journey.",
                     "effectsNum": 0,
-                    "effects": [
-                        {
-                            "effectType": 2,
-                            "effectOperation": "c",
-                            "effectValA": 1,
-                            "effectValB": 4
-                        }
-                    ],
+                    "effects": [],
                     "choiceNum": 2,
                     "choices":[
                         {
@@ -316,7 +309,7 @@
                             "checkType": 0,
                             "checkID": 0,
                             "checkVal": 0,
-                            "successStage": 1,
+                            "successStage": 2,
                             "failStage": 0
                         }
                     ],
