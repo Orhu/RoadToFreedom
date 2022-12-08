@@ -117,6 +117,8 @@ public class SlaveCatcher : MonoBehaviour {
                         if (Trail.trailNum == scTrailNum) {
                             ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                             CatchPlayer();
+                        } else {
+                            EmbarkToTrail();
                         }
                     }
                 }

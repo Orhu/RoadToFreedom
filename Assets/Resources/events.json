@@ -1067,7 +1067,7 @@
                     "title": "Fallen Trees",
                     "image": "",
                     "text": "You near a bend in the path and hear loud voices beyond. You see a man and a woman arguing beside a large horse-drawn carriage. The road is blocked by a fallen tree. \n\"How was I supposed to know the storm'd knock down a tree?\" The man grumbles. He sighs and sits on the trunk, slapping the side of the tree. \"If I had another pair of hands, we might budge this fella...\"\nThe woman sits down next to him. \"I'd give good money for a little help right now.\"",
-                    "effectsNum": 1,
+                    "effectsNum": 0,
                     "effects": [],
                     "choiceNum": 2,
                     "choices":[
@@ -5724,7 +5724,7 @@
             ]
         },
         {
-            "id": 131,
+            "id": 132,
             "stageNum": 1,
             "stages": [
                 {
