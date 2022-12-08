@@ -61,16 +61,20 @@ public class CharacterStats : MonoBehaviour
     }
 
     public static void ChangeHealth(int boost) { //Changes health based on boost
-        Debug.Log("changing health");
+        Debug.Log($"changing health: {health}/{maxHealth}, {boost}");
         health += boost;
         if (health > maxHealth) {
             health = maxHealth;
         }
         if (health <= 0) {
             if (Trail.trailNum != 5) {
-                World.LoadEvent(129);
+                DynamicEventHandler.ResetMasterPool();
+                DynamicEventHandler.AddEventToPool(129,4);
+                Trail.SetTimeToNext(2);
             } else {
-                World.LoadEvent(130);
+                DynamicEventHandler.ResetMasterPool();
+                DynamicEventHandler.AddEventToPool(130,4);
+                Trail.SetTimeToNext(2);
             }
         }
         _gameUI.RefreshCounters(food, medicine, money, health);
