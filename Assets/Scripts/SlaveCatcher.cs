@@ -115,7 +115,9 @@ public class SlaveCatcher : MonoBehaviour {
                     currentStallTime -= timeAdvance;
                     Debug.Log($"slave catcher stall time in town {latestLocation} = {currentStallTime}");
                     if(currentStallTime <= 0f) {
-                        if (Trail.trailNum == scTrailNum) {
+                        if (SceneController.gameState == GameState.ON_TRAIL) {
+                            EmbarkToTrail();
+                        } else if (Trail.trailNum == scTrailNum) {
                             ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                             CatchPlayer();
                         } else {
