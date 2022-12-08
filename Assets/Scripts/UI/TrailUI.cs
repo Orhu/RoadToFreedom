@@ -11,9 +11,12 @@ public class TrailUI : MonoBehaviour {
 
     void Update() {
         if (SceneController.gameState == GameState.ON_TRAIL) {
+            skyImageTransform.gameObject.SetActive(true);
             timeText.text = $"Time: About {(int)World.time}:00";
             progressText.text = $"Progress: {Trail.progress}/{Trail.length}";
             skyImageTransform.localRotation = Quaternion.Euler(0f,0f,Mathf.Lerp(360f, 0f, World.time/24f));
+        } else {
+            skyImageTransform.gameObject.SetActive(false);
         }
     }
 }
