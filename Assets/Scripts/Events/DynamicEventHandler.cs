@@ -226,6 +226,14 @@ public class DynamicEventHandler : MonoBehaviour {
         int eventID = PickEvent();
 
         switch (eventID) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                break;
             case 7:
                 calledEvents.Add(eventID);
                 AddEventToPool(10);
