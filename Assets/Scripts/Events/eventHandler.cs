@@ -108,6 +108,8 @@ public class eventHandler : MonoBehaviour
     private World _world; 
 
     private int closeAction = -1;
+    private int caValA = -1;
+    private string caOp = "";
 
     void Start() {
         // Reads in json and stores in an object that will be accessed to get events
@@ -252,11 +254,7 @@ public class eventHandler : MonoBehaviour
                         }
                         break;
                     case 5: // Game
-                        if (s.effects[1].effectValA == 1) {
-                            SceneController.GameOver(true,s.effects[1].effectOperation);
-                        } else if (s.effects[1].effectValA == 0) {
-                            SceneController.GameOver(false,s.effects[1].effectOperation);
-                        }
+                        SetCloseAction(3, s.effects[i].effectValA, s.effects[i].effectOperation);
                         break;
                     case 6: // Game
                         // WIN LOSS EFFECTS ADDED HERE
@@ -331,7 +329,12 @@ public class eventHandler : MonoBehaviour
 
     public void HideEvent() {
         gameObject.SetActive(false);
-        if (closeAction != -1) {
+        if (closeAction != -1 && caValA != -1) {
+            SceneController.ProcessCloseAction(closeAction, caValA, caOp);
+            closeAction = -1;
+            caValA = -1;
+            caOp = "";
+        } else if (closeAction != -1) {
             SceneController.ProcessCloseAction(closeAction);
             closeAction = -1;
         }
@@ -339,5 +342,10 @@ public class eventHandler : MonoBehaviour
 
     public void SetCloseAction (int closeActionNum) {
         closeAction = closeActionNum;
+    }
+    public void SetCloseAction (int closeActionNum, int valA, string op) {
+        closeAction = closeActionNum;
+        caValA = valA;
+        caOp = op;
     }
 }

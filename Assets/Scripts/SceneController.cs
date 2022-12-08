@@ -162,6 +162,15 @@ public class SceneController : MonoBehaviour {
             case 2:
                 World.LoadEvent(96);
                 return;
+            case 3: // juego over
+                break;
+        }
+    }
+    public static void ProcessCloseAction(int closeAction, int valA, string operation) {
+        if (valA == 1) {
+            GameOver(true, operation);
+        } else if (valA == 0) {
+            GameOver(false, operation);
         }
     }
 
