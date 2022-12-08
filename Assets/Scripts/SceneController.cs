@@ -40,6 +40,7 @@ public class SceneController : MonoBehaviour {
 
     public static void CharacterBuilderComplete() {
         characterBuilt = true;
+        gameUIObject.SetActive(true);
         //_trail.StartTrail();
     }
 
