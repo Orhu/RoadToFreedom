@@ -13,11 +13,14 @@ public class TitleScreen : MonoBehaviour {
     }
     
     public void OnStartGame() {
-        Debug.Log("CLICKED BUTTON");
         SceneManager.LoadScene("Base Scene");
     }
 
     public void OnShowCredits() {
+        SceneManager.LoadScene("Credits");
+    }
 
+    public void EndCredits() {
+        SceneManager.LoadScene("TitleScreen");
     }
 }
