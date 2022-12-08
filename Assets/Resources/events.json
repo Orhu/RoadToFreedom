@@ -2910,7 +2910,7 @@
                     "choices":[
                         {
                             "buttonText": "Take a look",
-                            "hasCheck": false,
+                            "hasCheck": true,
                             "checkType": 1,
                             "checkID": 8,
                             "checkVal": 3,
@@ -2919,7 +2919,7 @@
                         },
                         {
                             "buttonText": "Continue on your way",
-                            "hasCheck": true,
+                            "hasCheck": false,
                             "checkType": 0,
                             "checkID": 0,
                             "checkVal": 0,
