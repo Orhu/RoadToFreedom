@@ -1365,7 +1365,7 @@
                     "stageId": 1,
                     "title": "Thunderstorm",
                     "image": "",
-                    "text": "At the edge of the woods, you spot a small, crooked shed that looks abandoned. You duck inside to wait out the storm. Leaks trickle through the gaps between boards in the ceiling, but compared to outside, the shelter is practically bone-dry.\n\nIt takes the storm an hour to pass, and then you can continue on your way.\n\n<color=#FF0000>4 hours have passed</color>",
+                    "text": "At the edge of the woods, you spot a small, crooked shed that looks abandoned. You duck inside to wait out the storm. Leaks trickle through the gaps between boards in the ceiling, but compared to outside, the shelter is practically bone-dry.\n\nIt takes the storm a few hours to pass, and then you can continue on your way.\n\n<color=#FF0000>4 hours have passed</color>",
                     "effectsNum": 1,
                     "effects": [
                         {
