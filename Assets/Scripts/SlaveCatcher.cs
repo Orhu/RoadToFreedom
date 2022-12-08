@@ -48,8 +48,6 @@ public class SlaveCatcher : MonoBehaviour {
                 }
 
                 if (scCurrentTrailLength <= scProgress) {
-                    scTrailNum++;
-
                     if (scTrailNum == 4) {
                         if (Trail.trailNum == 5) {
                             scTrailNum = 5;
@@ -144,6 +142,7 @@ public class SlaveCatcher : MonoBehaviour {
     public static void ArriveInTown() {
         // arriving in town from trail
         latestLocation++; // arrive in next town
+        scTrailNum++;
         Debug.Log($"Arriving in town {latestLocation}");
         currentStallTime = townStallTimes[scTrailNum];
         scProgress = 0f;
