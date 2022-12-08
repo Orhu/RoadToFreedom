@@ -1854,7 +1854,7 @@
                     "text": "While attempting a shortcut across a field, you hear a rattling, buzzing noise from the tall grass. You freeze instantly, looking around. There, a pace from your foot, is a coiled bundle of mottled green scales and lean muscle. The snake hisses at you, its head swaying slightly back and forth. The rattle comes again, louder, as you try to step to the side. You see those muscles bunching together as if ready to strike.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
+                    "choiceNum": 3,
                     "choices":[
                         {
                             "buttonText": "Dodge it",
@@ -1995,7 +1995,7 @@
                     "text": "You hear the rush water ahead of you and are surprised to find a river through over a crevace in the road. Peering down into it, you can see that there used to be a bridge here, but it's fallen. A makeshift road leads sideways along the river, probably to another bridge further down. If you followed, you'd have to walk all the way there and all the way back to the road. On the other hand, the water looks deep and dangerous, but you might be able to swim across.",
                     "effectsNum": 0,
                     "effects": [],
-                    "choiceNum": 1,
+                    "choiceNum": 2,
                     "choices":[
                         {
                             "buttonText": "Swim",
