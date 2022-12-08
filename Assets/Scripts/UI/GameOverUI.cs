@@ -22,6 +22,7 @@ public class GameOverUI : MonoBehaviour {
 
     public void OnSoftRestart() { // return to first plantation
         gameObject.SetActive(false);
+        SceneController.ForceGameSet(GameState.IN_TOWN);
         SlaveCatcher.Restart();
         DynamicEventHandler.ResetMasterPool();
         DynamicEventHandler.ResetCalledPool();

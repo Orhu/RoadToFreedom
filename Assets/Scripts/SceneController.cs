@@ -151,7 +151,7 @@ public class SceneController : MonoBehaviour {
 
     public void RebuildCharacter() {
         characterBuilt = false;
-        UpdateGameState(GameState.CHARACTER_BUILDER);
+        gameState = GameState.CHARACTER_BUILDER;
         _characterBuilder.ReopenCharacterBuilder();
         StartCoroutine(AwaitCharacter());
     }
@@ -186,5 +186,9 @@ public class SceneController : MonoBehaviour {
     }
     public static void QueueFakeCloseAction(int closeAction, int caV1, string caStr) {
         _event.SetCloseAction(closeAction, caV1, caStr);
+    }
+
+    public static void ForceGameSet(GameState newStet) {
+        gameState = newStet;
     }
 }
