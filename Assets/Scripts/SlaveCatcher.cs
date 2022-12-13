@@ -10,7 +10,7 @@ public class SlaveCatcher : MonoBehaviour {
     public static SlaveCatcherState scState = SlaveCatcherState.INACTIVE;
 
     private static float currentStallTime = 0f; // time delay in town
-    private static float[] townStallTimes = new float[]{24f, 24f, 24f, 24f};
+    private static float[] townStallTimes = new float[]{15f, 24f, 24f, 24f};
 
     private static float scSpeed = 4f;
     private static float scProgress = 0f;
@@ -42,9 +42,10 @@ public class SlaveCatcher : MonoBehaviour {
                     Debug.Log($"slave catcher progress on trail {scTrailNum} = {scProgress}/{scCurrentTrailLength}");
                 }
 
-                if (scTrailNum == Trail.trailNum) {
+                if (scTrailNum-1 == Trail.trailNum && SceneController.gameState == GameState.ON_TRAIL) {
                     if (scProgress >= Trail.progress)
                         ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
+                        CatchPlayer();
                 }
 
                 if (scCurrentTrailLength <= scProgress) {
@@ -61,13 +62,17 @@ public class SlaveCatcher : MonoBehaviour {
 
             if (scState == SlaveCatcherState.INVESTIGATING_TOWN) {
                 if (currentStallTime <= 0f) {
-                    if (Trail.trailNum != scTrailNum || SceneController.gameState != GameState.IN_TOWN) { // if player is not in same town
+                    if (Trail.trailNum != scTrailNum-1 || SceneController.gameState != GameState.IN_TOWN) { // if player is not in same town
                         EmbarkToTrail();
                     } else {
                         ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                         CatchPlayer();
                     }
                 } else{
+                    if(Trail.trailNum == scTrailNum-1 && SceneController.gameState == GameState.IN_TOWN){
+                        ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
+                        CatchPlayer();
+                    }
                     currentStallTime = Mathf.Round((currentStallTime - 0.1f)*10f)/10f;
                     Debug.Log($"slave catcher stall time in town {latestLocation} = {currentStallTime}");
                 }
@@ -119,7 +124,7 @@ public class SlaveCatcher : MonoBehaviour {
                     if(currentStallTime <= 0f) {
                         if (SceneController.gameState == GameState.ON_TRAIL) {
                             EmbarkToTrail();
-                        } else if (Trail.trailNum == scTrailNum) {
+                        } else if (Trail.trailNum == scTrailNum-1 && SceneController.gameState == GameState.IN_TOWN) {
                             ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                             CatchPlayer();
                         } else {
@@ -134,7 +139,7 @@ public class SlaveCatcher : MonoBehaviour {
     public static void EmbarkToTrail() {
         Debug.Log($"Embarking on trail {scTrailNum}");
         // embark to trail from town
-        scCurrentTrailLength = scTrailLengths[scTrailNum];
+        scCurrentTrailLength = scTrailLengths[scTrailNum-1];
         currentStallTime = 0f;
         ChangeSCState(SlaveCatcherState.ON_TRAIL);
     }
@@ -144,8 +149,10 @@ public class SlaveCatcher : MonoBehaviour {
         latestLocation++; // arrive in next town
         scTrailNum++;
         Debug.Log($"Arriving in town {latestLocation}");
-        currentStallTime = townStallTimes[scTrailNum];
+        currentStallTime = townStallTimes[scTrailNum-1];
         scProgress = 0f;
+
+        //scTrailNum++;
         ChangeSCState(SlaveCatcherState.INVESTIGATING_TOWN);
     }
 
@@ -154,8 +161,11 @@ public class SlaveCatcher : MonoBehaviour {
         Debug.Log("You Are Caught");
         if (SceneController.gameState == GameState.ON_TRAIL) {
             DynamicEventHandler.SetNextEvent(96);
+            SceneController.GameOver(false, "You have been caught by slave catchers.");
+            //DynamicEventHandler.catch();
             Trail.SetTimeToNext(3);
-        } else {
+        } 
+        else{
             SceneController.QueueFakeCloseAction(2);
         }
     }
@@ -185,7 +195,7 @@ public class SlaveCatcher : MonoBehaviour {
         currentStallTime = 0f;
         latestLocation = -1;
         scCurrentTrailLength = 0f;
-        townStallTimes = new float[]{48f, 48f, 48f, 48f};
+        townStallTimes = new float[]{15f, 24f, 24f, 24f};
         Deactivate();
     }
     

@@ -3485,7 +3485,7 @@
                     "stageId": 0,
                     "title": "First Aid",
                     "image": "",
-                    "text": "Using the supplies you have, you do your best to tend to your wounds.\n\n<color=#00FF00>Gain 1 health</color>\n<color=#FF0000>Lose 1 medicine<color>",
+                    "text": "Using the supplies you have, you do your best to tend to your wounds.\n\n<color=#00FF00>Gain 1 health</color>\n<color=#FF0000>Lose 1 medicine</color>",
                     "effectsNum": 2,
                     "effects": [
                         {

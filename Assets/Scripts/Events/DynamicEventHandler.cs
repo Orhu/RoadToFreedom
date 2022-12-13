@@ -26,16 +26,16 @@ public class DynamicEventHandler : MonoBehaviour {
 
     void Update() {
         // mandatory events
-        if (Trail.trailNum == 5 && masterPool.Count == 0 && nextEvent == -1) {
+        if (Trail.trailNum == 5 && masterPool.Count == 0 && nextEvent != 128) {
             SetNextEvent(128);
-        } else if (SlaveCatcher.scState == SlaveCatcherState.FINDING_PLAYER && nextEvent == -1) {
-            SetNextEvent(95);
-        } else if (SlaveCatcher.scTrailNum == Trail.trailNum && SlaveCatcher.scState == SlaveCatcherState.ON_TRAIL && noWarning && nextEvent == -1) { // slave catcher warning
-            noWarning = false;
-            SetNextEvent(97);
-        } else if (CharacterStats.GetResource(0) < CharacterStats.GetResource(4) && CharacterStats.GetResource(2) > 0 && healCD == 0 && nextEvent == -1) { // first aid
-            healCD = 10;
-            SetNextEvent(98);
+        } else if (nextEvent == -1) {
+            if ((SlaveCatcher.scTrailNum == Trail.trailNum && SlaveCatcher.scState == SlaveCatcherState.ON_TRAIL) && noWarning) { // slave catcher warning
+                noWarning = false;
+                SetNextEvent(97);
+            } if (CharacterStats.GetResource(0) < CharacterStats.GetResource(4) && CharacterStats.GetResource(2) > 0 && healCD == 0) { // first aid
+                healCD = 10;
+                SetNextEvent(98);
+            }
         }
     }
 
@@ -377,10 +377,8 @@ public class DynamicEventHandler : MonoBehaviour {
     }
 
     private static int PickEvent() {
-        foreach (var i in masterPool) {
-            Debug.Log(i);
-        }
         if (nextEvent != -1) {
+            Debug.Log($"setting next event: {nextEvent}");
             int temp = nextEvent;
             nextEvent = -1;
             return temp;
@@ -397,5 +395,6 @@ public class DynamicEventHandler : MonoBehaviour {
         RemoveEventFromPool(selectedEvent);
         return selectedEvent;
     }
+
 
 }
