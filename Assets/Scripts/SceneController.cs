@@ -133,7 +133,7 @@ public class SceneController : MonoBehaviour {
     public static void GameOver(bool isWin, string message) {
         // TO DO
         // show game over screen
-        if (gameState == GameState.IN_TOWN) {
+        if (prevState == GameState.IN_TOWN) {
             GameObject townObj = GameObject.Find("TownUI");
             if (townObj != null)
                 SceneManager.UnloadSceneAsync(Trail.trailNum+3);
@@ -142,6 +142,7 @@ public class SceneController : MonoBehaviour {
 
         resourcesUIObject.SetActive(false);
         gameUIObject.SetActive(false);
+        EndEvent();
 
         _gameOver.gameObject.SetActive(true);
         _gameOver.FillScreen(isWin, message);
