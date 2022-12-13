@@ -146,6 +146,10 @@ public class SceneController : MonoBehaviour {
         _gameOver.gameObject.SetActive(true);
         _gameOver.FillScreen(isWin, message);
         SlaveCatcher.ChangeSCState(SlaveCatcherState.INACTIVE);
+        town.friend = true;
+        town.butcher = true;
+        town.passA = true;
+        town.lumber = 3;
 
         Debug.Log($"GAME OVER! WIN = {isWin}, {message}");
     }

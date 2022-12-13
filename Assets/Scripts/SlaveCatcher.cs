@@ -124,11 +124,17 @@ public class SlaveCatcher : MonoBehaviour {
                     if(currentStallTime <= 0f) {
                         if (SceneController.gameState == GameState.ON_TRAIL) {
                             EmbarkToTrail();
-                        } else if (Trail.trailNum == scTrailNum-1 && SceneController.gameState == GameState.IN_TOWN) {
+                        } else if (Trail.trailNum <= scTrailNum-1 && SceneController.gameState == GameState.IN_TOWN) {
                             ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                             CatchPlayer();
                         } else {
                             EmbarkToTrail();
+                        }
+                    }
+                    else if(currentStallTime > 0f){
+                        if (SceneController.gameState == GameState.IN_TOWN && Trail.trailNum <= scTrailNum){
+                            ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
+                            CatchPlayer();
                         }
                     }
                 }
