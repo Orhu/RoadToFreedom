@@ -13,6 +13,7 @@ public class town : MonoBehaviour
     public static bool friend = true;
     public static bool butcher = true;
     public static bool passA = true;
+    public static int lumber = 3;
 
     // Text GameObjects
     // [SerializeField] TMP_Text shopButtonText;
@@ -68,6 +69,19 @@ public class town : MonoBehaviour
             }
             else{
                 openShop(1090);
+            }
+        }
+        else{
+            Debug.Log("THEY FOUND YOU");
+        }
+    }
+
+    // Lumberyard
+    public static void lumberYard(){
+        if (SlaveCatcher.scState != SlaveCatcherState.FINDING_PLAYER){
+            if (lumber > 0){
+                openShop(107);
+                lumber = lumber - 1;
             }
         }
         else{
