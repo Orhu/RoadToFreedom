@@ -132,7 +132,10 @@ public class SlaveCatcher : MonoBehaviour {
                         }
                     }
                     else if(currentStallTime > 0f){
-                        if (SceneController.gameState == GameState.IN_TOWN && Trail.trailNum <= scTrailNum){
+                        if (SceneController.gameState == GameState.IN_TOWN && Trail.trailNum <= scTrailNum-1){
+                            ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
+                            CatchPlayer();
+                        }else if (SceneController.gameState == GameState.IN_EVENT && Trail.trailNum <= scTrailNum-1){
                             ChangeSCState(SlaveCatcherState.FINDING_PLAYER);
                             CatchPlayer();
                         }
@@ -171,6 +174,12 @@ public class SlaveCatcher : MonoBehaviour {
             //DynamicEventHandler.catch();
             Trail.SetTimeToNext(3);
         } 
+        else if (SceneController.gameState == GameState.IN_TOWN || SceneController.gameState == GameState.IN_EVENT){
+            DynamicEventHandler.SetNextEvent(96);
+            SceneController.GameOver(false, "You have been caught by slave catchers.");
+            //DynamicEventHandler.catch();
+            Trail.SetTimeToNext(3);
+        }
         else{
             SceneController.QueueFakeCloseAction(2);
         }

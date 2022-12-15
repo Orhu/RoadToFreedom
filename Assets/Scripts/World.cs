@@ -94,6 +94,11 @@ public class World : MonoBehaviour {
         float oldTime = time;
         World.AdvanceTime(timeAdvance);
         SlaveCatcher.AdvanceTime(timeAdvance);
+        if (SceneController.gameState == GameState.IN_TOWN && SlaveCatcher.scState == SlaveCatcherState.INVESTIGATING_TOWN){
+            if (Trail.trailNum-1 <= SlaveCatcher.scTrailNum-1){
+                SlaveCatcher.CatchPlayer();
+            }
+        }
         float newTime = time;
 
         // check if any mandatory events happened during the time skip and display them after a few seconds
